@@ -1,0 +1,239 @@
+<!DOCTYPE HTML PUBLIC "-//W3O//DTD W3 HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 95 (Thu Jan 19 1995) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<head><script src="https://archive.org/includes/analytics.js?v=cf34f82" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app211.us.archive.org';v.server_ms=225;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="https://web.archive.org/_static/js/bundle-playback.js?v=KTqwAcYd" charset="utf-8"></script>
+<script type="text/javascript" src="https://web.archive.org/_static/js/wombat.js?v=UHAOicsW" charset="utf-8"></script>
+<script type="text/javascript">
+  __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.vhdl.org:80/~wyle/diss/node22.html","19971014210126","https://web.archive.org/","web","/_static/",
+	      "876862886");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web.archive.org/_static/css/banner-styles.css?v=fantwOh2" />
+<link rel="stylesheet" type="text/css" href="https://web.archive.org/_static/css/iconochive.css?v=qtvMKcIJ" />
+<!-- End Wayback Rewrite JS Include -->
+
+<title> Automatic Phrase Generation</title>
+</head>
+<body>
+<meta name="description" value=" Automatic Phrase Generation">
+<meta name="keywords" value="diss">
+<meta name="resource-type" value="document">
+<meta name="distribution" value="global">
+<p>
+ <br> <hr><a name="tex2html1341" href="https://web.archive.org/web/19971014210126/http://www.vhdl.org/~wyle/diss/node23.html"><img align="BOTTOM" alt="next" src="https://web.archive.org/web/19971014210126im_/http://vhdl.org/~wyle/diss/images/next_motif.gif"></a>   <a name="tex2html1339" href="https://web.archive.org/web/19971014210126/http://www.vhdl.org/~wyle/diss/node18.html"><img align="BOTTOM" alt="up" src="https://web.archive.org/web/19971014210126im_/http://vhdl.org/~wyle/diss/images/up_motif.gif"></a>   <a name="tex2html1335" href="https://web.archive.org/web/19971014210126/http://www.vhdl.org/~wyle/diss/node21.html"><img align="BOTTOM" alt="previous" src="https://web.archive.org/web/19971014210126im_/http://vhdl.org/~wyle/diss/images/previous_motif.gif"></a>   <a name="tex2html1343" href="https://web.archive.org/web/19971014210126/http://www.vhdl.org/~wyle/diss/node2.html"><img align="BOTTOM" alt="contents" src="https://web.archive.org/web/19971014210126im_/http://vhdl.org/~wyle/diss/images/contents_motif.gif"></a>   <a name="tex2html1344" href="https://web.archive.org/web/19971014210126/http://www.vhdl.org/~wyle/diss/node57.html"><img align="BOTTOM" alt="index" src="https://web.archive.org/web/19971014210126im_/http://vhdl.org/~wyle/diss/images/index_motif.gif"></a>   <br>
+<b> Next:</b> <a name="tex2html1342" href="https://web.archive.org/web/19971014210126/http://www.vhdl.org/~wyle/diss/node23.html"> Pasadena: a WAN </a>
+<b>Up:</b> <a name="tex2html1340" href="https://web.archive.org/web/19971014210126/http://www.vhdl.org/~wyle/diss/node18.html"> Filtering</a>
+<b> Previous:</b> <a name="tex2html1336" href="https://web.archive.org/web/19971014210126/http://www.vhdl.org/~wyle/diss/node21.html"> Regular Expressions</a>
+<br> <hr> <p>
+<h1><a name="SECTION00840000000000000000"> Automatic Phrase Generation</a></h1>
+<a name="phrases">&#160;</a>
+<a name="6424">&#160;</a>
+<a name="6425">&#160;</a>
+<a name="6426">&#160;</a>
+<p>
+Throughout the last three decades in the IR, computer science, and
+other literature, there have been repeated attempts to incorporate
+phrases, i.e. combinations of words, in the automatic indexing and
+retrieval processes for full text applications [<a href="https://web.archive.org/web/19971014210126/http://www.vhdl.org/~wyle/diss/node40.html#Salt83">Salt83</a>],
+[<a href="https://web.archive.org/web/19971014210126/http://www.vhdl.org/~wyle/diss/node40.html#Jac92a">Jac92a</a>], [<a href="https://web.archive.org/web/19971014210126/http://www.vhdl.org/~wyle/diss/node40.html#Crof91">Crof91</a>].  The improvements gained through the use
+of phrases have counter-intuitively always been quite small.  In some
+cases they have produced no improvement to the retrieval process at
+all.  In very small message collections, with narrow,
+well-defined domains of discourse and small vocabularies, NLP methods
+using linguistically parsed phrases produce significant retrieval
+performance improvements [<a href="https://web.archive.org/web/19971014210126/http://www.vhdl.org/~wyle/diss/node40.html#Jaco92">Jaco92</a>].  But for larger unrestricted
+collections, most simple algorithmic phrase production methods to
+produce indexing features composed of more than one word have not had
+much success.
+<p>
+<a name="6431">&#160;</a>
+<a name="6432">&#160;</a>
+<a name="6433">&#160;</a>
+In [<a href="https://web.archive.org/web/19971014210126/http://www.vhdl.org/~wyle/diss/node40.html#Crof91">Crof91</a>], Croft et. al. analyse the major phrase production and
+indexing methods reported in the IR literature, then go on to propose
+and test related, slightly better methods.  Retrieval algorithms based
+on their methods produce at best an 8-15% performance improvement over
+methods they tested that use individual words.  The most successful
+automatic phrase generation system they tested uses Ken Church's
+stochastic tagger [<a href="https://web.archive.org/web/19971014210126/http://www.vhdl.org/~wyle/diss/node40.html#Chur88">Chur88</a>] which Croft et. al. employed only to
+generate noun phrases.  The stochastic tagger is based on so-called
+``shallow'' lexical analysis as well as probability tables of
+contextual occurrence to assign parts of speech to words and also to
+identify noun phrase boundaries.  This application is an example of the
+maturity that the best NLP<a name="6436">&#160;</a> 
+methods have obtained, as we mentioned in
+section <a href="https://web.archive.org/web/19971014210126/http://www.vhdl.org/~wyle/diss/node10.html#ir">1.4</a>.  Most methods reviewed and applied by Croft et. al.
+are based on a <em> semantic</em> analysis of text, where 
+the homeosemy<a name="6439">&#160;</a>
+between a query text and each message in a collection is enhanced
+through <em> meaningful</em> groups of words.
+<p>
+Our approach to the generation and use of indexing features composed of
+more than one word takes a radically different approach.
+Teufel<a name="6441">&#160;</a> [<a href="https://web.archive.org/web/19971014210126/http://www.vhdl.org/~wyle/diss/node40.html#Teuf89">Teuf89</a>] showed conclusively that <em>
+extending</em> overlapping word fragments (N-grams) based on their high
+information theoretical noise<a name="6444">&#160;</a> produced a much superior set
+of features (used as indexing tokens) than using a fixed-size set of
+N-grams.  Intrigued by this idea and Teufel's positive results, we
+decided to extend certain words into phrases based on their information
+theoretic noise within individual dynamic message collections.  Words
+with a high noise value relative to other words in these collections
+are extended <em> symmetrically</em> to phrases and phrases with high-noise
+are themselves extended to longer phrases.  Phrase construction starts
+with the selection of single-word features from a query text or message
+using the usual methods of word extraction, stop-list word elimination,
+and word reduction as described in [<a href="https://web.archive.org/web/19971014210126/http://www.vhdl.org/~wyle/diss/node40.html#Wyle91">Wyle91</a>].
+<p>
+The noise of each single-word feature, the average noise, and the
+standard deviation are then calculated.  Those words with a noise
+value larger than the average noise plus one standard deviation are
+extended to phrases.  The number of phrases constructed per high-noise
+word depends on the collection frequency of the word <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210126im_/http://www.vhdl.org/~wyle/diss/img316.gif"> and on a
+distance <a name="6447">&#160;</a>
+parameter <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210126im_/http://www.vhdl.org/~wyle/diss/img318.gif">.  Phrases are formed from all combinations
+of each occurrence of the high-noise word with <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210126im_/http://www.vhdl.org/~wyle/diss/img319.gif"> words to the
+left and <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210126im_/http://www.vhdl.org/~wyle/diss/img320.gif"> words to the right of the high-noise word.  Here is
+the first significant difference between Teufel's N-gram extension
+scheme and our phrase construction analog.  Whereas Teufel extended
+N-grams only to the right; we form phrases symmetrically.  <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210126im_/http://www.vhdl.org/~wyle/diss/img321.gif"> phrases are formed for each high-noise word.
+Obviously, a large <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210126im_/http://www.vhdl.org/~wyle/diss/img322.gif"> will cause explosively many phrases to be
+formed, and a small <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210126im_/http://www.vhdl.org/~wyle/diss/img323.gif"> may fail to form important phrases.  In
+his automatic phrase construction experiments, Fagan [<a href="https://web.archive.org/web/19971014210126/http://www.vhdl.org/~wyle/diss/node40.html#Faga87">Faga87</a>]
+found an optimal <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210126im_/http://www.vhdl.org/~wyle/diss/img324.gif"> value to be either 1 or 2, depending on the
+collection, and Croft [<a href="https://web.archive.org/web/19971014210126/http://www.vhdl.org/~wyle/diss/node40.html#Crof91">Crof91</a>] verified this result.  Since we
+continue to expand phrases formed by this initial step, we choose
+<img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210126im_/http://www.vhdl.org/~wyle/diss/img325.gif"> for our method.  Another parameter, <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210126im_/http://www.vhdl.org/~wyle/diss/img326.gif"> is used to
+handle stop-words in the source text which occur between words forming
+a <a name="6450">&#160;</a>
+phrase.  Up to <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210126im_/http://www.vhdl.org/~wyle/diss/img328.gif"> stop-words may appear between any two words
+for phrases containing these words to be deemed identical.  Again, the
+best analysis of this parameter is due to Fagan [<a href="https://web.archive.org/web/19971014210126/http://www.vhdl.org/~wyle/diss/node40.html#Faga87">Faga87</a>] who
+found the optimal value to be either 2 or 3.  For our method, experience
+indicates that <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210126im_/http://www.vhdl.org/~wyle/diss/img329.gif"> provides the best results.
+<p>
+The noise<a name="6452">&#160;</a> 
+of each phrase formed by this initial step along with the
+average and standard deviation are again calculated, and phrases with
+high-noise are extended to longer phrases by combining the initial
+phrase with <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210126im_/http://www.vhdl.org/~wyle/diss/img330.gif"> words to the left and and <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210126im_/http://www.vhdl.org/~wyle/diss/img331.gif"> words to the
+right of the phrase wherever it appears in the query text or message.
+The resulting set of individual words combined with phrases constructed
+from high-noise words forms the vocabulary of features <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210126im_/http://www.vhdl.org/~wyle/diss/img332.gif"> used by
+the similarity measures.  Each feature <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210126im_/http://www.vhdl.org/~wyle/diss/img333.gif"> is weighted
+according to equations <a href="https://web.archive.org/web/19971014210126/http://www.vhdl.org/~wyle/diss/node16.html#eqwtipd">2.15</a> or <a href="https://web.archive.org/web/19971014210126/http://www.vhdl.org/~wyle/diss/node16.html#eqwtipdn">2.16</a>, and the
+similarities between the query text and each message in the dynamic
+collection. are calculated by equation <a href="https://web.archive.org/web/19971014210126/http://www.vhdl.org/~wyle/diss/node15.html#eqrsvblen">2.11</a>.  The
+subscriber-specified number of messages with the highest retrieval
+status values form <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210126im_/http://www.vhdl.org/~wyle/diss/img334.gif">, the resulting set of messages of
+filtering stage <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210126im_/http://www.vhdl.org/~wyle/diss/img335.gif">.
+<p>
+
+<p>
+Because this phrase construction method relies heavily upon information
+theoretic noise, we now propose a reformulation of noise optimized for
+this method.  The usual definition of the <em> noise</em> <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210126im_/http://www.vhdl.org/~wyle/diss/img336.gif"> of a
+message feature <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210126im_/http://www.vhdl.org/~wyle/diss/img337.gif"> in a message collection <b>D</b> is defined [<a href="https://web.archive.org/web/19971014210126/http://www.vhdl.org/~wyle/diss/node40.html#Salt83">Salt83</a>, p.
+65,] as 
+<p><a name="eqnoise">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210126im_/http://www.vhdl.org/~wyle/diss/img338.gif"><p>
+<p>
+where <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210126im_/http://www.vhdl.org/~wyle/diss/img339.gif"> is the occurrence frequency of <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210126im_/http://www.vhdl.org/~wyle/diss/img340.gif"> in <b>d</b> and
+<img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210126im_/http://www.vhdl.org/~wyle/diss/img341.gif"> is the total occurrence frequency of <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210126im_/http://www.vhdl.org/~wyle/diss/img342.gif"> in <b>D</b>.
+<p>
+For the purpose of filtering a dynamic collection of unknown size <b>N</b>
+with an uncontrolled vocabulary of features <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210126im_/http://www.vhdl.org/~wyle/diss/img343.gif">, we propose a
+different formulation of <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210126im_/http://www.vhdl.org/~wyle/diss/img344.gif"> which minimizes the state
+information and computational complexity required  for the incremental
+calculation of <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210126im_/http://www.vhdl.org/~wyle/diss/img345.gif"> as each new query text and message arrives in
+an <b>IS</b>.  The advantages of this new formulation of noise
+are twofold:
+<ol><li> Reduced storage requirements for state information during the
+  calculation
+  <li> Reduced time complexity of an algorithm implementing this equation
+</ol>
+<p>
+<b> Proposition:</b>
+<p><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210126im_/http://www.vhdl.org/~wyle/diss/img346.gif"><p>
+<p>
+<b> Proof</b>: Starting with equation <a href="node22.html#eqnoise">3.5</a>,
+we note that <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210126im_/http://www.vhdl.org/~wyle/diss/img347.gif"> is independent of the sum and can be factored
+out to yield
+<p><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210126im_/http://www.vhdl.org/~wyle/diss/img348.gif"><p>
+Noting that the log of a fraction is the difference of the logs, we get
+<p><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210126im_/http://www.vhdl.org/~wyle/diss/img349.gif"><p>
+Expanding by multiplying the factors within the sum we obtain
+<p><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210126im_/http://www.vhdl.org/~wyle/diss/img350.gif"><p>
+Then we separate the sum into two sums:
+<p><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210126im_/http://www.vhdl.org/~wyle/diss/img351.gif"><p>
+Factoring out the constant part of the second sum,
+<p><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210126im_/http://www.vhdl.org/~wyle/diss/img352.gif"><p>
+And since by definition, <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210126im_/http://www.vhdl.org/~wyle/diss/img353.gif">,
+we get
+<p><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210126im_/http://www.vhdl.org/~wyle/diss/img354.gif"><p>
+which simplifies to
+<p><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210126im_/http://www.vhdl.org/~wyle/diss/img355.gif"><p>
+QED.
+<p>
+As we shall see in our discussion of retrieval performance experiments,
+the use of phrases generated by this scheme produces significant
+retrieval performance improvements over the use of single-term features or
+phrases produced by existing phrase generation methods.
+<p>
+In this chapter we introduced the passive subscriber model which is based on
+the SDI and software agent concepts; the model includes two new methods
+of human - computer interaction:  palettes of examples are used in
+conjunction with a dialog system in which each message a software
+system sends to a subscriber is actually a valid command which can be
+interpreted by the system.  Furthermore, we presented a hybrid of the
+SDI concept that uses modern IR similarity measures and dynamic message
+collections.  We also defined an information server in terms of
+subscriber profile parameters and individual filtering stages used to
+extract information from the Matrix.  Some properties
+of filtering stages were discussed in general, and four stages designed
+specifically to produce better retrieval performance in an <b>IS</b> were
+defined in detail.  Extensions of the commonly used formulation of
+regular expressions were introduced briefly.  Finally, a new method of
+automatic phrase construction for generating indexing tokens was
+defined based on the noise measure, and a more efficient re-formulation
+of that measure was presented.
+<p>
+We come now to the implementation of this proposed <b>IS</b> as well as the
+retrieval experiments used to test the filtering paradigm described
+here and the proposed term weighting and retrieval functions from the
+last chapter.
+<a name="6533">&#160;</a>
+<a name="6534">&#160;</a>
+<a name="6535">&#160;</a>
+<p>
+<br> <hr><a name="tex2html1341" href="https://web.archive.org/web/19971014210126/http://www.vhdl.org/~wyle/diss/node23.html"><img align="BOTTOM" alt="next" src="https://web.archive.org/web/19971014210126im_/http://vhdl.org/~wyle/diss/images/next_motif.gif"></a>   <a name="tex2html1339" href="https://web.archive.org/web/19971014210126/http://www.vhdl.org/~wyle/diss/node18.html"><img align="BOTTOM" alt="up" src="https://web.archive.org/web/19971014210126im_/http://vhdl.org/~wyle/diss/images/up_motif.gif"></a>   <a name="tex2html1335" href="https://web.archive.org/web/19971014210126/http://www.vhdl.org/~wyle/diss/node21.html"><img align="BOTTOM" alt="previous" src="https://web.archive.org/web/19971014210126im_/http://vhdl.org/~wyle/diss/images/previous_motif.gif"></a>   <a name="tex2html1343" href="https://web.archive.org/web/19971014210126/http://www.vhdl.org/~wyle/diss/node2.html"><img align="BOTTOM" alt="contents" src="https://web.archive.org/web/19971014210126im_/http://vhdl.org/~wyle/diss/images/contents_motif.gif"></a>   <a name="tex2html1344" href="https://web.archive.org/web/19971014210126/http://www.vhdl.org/~wyle/diss/node57.html"><img align="BOTTOM" alt="index" src="https://web.archive.org/web/19971014210126im_/http://vhdl.org/~wyle/diss/images/index_motif.gif"></a>   <br>
+<b> Next:</b> <a name="tex2html1342" href="https://web.archive.org/web/19971014210126/http://www.vhdl.org/~wyle/diss/node23.html"> Pasadena: a WAN </a>
+<b>Up:</b> <a name="tex2html1340" href="https://web.archive.org/web/19971014210126/http://www.vhdl.org/~wyle/diss/node18.html"> Filtering</a>
+<b> Previous:</b> <a name="tex2html1336" href="https://web.archive.org/web/19971014210126/http://www.vhdl.org/~wyle/diss/node21.html"> Regular Expressions</a>
+<br> <hr> <p>
+<br> <hr>
+<p><address>
+<i>Mitchell F. Wyle <br>
+Wed Jan  3 13:22:21 EST 1996</i>
+</address>
+</body>
+<!--
+     FILE ARCHIVED ON 21:01:26 Oct 14, 1997 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 17:11:22 Aug 04, 2022.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 139.583
+  exclusion.robots: 0.145
+  exclusion.robots.policy: 0.134
+  cdx.remote: 0.081
+  esindex: 0.01
+  LoadShardBlock: 86.931 (3)
+  PetaboxLoader3.datanode: 101.44 (4)
+  CDXLines.iter: 16.057 (3)
+  load_resource: 80.05
+  PetaboxLoader3.resolve: 61.828
+-->

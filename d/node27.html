@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3O//DTD W3 HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 95 (Thu Jan 19 1995) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<head><script src="https://archive.org/includes/analytics.js?v=cf34f82" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app225.us.archive.org';v.server_ms=125;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="https://web.archive.org/_static/js/bundle-playback.js?v=KTqwAcYd" charset="utf-8"></script>
+<script type="text/javascript" src="https://web.archive.org/_static/js/wombat.js?v=UHAOicsW" charset="utf-8"></script>
+<script type="text/javascript">
+  __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.vhdl.org:80/~wyle/diss/node27.html","19971014210427","https://web.archive.org/","web","/_static/",
+	      "876863067");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web.archive.org/_static/css/banner-styles.css?v=fantwOh2" />
+<link rel="stylesheet" type="text/css" href="https://web.archive.org/_static/css/iconochive.css?v=qtvMKcIJ" />
+<!-- End Wayback Rewrite JS Include -->
+
+<title> Implementation</title>
+</head>
+<body>
+<meta name="description" value=" Implementation">
+<meta name="keywords" value="diss">
+<meta name="resource-type" value="document">
+<meta name="distribution" value="global">
+<p>
+ <br> <hr><a name="tex2html1412" href="https://web.archive.org/web/19971014210427/http://www.vhdl.org/~wyle/diss/node28.html"><img align="BOTTOM" alt="next" src="https://web.archive.org/web/19971014210427im_/http://vhdl.org/~wyle/diss/images/next_motif.gif"></a>   <a name="tex2html1410" href="https://web.archive.org/web/19971014210427/http://www.vhdl.org/~wyle/diss/node23.html"><img align="BOTTOM" alt="up" src="https://web.archive.org/web/19971014210427im_/http://vhdl.org/~wyle/diss/images/up_motif.gif"></a>   <a name="tex2html1404" href="https://web.archive.org/web/19971014210427/http://www.vhdl.org/~wyle/diss/node26.html"><img align="BOTTOM" alt="previous" src="https://web.archive.org/web/19971014210427im_/http://vhdl.org/~wyle/diss/images/previous_motif.gif"></a>   <a name="tex2html1414" href="https://web.archive.org/web/19971014210427/http://www.vhdl.org/~wyle/diss/node2.html"><img align="BOTTOM" alt="contents" src="https://web.archive.org/web/19971014210427im_/http://vhdl.org/~wyle/diss/images/contents_motif.gif"></a>   <a name="tex2html1415" href="https://web.archive.org/web/19971014210427/http://www.vhdl.org/~wyle/diss/node57.html"><img align="BOTTOM" alt="index" src="https://web.archive.org/web/19971014210427im_/http://vhdl.org/~wyle/diss/images/index_motif.gif"></a>   <br>
+<b> Next:</b> <a name="tex2html1413" href="https://web.archive.org/web/19971014210427/http://www.vhdl.org/~wyle/diss/node28.html"> Daemon Program</a>
+<b>Up:</b> <a name="tex2html1411" href="https://web.archive.org/web/19971014210427/http://www.vhdl.org/~wyle/diss/node23.html"> Pasadena: a WAN </a>
+<b> Previous:</b> <a name="tex2html1405" href="https://web.archive.org/web/19971014210427/http://www.vhdl.org/~wyle/diss/node26.html"> User Profiles in </a>
+<br> <hr> <p>
+<h1><a name="SECTION00940000000000000000"> Implementation</a></h1>
+<a name="implementation">&#160;</a>
+<a name="6751">&#160;</a>
+<a name="6752">&#160;</a>
+<p>
+Most of the components in the Pasadena system were implemented in the C
+programming language [<a href="https://web.archive.org/web/19971014210427/http://www.vhdl.org/~wyle/diss/node40.html#Kern78">Kern78</a>].  These programs can be compiled by
+several different C implementations, including ANSI C and ``portable
+C'' compilers running on several different operating systems including
+those of small personal computers.  However, Pasadena has run in
+production mode only under variations of the UNIX [<a href="https://web.archive.org/web/19971014210427/http://www.vhdl.org/~wyle/diss/node40.html#Ritc78">Ritc78</a>]
+operating system.  (Pasadena has run on Digital Equipment Corporation's
+Ultrix, Sun Microsystems'' Sun-OS, and Berkeley System Development (BSD) 
+UNIX.)
+<p>
+Pasadena consists of several different programs which are executed
+independently.  The Abstraction of its major components into separate
+processes provides for a relatively high degree of robustness as well
+as the ability to parallelize some operations.  It also offers
+flexibility in the way a given process communicates with entities
+outside of its control.  The Pasadena sources will compile and run in
+most computing environments which support a C language run-time system
+[<a href="https://web.archive.org/web/19971014210427/http://www.vhdl.org/~wyle/diss/node40.html#Kern84">Kern84</a>] or posix [<a href="https://web.archive.org/web/19971014210427/http://www.vhdl.org/~wyle/diss/node40.html#Zlot91">Zlot91</a>] compliant system calls (UNIX, NT,
+OS/2, etc.).  The programs in the Pasadena system use many methods to
+communicate among themselves, with users, and with the Pasadena
+administrator:
+<ul><li> environment:  An associative list of variables and values which are
+part of the run-time stack and directly accessible by the process.
+Environment variables usually reflect static information which is set
+at the time a system is started or when a user logs in.  
+<li> command-line arguments:  options, flags, or values which are passed to
+a program when it is invoked.  These arguments are usually dynamic and
+are often used to control optional features or processing parameters.
+<li> parameter file:  A file containing options, flags, or data which
+are read by the program when it starts.  Such files usually contain
+large, relatively static options and commands.  
+<li> signals:  Signals are asynchronous events which are 
+sent to a running process in order to
+communicate information very quickly; such information is usually used
+to make the process interrupt to a specific location.  
+<li> console input:  Interactive processes can receive input from a keyboard or
+other input device.  
+<li> data file:  A file containing a (usually) large, dynamic
+collection of data to be used as input 
+</ul><br> <hr>
+<ul> 
+<li> <a name="tex2html1416" href="https://web.archive.org/web/19971014210427/http://www.vhdl.org/~wyle/diss/node28.html#SECTION00941000000000000000"> Daemon Program</a>
+<li> <a name="tex2html1417" href="https://web.archive.org/web/19971014210427/http://www.vhdl.org/~wyle/diss/node29.html#SECTION00942000000000000000"> Network Transparent Interactive Programs</a>
+<li> <a name="tex2html1418" href="https://web.archive.org/web/19971014210427/http://www.vhdl.org/~wyle/diss/node30.html#SECTION00943000000000000000"> regular expressions</a>
+<li> <a name="tex2html1419" href="https://web.archive.org/web/19971014210427/http://www.vhdl.org/~wyle/diss/node31.html#SECTION00944000000000000000"> Format Conversion</a>
+<li> <a name="tex2html1420" href="https://web.archive.org/web/19971014210427/http://www.vhdl.org/~wyle/diss/node32.html#SECTION00945000000000000000"> Information Retrieval Algorithm Interface</a>
+<li> <a name="tex2html1421" href="https://web.archive.org/web/19971014210427/http://www.vhdl.org/~wyle/diss/node33.html#SECTION00946000000000000000"> Retrieval Methods Tested</a>
+</ul>
+<br> <hr><a name="tex2html1412" href="https://web.archive.org/web/19971014210427/http://www.vhdl.org/~wyle/diss/node28.html"><img align="BOTTOM" alt="next" src="https://web.archive.org/web/19971014210427im_/http://vhdl.org/~wyle/diss/images/next_motif.gif"></a>   <a name="tex2html1410" href="https://web.archive.org/web/19971014210427/http://www.vhdl.org/~wyle/diss/node23.html"><img align="BOTTOM" alt="up" src="https://web.archive.org/web/19971014210427im_/http://vhdl.org/~wyle/diss/images/up_motif.gif"></a>   <a name="tex2html1404" href="https://web.archive.org/web/19971014210427/http://www.vhdl.org/~wyle/diss/node26.html"><img align="BOTTOM" alt="previous" src="https://web.archive.org/web/19971014210427im_/http://vhdl.org/~wyle/diss/images/previous_motif.gif"></a>   <a name="tex2html1414" href="https://web.archive.org/web/19971014210427/http://www.vhdl.org/~wyle/diss/node2.html"><img align="BOTTOM" alt="contents" src="https://web.archive.org/web/19971014210427im_/http://vhdl.org/~wyle/diss/images/contents_motif.gif"></a>   <a name="tex2html1415" href="https://web.archive.org/web/19971014210427/http://www.vhdl.org/~wyle/diss/node57.html"><img align="BOTTOM" alt="index" src="https://web.archive.org/web/19971014210427im_/http://vhdl.org/~wyle/diss/images/index_motif.gif"></a>   <br>
+<b> Next:</b> <a name="tex2html1413" href="https://web.archive.org/web/19971014210427/http://www.vhdl.org/~wyle/diss/node28.html"> Daemon Program</a>
+<b>Up:</b> <a name="tex2html1411" href="https://web.archive.org/web/19971014210427/http://www.vhdl.org/~wyle/diss/node23.html"> Pasadena: a WAN </a>
+<b> Previous:</b> <a name="tex2html1405" href="https://web.archive.org/web/19971014210427/http://www.vhdl.org/~wyle/diss/node26.html"> User Profiles in </a>
+<br> <hr> <p>
+<br> <hr>
+<p><address>
+<i>Mitchell F. Wyle <br>
+Wed Jan  3 13:22:21 EST 1996</i>
+</address>
+</body>
+<!--
+     FILE ARCHIVED ON 21:04:27 Oct 14, 1997 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 17:11:39 Aug 04, 2022.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 62.326
+  exclusion.robots: 0.087
+  exclusion.robots.policy: 0.079
+  RedisCDXSource: 0.573
+  esindex: 0.008
+  LoadShardBlock: 46.305 (3)
+  PetaboxLoader3.datanode: 54.525 (4)
+  CDXLines.iter: 12.924 (3)
+  load_resource: 57.777
+  PetaboxLoader3.resolve: 38.288
+-->

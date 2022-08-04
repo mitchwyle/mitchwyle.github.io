@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3O//DTD W3 HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 95 (Thu Jan 19 1995) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<head><script src="https://archive.org/includes/analytics.js?v=cf34f82" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app200.us.archive.org';v.server_ms=179;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="https://web.archive.org/_static/js/bundle-playback.js?v=KTqwAcYd" charset="utf-8"></script>
+<script type="text/javascript" src="https://web.archive.org/_static/js/wombat.js?v=UHAOicsW" charset="utf-8"></script>
+<script type="text/javascript">
+  __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.vhdl.org:80/~wyle/diss/node29.html","19971014210540","https://web.archive.org/","web","/_static/",
+	      "876863140");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web.archive.org/_static/css/banner-styles.css?v=fantwOh2" />
+<link rel="stylesheet" type="text/css" href="https://web.archive.org/_static/css/iconochive.css?v=qtvMKcIJ" />
+<!-- End Wayback Rewrite JS Include -->
+
+<title> Network Transparent Interactive Programs</title>
+</head>
+<body>
+<meta name="description" value=" Network Transparent Interactive Programs">
+<meta name="keywords" value="diss">
+<meta name="resource-type" value="document">
+<meta name="distribution" value="global">
+<p>
+ <br> <hr><a name="tex2html1442" href="https://web.archive.org/web/19971014210540/http://www.vhdl.org/~wyle/diss/node30.html"><img align="BOTTOM" alt="next" src="https://web.archive.org/web/19971014210540im_/http://vhdl.org/~wyle/diss/images/next_motif.gif"></a>   <a name="tex2html1440" href="https://web.archive.org/web/19971014210540/http://www.vhdl.org/~wyle/diss/node27.html"><img align="BOTTOM" alt="up" src="https://web.archive.org/web/19971014210540im_/http://vhdl.org/~wyle/diss/images/up_motif.gif"></a>   <a name="tex2html1434" href="https://web.archive.org/web/19971014210540/http://www.vhdl.org/~wyle/diss/node28.html"><img align="BOTTOM" alt="previous" src="https://web.archive.org/web/19971014210540im_/http://vhdl.org/~wyle/diss/images/previous_motif.gif"></a>   <a name="tex2html1444" href="https://web.archive.org/web/19971014210540/http://www.vhdl.org/~wyle/diss/node2.html"><img align="BOTTOM" alt="contents" src="https://web.archive.org/web/19971014210540im_/http://vhdl.org/~wyle/diss/images/contents_motif.gif"></a>   <a name="tex2html1445" href="https://web.archive.org/web/19971014210540/http://www.vhdl.org/~wyle/diss/node57.html"><img align="BOTTOM" alt="index" src="https://web.archive.org/web/19971014210540im_/http://vhdl.org/~wyle/diss/images/index_motif.gif"></a>   <br>
+<b> Next:</b> <a name="tex2html1443" href="https://web.archive.org/web/19971014210540/http://www.vhdl.org/~wyle/diss/node30.html"> regular expressions</a>
+<b>Up:</b> <a name="tex2html1441" href="https://web.archive.org/web/19971014210540/http://www.vhdl.org/~wyle/diss/node27.html"> Implementation</a>
+<b> Previous:</b> <a name="tex2html1435" href="https://web.archive.org/web/19971014210540/http://www.vhdl.org/~wyle/diss/node28.html"> Daemon Program</a>
+<br> <hr> <p>
+<h2><a name="SECTION00942000000000000000"> Network Transparent Interactive Programs</a></h2>
+<p>
+The Pasadena interactive profile editor and interactive message browser
+each consists of a <b> server</b>
+program and a <b> client</b> program that communicate with each other
+using a layered protocol over a WAN.  The server runs on a system which
+can directly access Pasadena's user profile data, and the client
+program runs on a machine that can access the subscriber's personal
+data.  There are actually several levels of network transparency in this
+model; they include:
+<ol><li> A network transparent file system that allows the server program
+to run on any machine which can access the Pasadena system's files.  Such
+machines are usually connected to the Pasadena host system via a
+high-speed local area network (LAN).  The client executable part of the
+interactive program can also run on any machine that allows it to
+access the subscriber's personal files.
+<li> The client and server profile editor programs and the associated
+protocol for the interactive editor.
+<li> A network transparent window system which uses it's own client -
+server protocol.
+</ol>
+<p>
+It is therefore possible to have the Pasadena system's files on machine
+A (a file server), the main Pasadena program running on machine B, the
+profile editor server running on machine C, the profile editor client
+running on machine D, the subscriber's personal files on another file
+server E, and a subscriber using the display and input devices of
+machine F running a network transparent window system.  
+Theoretically these machines can physically be anywhere on
+a wide-area network.  The interrelation of these network 
+transparency models are illustrated in figure <a href="node29.html#nettrans">4.4</a>.
+<p><a name="7198">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210540im_/http://www.vhdl.org/~wyle/diss/img369.gif">
+<br><strong>Figure 4.4:</strong> Network transparency in Client - Server Interactive Pasadena
+Programs<a name="nettrans">&#160;</a><br>
+<p>
+<p>
+The server parts of both the interactive profile editor and the
+interactive message database browser are started automatically by an
+operating system daemon when a request for their service comes across
+the network.  Each new request for a network connection starts a new
+process.  This mechanism allows the server process to run only when it
+is needed instead of constantly as a daemon; it also allows for
+different incarnations of the same process to run for several different
+interactive users at the same time.
+<p>
+Both interactive server programs consists of two high-level modules and
+three low-level ones.  They also import functions from the eight
+lowest-level modules of the Pasadena main daemon program described
+above.  In fact, all of the programs in the system share common
+modules.  These interactive, user-friendly programs were developed
+based on the Motif [<a href="https://web.archive.org/web/19971014210540/http://www.vhdl.org/~wyle/diss/node40.html#Moti90">Moti90</a>] software behavior specification,
+implemented on the X-Window System.
+<p>
+<br> <hr><a name="tex2html1442" href="https://web.archive.org/web/19971014210540/http://www.vhdl.org/~wyle/diss/node30.html"><img align="BOTTOM" alt="next" src="https://web.archive.org/web/19971014210540im_/http://vhdl.org/~wyle/diss/images/next_motif.gif"></a>   <a name="tex2html1440" href="https://web.archive.org/web/19971014210540/http://www.vhdl.org/~wyle/diss/node27.html"><img align="BOTTOM" alt="up" src="https://web.archive.org/web/19971014210540im_/http://vhdl.org/~wyle/diss/images/up_motif.gif"></a>   <a name="tex2html1434" href="https://web.archive.org/web/19971014210540/http://www.vhdl.org/~wyle/diss/node28.html"><img align="BOTTOM" alt="previous" src="https://web.archive.org/web/19971014210540im_/http://vhdl.org/~wyle/diss/images/previous_motif.gif"></a>   <a name="tex2html1444" href="https://web.archive.org/web/19971014210540/http://www.vhdl.org/~wyle/diss/node2.html"><img align="BOTTOM" alt="contents" src="https://web.archive.org/web/19971014210540im_/http://vhdl.org/~wyle/diss/images/contents_motif.gif"></a>   <a name="tex2html1445" href="https://web.archive.org/web/19971014210540/http://www.vhdl.org/~wyle/diss/node57.html"><img align="BOTTOM" alt="index" src="https://web.archive.org/web/19971014210540im_/http://vhdl.org/~wyle/diss/images/index_motif.gif"></a>   <br>
+<b> Next:</b> <a name="tex2html1443" href="https://web.archive.org/web/19971014210540/http://www.vhdl.org/~wyle/diss/node30.html"> regular expressions</a>
+<b>Up:</b> <a name="tex2html1441" href="https://web.archive.org/web/19971014210540/http://www.vhdl.org/~wyle/diss/node27.html"> Implementation</a>
+<b> Previous:</b> <a name="tex2html1435" href="https://web.archive.org/web/19971014210540/http://www.vhdl.org/~wyle/diss/node28.html"> Daemon Program</a>
+<br> <hr> <p>
+<br> <hr>
+<p><address>
+<i>Mitchell F. Wyle <br>
+Wed Jan  3 13:22:21 EST 1996</i>
+</address>
+</body>
+<!--
+     FILE ARCHIVED ON 21:05:40 Oct 14, 1997 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 17:11:50 Aug 04, 2022.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 90.586
+  exclusion.robots: 0.129
+  exclusion.robots.policy: 0.121
+  cdx.remote: 0.072
+  esindex: 0.011
+  LoadShardBlock: 64.919 (3)
+  PetaboxLoader3.datanode: 86.163 (4)
+  CDXLines.iter: 15.172 (3)
+  load_resource: 83.351
+  PetaboxLoader3.resolve: 40.979
+-->

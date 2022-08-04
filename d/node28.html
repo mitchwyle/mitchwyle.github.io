@@ -1,0 +1,264 @@
+<!DOCTYPE HTML PUBLIC "-//W3O//DTD W3 HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 95 (Thu Jan 19 1995) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<head><script src="https://archive.org/includes/analytics.js?v=cf34f82" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app228.us.archive.org';v.server_ms=169;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="https://web.archive.org/_static/js/bundle-playback.js?v=KTqwAcYd" charset="utf-8"></script>
+<script type="text/javascript" src="https://web.archive.org/_static/js/wombat.js?v=UHAOicsW" charset="utf-8"></script>
+<script type="text/javascript">
+  __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.vhdl.org:80/~wyle/diss/node28.html","19971014210504","https://web.archive.org/","web","/_static/",
+	      "876863104");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web.archive.org/_static/css/banner-styles.css?v=fantwOh2" />
+<link rel="stylesheet" type="text/css" href="https://web.archive.org/_static/css/iconochive.css?v=qtvMKcIJ" />
+<!-- End Wayback Rewrite JS Include -->
+
+<title> Daemon Program</title>
+</head>
+<body>
+<meta name="description" value=" Daemon Program">
+<meta name="keywords" value="diss">
+<meta name="resource-type" value="document">
+<meta name="distribution" value="global">
+<p>
+ <br> <hr><a name="tex2html1430" href="https://web.archive.org/web/19971014210504/http://www.vhdl.org/~wyle/diss/node29.html"><img align="BOTTOM" alt="next" src="https://web.archive.org/web/19971014210504im_/http://vhdl.org/~wyle/diss/images/next_motif.gif"></a>   <a name="tex2html1428" href="https://web.archive.org/web/19971014210504/http://www.vhdl.org/~wyle/diss/node27.html"><img align="BOTTOM" alt="up" src="https://web.archive.org/web/19971014210504im_/http://vhdl.org/~wyle/diss/images/up_motif.gif"></a>   <a name="tex2html1422" href="https://web.archive.org/web/19971014210504/http://www.vhdl.org/~wyle/diss/node27.html"><img align="BOTTOM" alt="previous" src="https://web.archive.org/web/19971014210504im_/http://vhdl.org/~wyle/diss/images/previous_motif.gif"></a>   <a name="tex2html1432" href="https://web.archive.org/web/19971014210504/http://www.vhdl.org/~wyle/diss/node2.html"><img align="BOTTOM" alt="contents" src="https://web.archive.org/web/19971014210504im_/http://vhdl.org/~wyle/diss/images/contents_motif.gif"></a>   <a name="tex2html1433" href="https://web.archive.org/web/19971014210504/http://www.vhdl.org/~wyle/diss/node57.html"><img align="BOTTOM" alt="index" src="https://web.archive.org/web/19971014210504im_/http://vhdl.org/~wyle/diss/images/index_motif.gif"></a>   <br>
+<b> Next:</b> <a name="tex2html1431" href="https://web.archive.org/web/19971014210504/http://www.vhdl.org/~wyle/diss/node29.html"> Network Transparent Interactive </a>
+<b>Up:</b> <a name="tex2html1429" href="https://web.archive.org/web/19971014210504/http://www.vhdl.org/~wyle/diss/node27.html"> Implementation</a>
+<b> Previous:</b> <a name="tex2html1423" href="https://web.archive.org/web/19971014210504/http://www.vhdl.org/~wyle/diss/node27.html"> Implementation</a>
+<br> <hr> <p>
+<h2><a name="SECTION00941000000000000000"> Daemon Program</a></h2>
+<a name="irintrf">&#160;</a>
+<p>
+The main program is a so-called <em> daemon</em> process which runs
+constantly; it responds to many types of events and console commands
+from the Pasadena administrator.  This main program coordinates,
+schedules, and executes other processes.  It was first implemented
+early in 1990 and later changed to incorporate interactive profile
+editing and interactive database queries.  In the last few years, many
+bugs were fixed and a few features were added such that the system can
+now run for at least a few months without the need for operator
+intervention.  The main Pasadena daemon program consists of three
+high-level modules (see figure <a href="node28.html#modstruc">4.2</a>).  
+The module <tt> procmail<a name="6763">&#160;</a></tt> executes user commands
+which are sent to the system either in electronic mail messages or
+through the interactive profile-editor.  It also sends error messages
+and calls other subscriber profile processing routines.  The second module,
+<tt> procnews<a name="6764">&#160;</a></tt> 
+processes messages (news articles) which are in Usenet
+[<a href="https://web.archive.org/web/19971014210504/http://www.vhdl.org/~wyle/diss/node40.html#Hort87">Hort87</a>] format.  It maintains a database of indexed messages,
+adding, creating, indexing, and deleting message indexes.  The third
+module, <tt> irintrf</tt> provides an interface to the information
+retrieval routines which are all run as separate processes.
+<p>
+These three modules are supported by a set of routines found in five
+mid-level modules, called <tt> newsdist</tt>, <tt> ngmaint</tt>, <tt> filter</tt>,
+<tt> profman</tt>, and <tt> utility</tt>.  A larger set of core modules
+contains low-level routines which are not specific to Pasadena.  These
+routines are used by most of the higher-level modules and include the
+following:  <tt> misc</tt>, <tt> unique</tt>, <tt> handlers</tt>, <tt> scandir</tt>,
+<tt> match</tt>, <tt> profile</tt>, <tt> formgen</tt>, <tt> console</tt>.
+<p>
+<p><a name="6975">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210504im_/http://www.vhdl.org/~wyle/diss/img360.gif">
+<br><strong>Figure 4.2:</strong> Pasadena main daemon program: Module Structure &amp; 
+Interfaces <a name="modstruc">&#160;</a><br>
+<p>
+<p>
+The module <tt> handlers</tt> provides for sophisticated error handling
+capabilities including several levels of error severity and different
+methods of recovery and exception handling.  Severity is defined
+hierarchically; the data structures and algorithms are very similar to
+those used by the programming language LISP [<a href="https://web.archive.org/web/19971014210504/http://www.vhdl.org/~wyle/diss/node40.html#Wins84">Wins84</a>].  Critical
+sections of a program are enclosed by <tt> catch_begin</tt> and <tt>
+catch_end</tt>.  If an error occurs while inside such blocks, it is
+signalled by the function <tt> throw</tt>.  The error handler unwinds the
+stack until a matching <tt> catch</tt> is found.  A fatal error occurs if
+no matching <tt> catch</tt> can be found.  The static variable <tt> caught</tt>
+is cleared when a <tt> catch_begin</tt> is executed and set whenever <tt>
+throw</tt> is called.  Most routines in the main Pasadena program signal
+errors by calling one of <tt> fatal_error</tt>, <tt> error</tt>, or <tt>
+warning</tt>.  These routines accept <tt> printf</tt><a name="tex2html921" href="https://web.archive.org/web/19971014210504/http://www.vhdl.org/~wyle/diss/footnode.html#6976"><img align="BOTTOM" alt="gif" src="https://web.archive.org/web/19971014210504im_/http://vhdl.org/~wyle/diss/images/foot_motif.gif"></a> arguments.  <tt> fatal_error</tt> never returns; instead it
+executes a <tt> throw(catch_fatal);</tt> which terminates the process.
+Again adhering to the <em> de facto</em> standards of most C-language
+run-time environments, the reason for an error can be obtained by
+calling a function <tt> error_reason</tt>.  When running in production
+mode, Pasadena traps most operating system signals and translates them
+into calls to <tt> throw</tt>.  This trap and signal handling mechanism is
+encoded within the <tt> handlers</tt> module.
+<p>
+The Pasadena system includes several other error detection and recovery
+mechanims.  For example, the heuristic used to detect mailer loops is
+as follows:  If it is determined that sending messages to a particular
+email address causes a message to be generated for some large number of
+repetitions during a short time interval, that address is ``suspected''
+of generating a mailer loop.  The address is added to a ``suspected''
+database and no messages are ever sent to that address until the
+Pasadena administrator manually removes the address from the suspected
+list or changes the subscriber's address.  If the messages returned
+from that address happen to be valid Pasadena commands, the subscriber
+is <em> not</em> added to the suspected list.  It is therefore
+theoretically possible but very unlikely for this loop detection system
+to fail if the system (or person) causing a mailer loop sends the
+Pasadena system only valid Pasadena commands.  It is also possible but
+again very unlikely to add a valid subscriber to the suspected list if
+a large number of messages are exchanged during a short time interval
+between the subscriber and the Pasadena system with no valid Pasadena
+commands coming from the subscriber.
+<p>
+Another noteworthy aspect of the Pasadena system implementation is the
+heavy use of <em> parameter</em> data stored in secondary medium (data
+files).  The module <tt> profile</tt> contains a large number of small
+functions to load, read, modify, and store collections of name - value
+pairs from a startup file.  These routines are used not only by the
+main Pasadena daemon program, but also by the interactive profile
+editor, message retrieval browser, and certain IR components which
+require static parameters.  This parameter handling implementation
+allows for a limited amount of variable <em> scoping</em>; a variable can
+be either local or global.  In the realization of the system, the first
+group of name - value pairs is called the <em> global section</em> and is
+used, for example, in the global section of subscribers' profiles.  The
+other groups are called local sections.  These sections are used for
+queries within a profile.  Data stored in a variable can be a string,
+an integer, or a float.  The main Pasadena daemon program has a large
+set of parameters that the system reads when it starts.  Almost all
+aspects of the system can be changed by updating the system's parameter
+file (stored as text).  No re-compilation is necessary.  When the
+Pasadena system itself changes a parameter file, it uses a procedure to write
+the data first to a temporary file; then it moves this temporary file
+to the real parameter file name.  This method of first writing to a
+temporary file, then using an atomic system call to create the
+destination file is used often in Pasadena to protect the files from
+partial changes caused by system crashes.
+<p>
+The passive user model (section <a href="https://web.archive.org/web/19971014210504/http://www.vhdl.org/~wyle/diss/node19.html#passive">3.1</a>) includes a ``forms''
+processing paradigm whereby the information server (<b>IS</b>) itself
+generates partial or sometimes even complete <em> system commands</em>
+which it sends to subscribers.  Subscribers then make changes to the
+forms or fill them in when they are blank, and then send them back to
+the <b>IS</b>.  <tt> formgen</tt> is the Pasadena system's forms processing
+module that creates various forms for on-line help, feedback, database
+category
+maintenance, and for parsing command responses.  Form definitions are
+stored in template files  in a library directory. The template forms
+consist of a header, a repeating data part, and a form body.  The
+repeated part is delimited by a special pattern.  The definition of the
+data fields (typically only one line) contains a <tt> printf</tt> format
+command that is replaced by the actual data when the form is sent out.
+A sample form that the Pasadena system currently uses is
+given here as an example (see figure <a href="node28.html#sf">4.3</a>).
+<p><a name="6978">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210504im_/http://www.vhdl.org/~wyle/diss/img361.gif">
+<br><strong>Figure 4.3:</strong> Example <b> form</b> Template in the Pasadena System <a name="sf">&#160;</a><br>
+<p>
+<p>
+The <tt> newsdist</tt> module in the main Pasadena daemon program is also
+worthy of mention.  This module processes new messages as they become
+available for distribution.  It runs the IR algorithms and prepares
+algorithm performance data for the usefulness calculation.  It may be
+considered the heart of the Pasadena program.  This module contains a
+procedure that selects and distributes new messages for all queries in a
+subscriber's profile.  When examining the subscriber's profile, this
+module will skip the entire profile if the subscriber is unavailable
+for some reason (i.e. if the <b> vacation</b> variable is set.  A
+separate procedure receives a profile and a single query.  It first
+checks the per-query suspension variable to see if the subscriber has
+temporarily turned this query off.  If so, it returns.  Otherwise it
+examines the query interval and the last time this query was executed.
+If the query is not yet due to run, it returns.  If the query is due to
+run, it first loads the query's filters (if any are present); then it
+creates a dynamic message collection, starts the IR algorithms,
+updates its databases and sends the messages and a feedback form to the
+subscriber.
+<p>
+The dynamic message collection procedure within this module works
+as follows.  First the procedure scans the message database
+for messages that are younger than a certain number of days (the query
+interval) and that are from database categories to which the query is
+subscribed.  If an exclude filter is present, it is loaded and all
+matching news items are filtered out.  If the exclude filter removes
+all candidate messages, and the original number of candidate messages
+is above a threshold, a warning is sent to the subscriber that his
+exclude filter may be too broad.  The procedure calls each IR
+algorithm's RSV (ranking) program to obtain a ranked list of retrieval
+status values.
+<p>
+Another procedure examines the query-specific number of items to be
+retrieved, and picks messages from the two algorithms' ranked lists
+until this number is reached.  The selected messages are then
+registered and counted; duplicates are eliminated by examining the list
+of messages which are already chosen to be sent.  If there are
+duplicates, the selection process continues until the desired number of
+messages is reached.  After the selection, the messages are sent to the
+subscriber.  If an include filter is active, the job file is scanned
+for messages which have not yet been chosen by the retrieval algorithms
+but which match the filter specification.  Such messages are also sent
+to the subscriber, but they will not appear on the feedback form.  If
+more than one news message is selected by the IR algorithms, a
+so-called experiment dump file is created which contains the ranked
+list of relevant messages which were selected by each algorithm.  Then
+a feedback form is created and sent to the subscriber.  The procedure
+that is used to send an individual WAN message to a subscriber also
+performs some filtering operations.  It prefixes the message with
+certain email header lines and filters out unwanted headers from the
+message itself.  The implementation of the orthogonality restriction on
+the message sets produced by the inclusion and exclusion filtering
+stages discussed in section <a href="https://web.archive.org/web/19971014210504/http://www.vhdl.org/~wyle/diss/node20.html#filter">3.2</a> is accomplished as follows.
+Those messages matching the inclusion pattern are searched again for
+the exclusion pattern.  Matches here generate a warning message to the
+subscriber and messages matching both patterns are not sent.
+<p>
+The final major module within the main Pasadena daemon program we would
+like to highlight in this discussion is the <tt> utility</tt> module which
+processes returned feedback forms and computes the usefulness
+[<a href="https://web.archive.org/web/19971014210504/http://www.vhdl.org/~wyle/diss/node40.html#Frei91">Frei91</a>] measure.  The procedure that reads filled-out feedback
+forms detects lines which appear to contain feedback information.  This
+detection is accomplished by the same general-purpose regular
+expression parsing mechanism used in include and exclude filtering.
+The state information for the appropriate experiment, the so-called
+``experiment dump'' whose number corresponds to the current feedback
+form is then loaded and the ranks are determined.  The <b>X</b> and <b>Y</b>
+values are computed and written to a database A separate procedure
+calculates the number of valid experiments <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210504im_/http://www.vhdl.org/~wyle/diss/img362.gif">, the number of
+positive ranks <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210504im_/http://www.vhdl.org/~wyle/diss/img363.gif">, the value of <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210504im_/http://www.vhdl.org/~wyle/diss/img364.gif">, the variance <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210504im_/http://www.vhdl.org/~wyle/diss/img365.gif">, the
+usefulness <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210504im_/http://www.vhdl.org/~wyle/diss/img366.gif"> and the adjusted usefulness <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210504im_/http://www.vhdl.org/~wyle/diss/img367.gif">.  It
+also calculates the error probability <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210504im_/http://www.vhdl.org/~wyle/diss/img368.gif">.
+All of these values are displayed and written to a report file.
+<p>
+Our description of the system implementation thus far has covered only
+the main daemon program which coordinates the other components of the
+system.  We come now to the client - server software; these two
+programs provide interactive access to Pasadena's momentary ``cache''
+of WAN messages and a user-friendly interactive profile editor for
+updating user profiles more comfortably than by issuing commands via
+email.
+<p>
+<br> <hr><a name="tex2html1430" href="https://web.archive.org/web/19971014210504/http://www.vhdl.org/~wyle/diss/node29.html"><img align="BOTTOM" alt="next" src="https://web.archive.org/web/19971014210504im_/http://vhdl.org/~wyle/diss/images/next_motif.gif"></a>   <a name="tex2html1428" href="https://web.archive.org/web/19971014210504/http://www.vhdl.org/~wyle/diss/node27.html"><img align="BOTTOM" alt="up" src="https://web.archive.org/web/19971014210504im_/http://vhdl.org/~wyle/diss/images/up_motif.gif"></a>   <a name="tex2html1422" href="https://web.archive.org/web/19971014210504/http://www.vhdl.org/~wyle/diss/node27.html"><img align="BOTTOM" alt="previous" src="https://web.archive.org/web/19971014210504im_/http://vhdl.org/~wyle/diss/images/previous_motif.gif"></a>   <a name="tex2html1432" href="https://web.archive.org/web/19971014210504/http://www.vhdl.org/~wyle/diss/node2.html"><img align="BOTTOM" alt="contents" src="https://web.archive.org/web/19971014210504im_/http://vhdl.org/~wyle/diss/images/contents_motif.gif"></a>   <a name="tex2html1433" href="https://web.archive.org/web/19971014210504/http://www.vhdl.org/~wyle/diss/node57.html"><img align="BOTTOM" alt="index" src="https://web.archive.org/web/19971014210504im_/http://vhdl.org/~wyle/diss/images/index_motif.gif"></a>   <br>
+<b> Next:</b> <a name="tex2html1431" href="https://web.archive.org/web/19971014210504/http://www.vhdl.org/~wyle/diss/node29.html"> Network Transparent Interactive </a>
+<b>Up:</b> <a name="tex2html1429" href="https://web.archive.org/web/19971014210504/http://www.vhdl.org/~wyle/diss/node27.html"> Implementation</a>
+<b> Previous:</b> <a name="tex2html1423" href="https://web.archive.org/web/19971014210504/http://www.vhdl.org/~wyle/diss/node27.html"> Implementation</a>
+<br> <hr> <p>
+<br> <hr>
+<p><address>
+<i>Mitchell F. Wyle <br>
+Wed Jan  3 13:22:21 EST 1996</i>
+</address>
+</body>
+<!--
+     FILE ARCHIVED ON 21:05:04 Oct 14, 1997 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 17:11:46 Aug 04, 2022.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 65.219
+  exclusion.robots: 0.145
+  exclusion.robots.policy: 0.138
+  RedisCDXSource: 0.532
+  esindex: 0.008
+  LoadShardBlock: 49.065 (3)
+  PetaboxLoader3.datanode: 56.846 (4)
+  CDXLines.iter: 13.449 (3)
+  load_resource: 99.11
+  PetaboxLoader3.resolve: 80.346
+-->

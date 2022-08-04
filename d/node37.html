@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3O//DTD W3 HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 95 (Thu Jan 19 1995) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<head><script src="https://archive.org/includes/analytics.js?v=cf34f82" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app209.us.archive.org';v.server_ms=222;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="https://web.archive.org/_static/js/bundle-playback.js?v=KTqwAcYd" charset="utf-8"></script>
+<script type="text/javascript" src="https://web.archive.org/_static/js/wombat.js?v=UHAOicsW" charset="utf-8"></script>
+<script type="text/javascript">
+  __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.vhdl.org:80/~wyle/diss/node37.html","19971014211041","https://web.archive.org/","web","/_static/",
+	      "876863441");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web.archive.org/_static/css/banner-styles.css?v=fantwOh2" />
+<link rel="stylesheet" type="text/css" href="https://web.archive.org/_static/css/iconochive.css?v=qtvMKcIJ" />
+<!-- End Wayback Rewrite JS Include -->
+
+<title> Performance Evaluation in an Information Server</title>
+</head>
+<body>
+<meta name="description" value=" Performance Evaluation in an Information Server">
+<meta name="keywords" value="diss">
+<meta name="resource-type" value="document">
+<meta name="distribution" value="global">
+<p>
+ <br> <hr><a name="tex2html1538" href="https://web.archive.org/web/19971014211041/http://www.vhdl.org/~wyle/diss/node38.html"><img align="BOTTOM" alt="next" src="https://web.archive.org/web/19971014211041im_/http://vhdl.org/~wyle/diss/images/next_motif.gif"></a>   <a name="tex2html1536" href="https://web.archive.org/web/19971014211041/http://www.vhdl.org/~wyle/diss/node35.html"><img align="BOTTOM" alt="up" src="https://web.archive.org/web/19971014211041im_/http://vhdl.org/~wyle/diss/images/up_motif.gif"></a>   <a name="tex2html1530" href="https://web.archive.org/web/19971014211041/http://www.vhdl.org/~wyle/diss/node36.html"><img align="BOTTOM" alt="previous" src="https://web.archive.org/web/19971014211041im_/http://vhdl.org/~wyle/diss/images/previous_motif.gif"></a>   <a name="tex2html1540" href="https://web.archive.org/web/19971014211041/http://www.vhdl.org/~wyle/diss/node2.html"><img align="BOTTOM" alt="contents" src="https://web.archive.org/web/19971014211041im_/http://vhdl.org/~wyle/diss/images/contents_motif.gif"></a>   <a name="tex2html1541" href="https://web.archive.org/web/19971014211041/http://www.vhdl.org/~wyle/diss/node57.html"><img align="BOTTOM" alt="index" src="https://web.archive.org/web/19971014211041im_/http://vhdl.org/~wyle/diss/images/index_motif.gif"></a>   <br>
+<b> Next:</b> <a name="tex2html1539" href="https://web.archive.org/web/19971014211041/http://www.vhdl.org/~wyle/diss/node38.html"> System Usability</a>
+<b>Up:</b> <a name="tex2html1537" href="https://web.archive.org/web/19971014211041/http://www.vhdl.org/~wyle/diss/node35.html"> Conclusionand Outlook</a>
+<b> Previous:</b> <a name="tex2html1531" href="https://web.archive.org/web/19971014211041/http://www.vhdl.org/~wyle/diss/node36.html"> Interpretation of Experiment </a>
+<br> <hr> <p>
+<h1><a name="SECTION001020000000000000000"> Performance Evaluation in an Information Server</a></h1>
+<p>
+One of the fundamental problems with the vast proliferation of computer
+systems and computer networks is the effective dissemination and
+retrieval of newly available <em> dynamic</em> information.  Because of its
+exponential growth, the WAN information base within the Matrix has
+become more difficult to query and use.  On the other hand, electronic
+mail and user-friendly client - server network software have
+established themselves as well-defined mechanisms for communicating
+between people and computer systems both within an organization and
+over a WAN between machines thousands of kilometers distant.  With this
+growing connectivity, it is a natural idea to couple the WAN
+information sources to individual WAN users through an SDI subscription
+service.  The key element of such an information server (<b>IS</b>) is its
+ability effectively to <em> filter</em> the WAN-available information for
+its subscribers.
+<p>
+However, it is impossible to measure this filtering ability in a
+real-world situation using the classical effectiveness measures
+developed for static documents and small standard test collections.
+Hence, we applied the usefulness effectiveness measure, which is
+particularly suited to the dynamic message collections found in a
+subscription service.  The choice of effectiveness measure can be one
+of the most important aspects in information retrieval science because
+it provides for the accurate, empirical <em> measurement</em> of retrieval
+and filtering methods in a real-world environment.  The usefulness
+measure is very well suited to gauge algorithm performance in the
+dynamic environment of the Matrix.  The measure uses all preference
+relations contained in each subscriber's ranking of a retrieved set of
+messages.  The notion of relevance in this effectiveness measure is not
+an absolute binary (relevant / non-relevant) judgement.  Instead,
+subscribers rank information relevance <em> relative</em> to other items.
+The usefulness measure also includes an error probability calculation
+that is very helpful in experimental evaluation of algorithm
+performance.  The error calculation indicates the reliability of the
+measured difference in performance between two algorithms, and therefore
+provides a stopping criterion for on-going experiments.
+<p>
+The objectives of the theoretical model and implementation of this
+information server project are:
+<ul><li> to test the viability of the concept of <em> filtering in stages</em>
+        in a large-scale realistic environment,
+  <li> to provide a testbed for the iterative development of
+        high-performance vector-space retrieval algorithms, and
+        secondarily,
+  <li> to provide a useful service to subscribers.
+</ul>
+<p>
+The general framework of filtering in stages is not only more flexible
+for the implementor of an <b>IS</b>, but also advantageous to subscribers
+using such systems.  Each of the filtering stages described in 
+section <a href="https://web.archive.org/web/19971014211041/http://www.vhdl.org/~wyle/diss/node20.html#stages">3.2</a> is targeted at a single, well-defined aspect of the
+subscriber's information need.  This specificity provides a clearer,
+more direct method for a subscriber to express his information need.
+It also entails more tractable and direct methods for a subscriber to
+make changes to his profile to keep it more isomorphic with his actual
+information need as covered by the highly dynamic Matrix.  Profiles
+within our <b>IS</b> model include a mechanism to help subscribers discover
+new Matrix resources as they become available.  This aspect of a
+subscriber's information need is modeled formally by the notion of a
+conjectural preference.
+<p>
+Experiments run within the Pasadena <b>IS</b> give empirical evidence that
+our proposed phrase generation technique based on the symmetric
+extension of high-noise words as well as the inverse feature density
+term weighting function (both described in section<a href="https://web.archive.org/web/19971014211041/http://www.vhdl.org/~wyle/diss/node15.html#methods">2.2</a>)
+provide better retrieval performance in a WAN information environment
+than any other retrieval method.
+<p>
+<br> <hr><a name="tex2html1538" href="https://web.archive.org/web/19971014211041/http://www.vhdl.org/~wyle/diss/node38.html"><img align="BOTTOM" alt="next" src="https://web.archive.org/web/19971014211041im_/http://vhdl.org/~wyle/diss/images/next_motif.gif"></a>   <a name="tex2html1536" href="https://web.archive.org/web/19971014211041/http://www.vhdl.org/~wyle/diss/node35.html"><img align="BOTTOM" alt="up" src="https://web.archive.org/web/19971014211041im_/http://vhdl.org/~wyle/diss/images/up_motif.gif"></a>   <a name="tex2html1530" href="https://web.archive.org/web/19971014211041/http://www.vhdl.org/~wyle/diss/node36.html"><img align="BOTTOM" alt="previous" src="https://web.archive.org/web/19971014211041im_/http://vhdl.org/~wyle/diss/images/previous_motif.gif"></a>   <a name="tex2html1540" href="https://web.archive.org/web/19971014211041/http://www.vhdl.org/~wyle/diss/node2.html"><img align="BOTTOM" alt="contents" src="https://web.archive.org/web/19971014211041im_/http://vhdl.org/~wyle/diss/images/contents_motif.gif"></a>   <a name="tex2html1541" href="https://web.archive.org/web/19971014211041/http://www.vhdl.org/~wyle/diss/node57.html"><img align="BOTTOM" alt="index" src="https://web.archive.org/web/19971014211041im_/http://vhdl.org/~wyle/diss/images/index_motif.gif"></a>   <br>
+<b> Next:</b> <a name="tex2html1539" href="https://web.archive.org/web/19971014211041/http://www.vhdl.org/~wyle/diss/node38.html"> System Usability</a>
+<b>Up:</b> <a name="tex2html1537" href="https://web.archive.org/web/19971014211041/http://www.vhdl.org/~wyle/diss/node35.html"> Conclusionand Outlook</a>
+<b> Previous:</b> <a name="tex2html1531" href="https://web.archive.org/web/19971014211041/http://www.vhdl.org/~wyle/diss/node36.html"> Interpretation of Experiment </a>
+<br> <hr> <p>
+<br> <hr>
+<p><address>
+<i>Mitchell F. Wyle <br>
+Wed Jan  3 13:22:21 EST 1996</i>
+</address>
+</body>
+<!--
+     FILE ARCHIVED ON 21:10:41 Oct 14, 1997 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 17:12:21 Aug 04, 2022.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 146.708
+  exclusion.robots: 0.125
+  exclusion.robots.policy: 0.114
+  cdx.remote: 0.095
+  esindex: 0.014
+  LoadShardBlock: 108.985 (3)
+  PetaboxLoader3.datanode: 59.928 (4)
+  CDXLines.iter: 17.792 (3)
+  PetaboxLoader3.resolve: 108.95 (2)
+  load_resource: 69.442
+-->

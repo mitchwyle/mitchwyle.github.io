@@ -1,0 +1,279 @@
+<!DOCTYPE HTML PUBLIC "-//W3O//DTD W3 HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 95 (Thu Jan 19 1995) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<head><script src="https://archive.org/includes/analytics.js?v=cf34f82" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app220.us.archive.org';v.server_ms=1428;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="https://web.archive.org/_static/js/bundle-playback.js?v=KTqwAcYd" charset="utf-8"></script>
+<script type="text/javascript" src="https://web.archive.org/_static/js/wombat.js?v=UHAOicsW" charset="utf-8"></script>
+<script type="text/javascript">
+  __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.vhdl.org:80/~wyle/diss/node17.html","19971014205822","https://web.archive.org/","web","/_static/",
+	      "876862702");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web.archive.org/_static/css/banner-styles.css?v=fantwOh2" />
+<link rel="stylesheet" type="text/css" href="https://web.archive.org/_static/css/iconochive.css?v=qtvMKcIJ" />
+<!-- End Wayback Rewrite JS Include -->
+
+<title> Efficacy</title>
+</head>
+<body>
+<meta name="description" value=" Efficacy">
+<meta name="keywords" value="diss">
+<meta name="resource-type" value="document">
+<meta name="distribution" value="global">
+<p>
+ <br> <hr><a name="tex2html1279" href="https://web.archive.org/web/19971014205822/http://www.vhdl.org/~wyle/diss/node18.html"><img align="BOTTOM" alt="next" src="https://web.archive.org/web/19971014205822im_/http://vhdl.org/~wyle/diss/images/next_motif.gif"></a>   <a name="tex2html1277" href="https://web.archive.org/web/19971014205822/http://www.vhdl.org/~wyle/diss/node13.html"><img align="BOTTOM" alt="up" src="https://web.archive.org/web/19971014205822im_/http://vhdl.org/~wyle/diss/images/up_motif.gif"></a>   <a name="tex2html1273" href="https://web.archive.org/web/19971014205822/http://www.vhdl.org/~wyle/diss/node16.html"><img align="BOTTOM" alt="previous" src="https://web.archive.org/web/19971014205822im_/http://vhdl.org/~wyle/diss/images/previous_motif.gif"></a>   <a name="tex2html1281" href="https://web.archive.org/web/19971014205822/http://www.vhdl.org/~wyle/diss/node2.html"><img align="BOTTOM" alt="contents" src="https://web.archive.org/web/19971014205822im_/http://vhdl.org/~wyle/diss/images/contents_motif.gif"></a>   <a name="tex2html1282" href="https://web.archive.org/web/19971014205822/http://www.vhdl.org/~wyle/diss/node57.html"><img align="BOTTOM" alt="index" src="https://web.archive.org/web/19971014205822im_/http://vhdl.org/~wyle/diss/images/index_motif.gif"></a>   <br>
+<b> Next:</b> <a name="tex2html1280" href="https://web.archive.org/web/19971014205822/http://www.vhdl.org/~wyle/diss/node18.html"> Filtering</a>
+<b>Up:</b> <a name="tex2html1278" href="https://web.archive.org/web/19971014205822/http://www.vhdl.org/~wyle/diss/node13.html"> Dissemination and Retrieval</a>
+<b> Previous:</b> <a name="tex2html1274" href="https://web.archive.org/web/19971014205822/http://www.vhdl.org/~wyle/diss/node16.html"> Text Structure</a>
+<br> <hr> <p>
+<h1><a name="SECTION00740000000000000000"> Efficacy</a></h1>
+<p>
+<a name="2669">&#160;</a>
+<a name="2670">&#160;</a>
+<a name="2671">&#160;</a>
+<a name="2672">&#160;</a>
+<p>
+<blockquote> <em>...it often happens that people agree that two things are both useful
+ but do not agree about which is the more so...
+ -- Aristotle
+ <em> Rhetoric</em> <b> I</b> (7) 5.
+</blockquote>
+<p>
+Precision - recall<a name="2677">&#160;</a><a name="2678">&#160;</a>
+graphs <a name="2679">&#160;</a> 
+from standardized test collections are used
+pervasively in the IR literature to evaluate the performance of
+retrieval systems.  These measures are simple, intuitive and
+straightforward.  Researchers over the years have become comfortable
+comparing retrieval performance using these measures, but many subtle
+dangers arise when using them [<a href="https://web.archive.org/web/19971014205822/http://www.vhdl.org/~wyle/diss/node40.html#Fre91a">Fre91a</a>].  An important shortcoming
+of these measures is their sensitivity to outlying values in an
+experimental environment.  When too little data are used, there is no
+indication of the <em> error</em> associated with their calculation.
+<p>
+Precision-oriented users<a name="2682">&#160;</a> 
+are <a name="2683">&#160;</a>
+interested in how many non-relevant or<a name="2684">&#160;</a>
+``fallout'' messages they will have to view for a given retrieval set
+size.  Recall-oriented users usually prefer to ascertain system
+performance by counting how large a retrieval set size they must view
+in order to obtain a certain number of relevant messages.  This subtle
+but <a name="2685">&#160;</a><a name="2686">&#160;</a>
+important effectiveness consideration is hidden by the
+curve-smoothing process used to construct precision - recall graphs
+[<a href="https://web.archive.org/web/19971014205822/http://www.vhdl.org/~wyle/diss/node40.html#Fre91a">Fre91a</a>].  A number of other effectiveness measures that are
+simple variations of precision - recall have been proposed to make up
+for some of these shortcomings [<a href="https://web.archive.org/web/19971014205822/http://www.vhdl.org/~wyle/diss/node40.html#Salt83">Salt83</a>].  However, they all use
+binary relevance assessments.  That is, these effectiveness evaluation
+methods all use the absolute<a name="2689">&#160;</a> 
+relevant / <a name="2690">&#160;</a>
+non-relevant judgement as their cornerstone.
+<p>
+<p><a name="3544">&#160;</a><a name="reldef">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205822im_/http://www.vhdl.org/~wyle/diss/img141.gif">
+<br><strong>Figure 2.4:</strong> Definitions of Relevance<br>
+<p>
+<a name="3547">&#160;</a><a name="3548">&#160;</a>
+<p>
+The definitions appearing in some surveys and comparisons of relevance
+measurement [<a href="https://web.archive.org/web/19971014205822/http://www.vhdl.org/~wyle/diss/node40.html#Lose91">Lose91</a>], [<a href="https://web.archive.org/web/19971014205822/http://www.vhdl.org/~wyle/diss/node40.html#Scha90">Scha90</a>] are summarized in 
+figure <a href="node17.html#reldef">2.4</a>.  As we pointed out above, the key deficiency is the use
+of absolute, direct judgement instead of preferences.  As many,
+repeatable experiments have pointed out [<a href="https://web.archive.org/web/19971014205822/http://www.vhdl.org/~wyle/diss/node40.html#Frei91">Frei91</a>], the notion of
+preference is much more powerful and useful in the evaluation of
+information systems.
+<p>
+SDI<a name="3553">&#160;</a> 
+services model the user's information<a name="3554">&#160;</a> 
+need<a name="3555">&#160;</a> with a so-called <em>
+user profile</em>.  <a name="3557">&#160;</a><a name="3558">&#160;</a>
+One of the most important aspects of any SDI system is
+how well a profile accurately and effectively mirrors its user's
+information need.  Commercial SDI<a name="3559">&#160;</a> 
+services<a name="3560">&#160;</a> 
+use <a name="3561">&#160;</a>
+a simple Boolean<a name="3562">&#160;</a><a name="3563">&#160;</a>
+retrieval model and stored Boolean queries for user profiles.
+Delivered items are usually not ranked, and when the effectiveness of
+such systems is measured, the measurements always rely on statistics over
+binary relevance assessments.
+<p>
+The usefulness of a retrieved item depends not only on its 
+timeliness<a name="3564">&#160;</a>
+and availability<a name="3565">&#160;</a>, 
+but also on the user's <em> momentary</em> 
+interest<a name="3567">&#160;</a> <a name="3568">&#160;</a> and
+preferences.  It is also intuitively evident that the relevance and
+usefulness of individual items in a rapidly changing source message
+collection must be different from day to day.  Although definitions of
+relevance in information retrieval are once again gaining attention in
+the literature [<a href="https://web.archive.org/web/19971014205822/http://www.vhdl.org/~wyle/diss/node40.html#Lose91">Lose91</a>], measurements other than precision -
+recall have unfortunately not been heavily exploited for performance
+comparisons in evaluating new IR systems.
+<p>
+Usefulness [<a href="https://web.archive.org/web/19971014205822/http://www.vhdl.org/~wyle/diss/node40.html#Frei91">Frei91</a>] is an effectiveness measure which compares two
+retrieval algorithms; given two algorithms, A and B, <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014205822im_/http://www.vhdl.org/~wyle/diss/img142.gif"> expresses
+whether A is more effective than B or vice versa.  A positive value
+indicates that B is more effective than A; a negative value signifies
+that B is less effective than A.  The measure is specifically suited to
+measure IR algorithm performance in a WAN environment.  The notion of
+item relevance in this effectiveness measure does not have to be an
+absolute binary (relevant / non-relevant) judgement.  Instead,
+subscribers may rank information relevance <em> relative</em> to other
+items.  The viability of usefulness was demonstrated in [<a href="https://web.archive.org/web/19971014205822/http://www.vhdl.org/~wyle/diss/node40.html#Wyle91">Wyle91</a>]
+and its advantages to traditional measures are evident in
+[<a href="https://web.archive.org/web/19971014205822/http://www.vhdl.org/~wyle/diss/node40.html#Fre91a">Fre91a</a>].  The subscription service implementation described in
+chapter four employs the usefulness<a name="3574">&#160;</a> 
+measure<a name="3575">&#160;</a> to evaluate algorithm
+performance<a name="3576">&#160;</a>.
+<p>
+Usefulness uses <a name="3577">&#160;</a><a name="3578">&#160;</a>
+all preference relations [<a href="https://web.archive.org/web/19971014205822/http://www.vhdl.org/~wyle/diss/node40.html#Boll87">Boll87</a>], [<a href="https://web.archive.org/web/19971014205822/http://www.vhdl.org/~wyle/diss/node40.html#Wong88">Wong88</a>],
+[<a href="https://web.archive.org/web/19971014205822/http://www.vhdl.org/~wyle/diss/node40.html#Scha89">Scha89</a>] contained in each user's specification of the relative
+relevance of the items delivered.  In the classical preference relation
+<img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014205822im_/http://www.vhdl.org/~wyle/diss/img143.gif"> [<a href="https://web.archive.org/web/19971014205822/http://www.vhdl.org/~wyle/diss/node40.html#Boll87">Boll87</a>], a person's preference of one message <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205822im_/http://www.vhdl.org/~wyle/diss/img144.gif"> to
+another <b>d</b> is represented as: <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014205822im_/http://www.vhdl.org/~wyle/diss/img145.gif">.  This preference is
+assumed to be based on the relative relevance of the two messages
+to the person <b>p</b>.  These judgements are made by a person <em> after</em>
+reviewing <b>d</b> and <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205822im_/http://www.vhdl.org/~wyle/diss/img146.gif">.  Partial preference relations <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014205822im_/http://www.vhdl.org/~wyle/diss/img147.gif">
+[<a href="https://web.archive.org/web/19971014205822/http://www.vhdl.org/~wyle/diss/node40.html#Scha89">Scha89</a>] are similar to the classical preference relations, i.e.
+<img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014205822im_/http://www.vhdl.org/~wyle/diss/img148.gif"> also indicates that person <b>p</b> prefers message <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205822im_/http://www.vhdl.org/~wyle/diss/img149.gif"> to
+<b>d</b>.  However, <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014205822im_/http://www.vhdl.org/~wyle/diss/img150.gif"> does not indicate that <b>p</b> does
+not prefer <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205822im_/http://www.vhdl.org/~wyle/diss/img151.gif"> to <b>d</b>.  Instead it means either <b>p</b> does not
+prefer <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205822im_/http://www.vhdl.org/~wyle/diss/img152.gif"> to <b>d</b> or that <b>p</b> has not made a relevance judgement
+concerning those two messages.
+<p>
+In order to express certain notions used in the creation of filtering
+stages which we shall propose in the next chapter, we need to add a
+temporal<a name="3590">&#160;</a><a name="3591">&#160;</a>
+aspect to these relations.  Criticisms of IR evaluation
+methods [<a href="https://web.archive.org/web/19971014205822/http://www.vhdl.org/~wyle/diss/node40.html#Swan88">Swan88</a>] point out that message relevance is time-dependent;
+investigators <a name="3593">&#160;</a><a name="3594">&#160;</a>
+have lamented the fact that no formal methods exist to 
+model these dependencies [<a href="https://web.archive.org/web/19971014205822/http://www.vhdl.org/~wyle/diss/node40.html#Scha90">Scha90</a>].
+<p>
+Therefore, let us consider the notion of a time-dependent preference 
+relation <a name="3652">&#160;</a>
+denoted <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014205822im_/http://www.vhdl.org/~wyle/diss/img154.gif">.  This relation simply designates person <b>p</b>'s
+preference at a given instant in time <b>t</b>.  <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014205822im_/http://www.vhdl.org/~wyle/diss/img155.gif"> means that
+person <b>p</b> prefers <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205822im_/http://www.vhdl.org/~wyle/diss/img156.gif"> to <b>d</b> at time <b>t</b>.  If we restrict <b>t</b> to a
+``universal present'' <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014205822im_/http://www.vhdl.org/~wyle/diss/img157.gif"> or we assume that preferences do not change
+over time, then <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014205822im_/http://www.vhdl.org/~wyle/diss/img158.gif"> is identical to <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014205822im_/http://www.vhdl.org/~wyle/diss/img159.gif">.  If <b>t</b>
+is less than <b>0</b>, i.e. one considers past preferences, it becomes
+possible to model partially the change in a person's preferences over
+time.  In such a situation, the person would be tasked with specifying
+preferences for a given set of messages at two or more separate times,
+and an analysis could be performed of any differences in the two sets
+of preferences.  For our purposes, however, we are not interested in
+the <em> change</em> in user preferences over time, but rather in
+<em> predicting</em> <a name="3607">&#160;</a><a name="3608">&#160;</a>
+a preference at some future time.
+<p>
+As we shall see in detail in the next chapter, our requirement for a
+temporal<a name="3609">&#160;</a> preference<a name="3610">&#160;</a> 
+is related to new resource<a name="3611">&#160;</a> 
+discovery<a name="3612">&#160;</a>.  In
+general, when new information items become available for retrieval, no
+preferences for these messages are available for determining whether or
+not these new items should be viewed or not.  In fact, SDI retrieval
+systems, based on stored subscriber profiles and retrieval algorithms,
+form <em> system</em> preferences of these new items.  Evaluation of the
+retrieval performance of such systems is then based on comparing these
+system preferences to those supplied <em> at some later time</em> by a
+subscriber.  When one considers the time dimension of this process, it
+is apparent that an SDI system is really trying to <em> predict</em>
+subscriber-preferences of newly arriving messages.
+<p>
+Let us consider positive values of <b>t</b> and the concept of
+<em> conjectural</em> preference<a name="3617">&#160;</a>.  
+A conjectural<a name="3618">&#160;</a> preference is defined as
+follows:
+<p>
+<p><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205822im_/http://www.vhdl.org/~wyle/diss/img160.gif"><p>
+<p>
+means that a retrieval algorithm forms the <em> conjecture</em> that person
+<b>p</b> would prefer <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205822im_/http://www.vhdl.org/~wyle/diss/img161.gif"> to <b>d</b> at some future time <b>t</b> if <b>p</b> were to
+view and compare <b>d</b> and <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205822im_/http://www.vhdl.org/~wyle/diss/img162.gif"> at time <b>t</b>.  Obviously, such 
+speculative<a name="3622">&#160;</a><a name="3623">&#160;</a>
+preferences can never be <em> measured</em>; they have some finite
+probability of correctly predicting the future
+outcome of a person's
+judgements.  The question then arises, why even try formally to model
+the future relative relevance judgements of some person?  As we alluded
+earlier, the answer lies in the specification of a filtering stage
+which is designed to find new sources of information which <em> would</em>
+be preferred to other sources.
+<p>
+<a name="3626">&#160;</a>
+<a name="3627">&#160;</a>
+<a name="3628">&#160;</a>
+<a name="3629">&#160;</a>
+<p>
+Using a set of conjectural preferences, we now define a mapping between
+the classical definition of an ``optimal'' set<a name="3630">&#160;</a> of 
+messages <a name="3631">&#160;</a> and the more
+useful preference relations of newer relevance theories.  Let
+<img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014205822im_/http://www.vhdl.org/~wyle/diss/img163.gif"> be the exhaustive set of conjectural preferences
+for <a name="3653">&#160;</a>
+subscriber <b>s</b> and all message pairs <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014205822im_/http://www.vhdl.org/~wyle/diss/img165.gif"> in the Matrix at some
+future time <b>t</b>. <p><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205822im_/http://www.vhdl.org/~wyle/diss/img166.gif"><p>
+According to [<a href="https://web.archive.org/web/19971014205822/http://www.vhdl.org/~wyle/diss/node40.html#Scha89">Scha89</a>], these preference relations induce a perfect
+ranking of equivalence classes.  Because the tuple set <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014205822im_/http://www.vhdl.org/~wyle/diss/img167.gif"> is
+defined as exhaustive, the equivalence classes contain individual
+messages.  This ranking in turn yields a <em> numbering</em>
+([<a href="https://web.archive.org/web/19971014205822/http://www.vhdl.org/~wyle/diss/node40.html#Scha89">Scha89</a>], p. 18) which is identical to the rankings resulting
+from the <b>RSV</b> functions defined in section <a href="https://web.archive.org/web/19971014205822/http://www.vhdl.org/~wyle/diss/node15.html#methods">2.2</a>.  Using a
+subscriber-defined cutoff point <b>c</b>, we can now define the ``optimal''
+set of messages (i.e. the set containing all and only those messages
+which the subscriber prefers to all others in the Matrix at time <b>t</b>)
+to be the set containing the <b>c</b> highest ranked messages induced by the
+exhaustive set of conjectural preference relations <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014205822im_/http://www.vhdl.org/~wyle/diss/img168.gif">.  As
+we shall see in the next chapter, an analysis involving this set can be
+used to define partially a subscriber's future information need.  Such
+a model can then be used to construct specific filtering stages aimed
+at optimizing retrieval performance by targeting specific qualities of
+this optimal set in their definition.  This set can also form the basis
+for methods aimed at assisting subscribers at new resource discovery.
+<p>
+In this chapter we defined a new model for querying the Matrix, and
+established an advanced feature weighting function to be incorporated
+in vector space ranking algorithms based on paragraph <em> types</em> in
+WAN messages.  We also examined some effectiveness matters, concluding
+that the usefulness measure is best suited for analyzing the
+effectiveness of WAN-based retrieval systems or any system which has a
+large or highly dynamic message collection.  Finally, we introduced the
+notion of temporal preferences, including conjectural preferences which
+approximate a future preference.  We come now to the heart
+of this work, namely our approach to <em> filtering</em> the Matrix.
+<p>
+</em><br> <hr><a name="tex2html1279" href="https://web.archive.org/web/19971014205822/http://www.vhdl.org/~wyle/diss/node18.html"><img align="BOTTOM" alt="next" src="https://web.archive.org/web/19971014205822im_/http://vhdl.org/~wyle/diss/images/next_motif.gif"></a>   <a name="tex2html1277" href="https://web.archive.org/web/19971014205822/http://www.vhdl.org/~wyle/diss/node13.html"><img align="BOTTOM" alt="up" src="https://web.archive.org/web/19971014205822im_/http://vhdl.org/~wyle/diss/images/up_motif.gif"></a>   <a name="tex2html1273" href="https://web.archive.org/web/19971014205822/http://www.vhdl.org/~wyle/diss/node16.html"><img align="BOTTOM" alt="previous" src="https://web.archive.org/web/19971014205822im_/http://vhdl.org/~wyle/diss/images/previous_motif.gif"></a>   <a name="tex2html1281" href="https://web.archive.org/web/19971014205822/http://www.vhdl.org/~wyle/diss/node2.html"><img align="BOTTOM" alt="contents" src="https://web.archive.org/web/19971014205822im_/http://vhdl.org/~wyle/diss/images/contents_motif.gif"></a>   <a name="tex2html1282" href="https://web.archive.org/web/19971014205822/http://www.vhdl.org/~wyle/diss/node57.html"><img align="BOTTOM" alt="index" src="https://web.archive.org/web/19971014205822im_/http://vhdl.org/~wyle/diss/images/index_motif.gif"></a>   <br>
+<b> Next:</b> <a name="tex2html1280" href="https://web.archive.org/web/19971014205822/http://www.vhdl.org/~wyle/diss/node18.html"> Filtering</a>
+<b>Up:</b> <a name="tex2html1278" href="https://web.archive.org/web/19971014205822/http://www.vhdl.org/~wyle/diss/node13.html"> Dissemination and Retrieval</a>
+<b> Previous:</b> <a name="tex2html1274" href="https://web.archive.org/web/19971014205822/http://www.vhdl.org/~wyle/diss/node16.html"> Text Structure</a>
+<br> <hr> <p>
+<br> <hr>
+<p><address>
+<i>Mitchell F. Wyle <br>
+Wed Jan  3 13:22:21 EST 1996</i>
+</address>
+</body>
+<!--
+     FILE ARCHIVED ON 20:58:22 Oct 14, 1997 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 17:11:01 Aug 04, 2022.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 113.934
+  exclusion.robots: 0.105
+  exclusion.robots.policy: 0.094
+  RedisCDXSource: 31.06
+  esindex: 0.011
+  LoadShardBlock: 60.416 (3)
+  PetaboxLoader3.datanode: 208.346 (4)
+  CDXLines.iter: 18.575 (3)
+  load_resource: 1308.558
+  PetaboxLoader3.resolve: 1139.703
+-->

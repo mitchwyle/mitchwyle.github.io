@@ -1,0 +1,602 @@
+<!DOCTYPE HTML PUBLIC "-//W3O//DTD W3 HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 95 (Thu Jan 19 1995) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<head><script src="https://archive.org/includes/analytics.js?v=cf34f82" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app228.us.archive.org';v.server_ms=466;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="https://web.archive.org/_static/js/bundle-playback.js?v=KTqwAcYd" charset="utf-8"></script>
+<script type="text/javascript" src="https://web.archive.org/_static/js/wombat.js?v=UHAOicsW" charset="utf-8"></script>
+<script type="text/javascript">
+  __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.vhdl.org:80/~wyle/diss/node34.html","19971014210849","https://web.archive.org/","web","/_static/",
+	      "876863329");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web.archive.org/_static/css/banner-styles.css?v=fantwOh2" />
+<link rel="stylesheet" type="text/css" href="https://web.archive.org/_static/css/iconochive.css?v=qtvMKcIJ" />
+<!-- End Wayback Rewrite JS Include -->
+
+<title> Retrieval Performance Experiments</title>
+</head>
+<body>
+<meta name="description" value=" Retrieval Performance Experiments">
+<meta name="keywords" value="diss">
+<meta name="resource-type" value="document">
+<meta name="distribution" value="global">
+<p>
+ <br> <hr><a name="tex2html1498" href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node35.html"><img align="BOTTOM" alt="next" src="https://web.archive.org/web/19971014210849im_/http://vhdl.org/~wyle/diss/images/next_motif.gif"></a>   <a name="tex2html1496" href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node23.html"><img align="BOTTOM" alt="up" src="https://web.archive.org/web/19971014210849im_/http://vhdl.org/~wyle/diss/images/up_motif.gif"></a>   <a name="tex2html1492" href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node33.html"><img align="BOTTOM" alt="previous" src="https://web.archive.org/web/19971014210849im_/http://vhdl.org/~wyle/diss/images/previous_motif.gif"></a>   <a name="tex2html1500" href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node2.html"><img align="BOTTOM" alt="contents" src="https://web.archive.org/web/19971014210849im_/http://vhdl.org/~wyle/diss/images/contents_motif.gif"></a>   <a name="tex2html1501" href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node57.html"><img align="BOTTOM" alt="index" src="https://web.archive.org/web/19971014210849im_/http://vhdl.org/~wyle/diss/images/index_motif.gif"></a>   <br>
+<b> Next:</b> <a name="tex2html1499" href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node35.html"> Conclusionand Outlook</a>
+<b>Up:</b> <a name="tex2html1497" href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node23.html"> Pasadena: a WAN </a>
+<b> Previous:</b> <a name="tex2html1493" href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node33.html"> Retrieval Methods Tested</a>
+<br> <hr> <p>
+<h1><a name="SECTION00950000000000000000"> Retrieval Performance Experiments</a></h1>
+<a name="secexp">&#160;</a>
+<a name="7386">&#160;</a>
+<a name="7387">&#160;</a>
+<a name="7388">&#160;</a>
+<p>
+Table <a href="node34.html#tabalgtype">4.1</a> succinctly summarizes the twelve IR algorithms
+according to the following parameters: 
+<ul><li> extent of word reduction:  The extended Porter suffix reduction
+    algorithm<a name="tex2html954" href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/footnode.html#7391"><img align="BOTTOM" alt="gif" src="https://web.archive.org/web/19971014210849im_/http://vhdl.org/~wyle/diss/images/foot_motif.gif"></a>
+    developed in [<a href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node40.html#Teuf89">Teuf89</a>] or a simpler reduction scheme,
+    so-called ``S-stemming'' [<a href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node40.html#Wyle91">Wyle91</a>].
+  <li> type of feature used in indexing:  Overlapping N-grams as
+    discussed in [<a href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node40.html#Wyle91">Wyle91</a>], single word features, simple phrases
+    [<a href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node40.html#Faga87">Faga87</a>], or Phrases resulting from the application of the
+    scheme presented in section <a href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node22.html#phrases">3.4</a> of the last chapter.
+  <li> type of RSV function:  (These functions were defined in section
+    <a href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node15.html#methods">2.2</a> in the second chapter).  They include the standard 
+    cosine function <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img380.gif">, the indirect similarity function 
+    <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img381.gif">, or the vector product function <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img382.gif">.
+  <li> feature weighting function used:  (These functions were also
+    defined in section <a href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node15.html#methods">2.2</a>).  They are the standard message
+    frequency times inverse message frequency (<img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img383.gif">) weighting
+    function <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img384.gif">, a normalized version, <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img385.gif">, Salton's
+    ``enhanced term frequency measure'' <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img386.gif">, and the normalized 
+    inverse feature density weighting function, <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img387.gif"> presented 
+    in section <a href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node16.html#secstruc">2.3</a>.
+</ul>
+<p>
+<p><a name="7495">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img388.gif">
+<br><strong>Table 4.1:</strong> Summary of Retrieval Algorithms Tested in Pasadena 
+<a name="tabalgtype">&#160;</a><br>
+<p>
+<p>
+The Pasadena system evaluates two vector space algorithms at a time by
+running both sets of indexing and retrieval methods and delivering
+those items with the highest retrieval status values from each to
+subscribers.  With each set of messages sent to a
+subscriber, Pasadena sends a feedback form asking for the subscriber's
+ranking of the relative usefulness of the delivered items.  In order to
+factor out biases, the items are delivered in random order and they
+appear on the form in a different random order.  Neither the Pasadena
+administrator nor the subscriber knows how each algorithm ranked the
+items.  In other words, the experiments are ``double blind.'' On the
+feedback form, the subscriber may specify ``ties,'' i.e. items of equal
+usefulness by giving them the same rank order.  If, for example, three
+items are delivered, such ranks as 2-3-1, 1-2-1, and 1-1-1 are all
+acceptable.  The latter indicates that the subscriber found all three
+items equally useful.
+<p>
+
+<p>
+As indicated earlier, the invention of the usefulness measure itself
+was motivated by difficulties in the precision - recall evaluation
+methods.  The error probability associated with the usefulness measure
+is of particular value in an empirical environment because it
+establishes a stopping criterion for experimental algorithm
+evaluations.  The results presented here include usefulness comparisons
+between many pairs of algorithms as well as the adjusted usefulness and
+error probabilities.  These indicators provide a very good display of
+retrieval performance differences in the algorithm comparisons; they
+are much better than the standard precision - recall graphs, which
+would be impossible to calculate in the Pasadena environment or other
+real-world situations.
+<p>
+All experiments involving human test subjects are sensitive to
+non-technical sources of error such as the personal characteristics of
+the subscriber and the social aspects of the test environment (see
+section <a href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node11.html#cogency">1.5</a> or, for a detailed discussion of these issues,
+see [<a href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node40.html#Schn87">Schn87</a>]).  Recognizing these difficulties, we designed
+controls into the experiments and features into the system to protect
+against common inconsistencies found, for example in similar tests in
+the literature [<a href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node40.html#Malo87">Malo87</a>], [<a href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node40.html#Giff90">Giff90</a>], [<a href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node40.html#Maul91">Maul91</a>].
+Specifically,
+<p>
+<ul><li> Experiments in the Pasadena system are double blind.
+  <li> There were 240 participants instead of 4 [<a href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node40.html#Maul91">Maul91</a>], 9
+        [<a href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node40.html#Malo87">Malo87</a>] or a few dozen [<a href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node40.html#Giff90">Giff90</a>].
+  <li> Subscriber anonymity was protected.
+  <li> The studies were over a somewhat longer time (more 
+        longitudinal) than other similar experiments.
+</ul>
+<p>
+Thousands of experiments were carried out during a period of almost
+three years.  The results of these experiments are densely summarized in
+tables <a href="node34.html#tabe1">4.2</a> through <a href="node34.html#tabe15">4.15</a>.  Appendix <a href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node42.html#rez">B</a>
+contains more detailed results, including the exact values of <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img389.gif">
+as well as all <b>x</b> and <b>y</b> values from the
+preferences specified on the feedback forms.
+<p>
+The experiments were designed to test the following hypotheses in the
+WAN SDI environment of the Pasadena subscription service.
+<p>
+<p><a name="hsswpsw">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img390.gif"><p>
+<p><a name="hngpsw">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img391.gif"><p>
+<p><a name="hind">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img392.gif"><p>
+<p><a name="hsph">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img393.gif"><p>
+<p><a name="hnph">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img394.gif"><p>
+<p><a name="hnorm">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img395.gif"><p>
+<p><a name="hsps">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img396.gif"><p>
+<p><a name="hipd">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img397.gif"><p>
+<p>
+The first set of experiments was designed to determine which word
+reduction rules are appropriate for the dynamic collections in the
+Pasadena system, i.e. to test hypothesis <a href="node34.html#hsswpsw">1</a>.  These
+experiments were in fact the first significant evaluations performed in
+the system; they were designed to measure retrieval performance
+differences stemming from different degrees of word reduction.
+Experiments reported in the literature have been carried out on a
+variety of <em> static</em> collections [<a href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node40.html#Lovi71">Lovi71</a>] with mixed results.
+In some collections, over-reduction was harmful to retrieval
+performance [<a href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node40.html#Harm87">Harm87</a>] whereas other collections showed significant
+retrieval performance improvements using context free suffix removal
+[<a href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node40.html#Salt83">Salt83</a>].
+<p>
+<p><a name="7496">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img398.gif">
+<br><strong>Table 4.2:</strong> Usefulness, S-stemmed vs. fully reduced words<a name="tabe1">&#160;</a><br>
+<p>
+<p>
+The two algorithms <b> ssw</b> and <b> psw</b> were run in the Pasadena
+system until 87 separate feedback forms were returned from
+subscribers.  At that time it was established with a very good degree of
+certainty (<img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img399.gif">) that the method <b> psw</b> performs better
+than <b> ssw</b>.
+<p>
+<p><a name="7579">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img400.gif">
+<br><strong>Figure 4.7:</strong> Retrieval Performance of S-stemmed vs. fully reduced words
+<a name="figsswpsw">&#160;</a><br>
+<p>
+<p>
+Figure <a href="node34.html#figsswpsw">4.7</a> displays this result graphically.  The graphic
+has a scale ranging from -1 to 1 representing the possible values in
+the usefulness measure.  The filled-in bar on the scale represents the
+usefulness measure comparing the two algorithms.  The size of the bar
+is the magnitude of the measure and it's direction from the origin
+corresponds to which algorithm is better.  Note that although the
+performance of algorithm <b> psw</b> is unmistakably better, the adjusted
+usefulness indicates that the difference in performance is relatively
+small. This result (a small adjusted usefulness) can be interpreted to
+mean that the performance difference, i.e. the
+difference in the number of satisfied preferences in each of these 
+experiments was small.
+<p>
+The next few experiments run in the system were designed to
+test hypothesis <a href="node34.html#hngpsw">2</a>, namely the viability of overlapping
+N-grams as indexing features in dynamic message collections.  DeHeer
+proposed the use of <em> text traces</em> (N-grams) for indexing features in
+information retrieval because they offer some implementation advantages
+as well as some interesting semantic properties [<a href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node40.html#DeHe74">DeHe74</a>].
+Investigations into the applicability of N-grams put forward the notion
+that the use of text fragments smaller than words for indexing features
+will lead to a better approximation of homeosemy than comparisons based
+only on word features.  Teufel [<a href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node40.html#Teuf89">Teuf89</a>] cites three major reasons
+suggesting an advantage to the use of N-grams over words as
+indexing features in a retrieval method.
+<p>
+The first argument is simply an efficiency consideration and
+implementation advantage:  All text traces of a given size and a given
+alphabet can be established <i> a priori</i>.  Therefore, even when the
+vocabulary of source messages and queries is uncontrolled, the number,
+size, and identity of all indexing tokens is still known before
+comparison operations begin, which suggests that methods based on text
+traces may be more flexible in a highly dynamic source collection.
+Teufel's second argument is that indexing based on text traces is
+tolerant of spelling and typographical errors.  Whereas word tokens
+require exact matches for a meaningful comparison, simple statistical
+measures using smaller text traces provide a kind of fuzzy matching.
+Third and finally, when new words become part of a language, it is
+often problematic to adapt a controlled vocabulary system that uses
+word features to make good comparisons between messages and queries.
+The advantage of using traces for indexing features is that new terms
+are simply reduced to their component traces in an <em> identical</em>
+fashion to the way old ones are handled.
+<p>
+<p><a name="7580">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img401.gif">
+<br><strong>Table 4.3:</strong> Usefulness, N-grams vs. fully reduced words<a name="tabe2">&#160;</a><br>
+<p>
+<p>
+The <b> ngc</b> algorithm using N-grams and <b> psw</b> using words were
+run in the Pasadena system until 99 feedback forms were processed.
+The performance comparison of these two algorithms appears in table
+ <a href="node34.html#tabe2">4.3</a> and figure <a href="node34.html#figngcpsw">4.8</a>.
+<p>
+<p><a name="7682">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img402.gif">
+<br><strong>Figure 4.8:</strong> Retrieval Performance of N-grams vs. fully reduced words
+<a name="figngcpsw">&#160;</a><br>
+<p>
+<p>
+The N-gram method proposed by Teufel included the use of the indirect
+similarity measure described above (and in detail in section
+ <a href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node15.html#methods">2.2</a>).  This RSV function is used in conjunction with N-gram
+indexing features.  In order to verify that a <em> combination</em> of the
+RSV function and indexing feature type was not responsible for the
+performance difference between N-gram features and reduced words,
+comparisons using this indirect similarity RSV function were carried
+out.  This next set of experiments contrasts the use of Porter
+reduced words and the indirect similarity RSV function to N-gram
+features using the same indirect similarity RSV function.
+<p>
+<p><a name="7683">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img403.gif">
+<br><strong>Table 4.4:</strong> Usefulness, N-grams vs. words, <b> indirect</b> RSV
+<a name="tabe3">&#160;</a><br>
+<p>
+<p>
+Algorithm <b> ng</b> was therefore run in the Pasadena system together
+with <b> pwi</b> until 81 feedback forms were returned.  At that time the
+value of <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img404.gif"> was low enough to draw the conclusion that the <b>
+pwi</b> algorithm was significantly better than <b> ng</b>.  This set of
+experiments verified the first N-gram versus word comparison, showing
+that words produce a significant improvement over N-grams as indexing
+features, when both are used in conjunction with the indirect
+similarity measure.
+<p>
+<p><a name="7784">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img405.gif">
+<br><strong>Figure 4.9:</strong> Retrieval Performance of N-grams vs. words using <b>
+indirect similarity</b>
+<a name="figngpwi">&#160;</a><br>
+<p>
+<p>
+The usefulness measure in general and the Pasadena experimentation
+paradigm specifically contain an interesting characteristic, namely that
+comparisons made between any two algorithms are independent of all
+other comparisons.  If it is determined, for example that algorithm <b>A</b>
+performs better than algorithm <b>B</b> and also that algorithm <b>B</b> performs
+better than <b>C</b>, it does not necessarily follow that <b>A</b> is better than
+<b>C</b>.  In the Pasadena system, this quality can easily arise because of
+the fact that direct <em> subscriber</em> judgements in a dynamic, <em>
+operational</em> system are used to compare algorithms.  However, even in
+cases where static collections and frozen queries with known relevance
+values are contrasted, it is theoretically possible for an <em>
+asymmetric</em> sequence of usefulness measurements (i.e. cycles) to 
+emerge among three or more algorithms.
+<p>
+Therefore, during the experimental comparison of the use of N-gram
+versus word features and the use of indirect similarity versus the
+cosine function, we also ran experiments of <em> cross</em> comparisons,
+where more than one attribute of the compared algorithms were
+different.
+<p>
+For example, algorithms <b> ng</b> and <b> psw</b> were run together in the
+system for a a few weeks until 197 feedback forms were returned and
+processed.  In this set of experiments, an algorithm using N-gram
+indexing features and indirect similarity is compared to one using
+fully stemmed words and the cosine similarity function.
+<p>
+<p><a name="7785">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img406.gif">
+<br><strong>Table 4.5:</strong> Usefulness, N-grams &amp; indirect RSV vs. 
+Porter stemmed words &amp; cosine RSV
+<a name="tabe4">&#160;</a><br>
+<p>
+<p>
+The results in table <a href="node34.html#tabe4">4.5</a> and figure <a href="node34.html#figngpsw">4.10</a> 
+indicate that the RSV function plays a more important r&#244;le in the
+overall performance of an algorithm than the type of indexing feature
+used.  The indirect similarity RSV algorithm out-performs the cosine
+algorithm even though the indexing features used in the indirect
+similarity method are N-grams which were shown in earlier experiments
+to be inferior indexing features.  This result confirms Teufel's results
+on a static collection.
+<p>
+<p><a name="7876">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img407.gif">
+<br><strong>Figure 4.10:</strong> Retrieval Performance, N-grams &amp; indirect similarity
+vs. fully reduced words &amp; direct similarity <a name="figngpsw">&#160;</a><br>
+<p>
+<p>
+The <b> ng</b> algorithm was also run in the Pasadena system together
+with the <b> ssw</b> method to verify that no abnormal asymmetries in the
+usefulness measurements among these comparisons cropped up.  In this
+comparison three different aspects of the algorithms were different:
+The first algorithm, <b> ng</b>, used full suffix reduction, an indirect
+comparison algorithm, and N-gram indexing features.  The second
+algorithm used S-stemming, the cosine direct similarity measure, and
+words as indexing features.
+<p>
+<p><a name="7877">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img408.gif">
+<br><strong>Table 4.6:</strong> Usefulness, N-grams &amp; indirect RSV vs.
+S-stemmed words &amp; cosine RSV <a name="tabe5">&#160;</a><br>
+<p>
+<p>
+Although 99 feedback forms were returned during these tests,
+most of the subscribers of the system were apparently very
+precision-oriented in their query formulations; they also reported many
+``ties'' in their rankings.  The number of feedback forms without zero
+differences (<img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img409.gif">) for these experiments was only 46, and the <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img410.gif">
+value, though small enough to be safe, was relatively high (see table
+ <a href="node34.html#tabe5">4.6</a>).
+<p>
+<p><a name="7980">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img411.gif">
+<br><strong>Figure 4.11:</strong> Retrieval Performance, N-grams &amp; indirect similarity
+vs. S-stemmed words &amp; direct similarity <a name="figngssw">&#160;</a><br>
+<p>
+<p>
+Preliminary data from this family of experiments, contrasting Teufel's
+N-gram and indirect similarity approach to an S-stemmed word and cosine
+method were reported in [<a href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node40.html#Wyle91">Wyle91</a>].  Because the Pasadena system had
+relatively few subscribers, some of the error probabilities in those
+data were quite high.  No definitive conclusions could be drawn from
+those results.  Here, however, it is clear that within the
+Pasadena test environment words are better indexing features for WAN
+messages than N-grams and the indirect similarity measure is much
+better than the standard cosine method.  Furthermore, it is apparent
+that the similarity measure is more important than type of indexing
+feature used.  That is, the indirect measure always outperforms the
+cosine measure, regardless of indexing features used.  
+
+<p>
+Having established that complete word reduction and an indirect
+similarity measurement were superior to proposed alternatives, we
+then set out to test different <em> phrase</em> generation methods
+for indexing features.
+<p>
+The <b> sph</b> algorithm was run in the Pasadena system
+together with <b> psw</b>.  In this evaluation, all aspects of the two
+algorithms are identical except that in addition to the single-word
+indexing features, <b> sph</b> includes word <em> combinations</em> (phrases) 
+from the query text as additional indexing features.  These experiments
+were run until 146 feedback forms were returned and <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img412.gif"> was below one
+tenth of one percent.
+<p>
+<p><a name="7981">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img413.gif">
+<br><strong>Table 4.7:</strong> Usefulness, Porter stemmed words vs. 
+simple phrases <a name="tabe6">&#160;</a><br>
+<p>
+<p>
+The results in table <a href="node34.html#tabe6">4.7</a> and figure <a href="node34.html#figpswsph">4.12</a> show
+clearly that the addition of simple phrases produce better retrieval
+performance results in almost all experiments than the use of single
+word features.  However, the adjusted usefulness is relatively low
+which indicates that the difference in the number of preferences
+between the two methods is small.  Again in this set of experiments,
+the small value for the adjusted usefulness is most probably due to
+subscribers' precision-orientation.  In fact, the use of phrases is
+intended to increase the number of preferences in a small retrieval set
+(for precision-oriented users) and these results confirm results in
+the literature [<a href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node40.html#Crof91">Crof91</a>].
+<p>
+<p><a name="8042">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img414.gif">
+<br><strong>Figure 4.12:</strong> Retrieval Performance, single term features 
+vs. phrases <a name="figpswsph">&#160;</a><br>
+<p>
+<p>
+Having established that the addition of phrases as indexing features in
+a WAN message environment did indeed improve retrieval performance, we
+then went about <em> combining</em> the use of phrases with an indirect
+similarity function in the hope of creating a method with a much better
+retrieval performance than known, existing methods.  Because simple
+(Fagan labelled them ``syntactic'' [<a href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node40.html#Faga87">Faga87</a>]) phrase methods generate
+explosively many new indexing features, their system performance
+constraints limit their use in a large, production environment.
+Because of the very large number of indexing features generated, it was
+impossible to apply the indirect comparison measure to the <b> sph</b> 
+method.
+<p>
+However, the <b> nph</b> algorithm produces relatively few new
+indexing features because only the high-noise words are extended; it
+was developed specifically for use in the Pasadena system (see section
+ <a href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node22.html#phrases">3.4</a>).  In this algorithm, the high-performance indirect
+similarity RSV function is used as well.  
+<p><a name="8043">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img415.gif">
+<br><strong>Table 4.8:</strong> Usefulness, simple phrases &amp; cosine vs. noise
+extended phrases &amp; indirect similarity <a name="tabe7">&#160;</a><br>
+<p>
+<p>
+<p><a name="8113">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img416.gif">
+<br><strong>Figure 4.13:</strong> Retrieval Performance, simple phrases
+vs. noise extended phrases <a name="figsphnph">&#160;</a><br>
+<p>
+The next set of experiments compares the <b> sph</b> method to <b>
+nph</b>.  It required only 60 feedback forms for the error probability to
+sink below 0.002.  Results are summarized in table <a href="node34.html#tabe7">4.8</a> and
+ <a href="node34.html#figsphnph">4.13</a>.  These results show that the phrases generated
+by symmetrically extending high noise words (method <b> nph</b>) performs
+better than a method using simple phrases.
+<p>
+Additionally, several different sets of experiments using the <b> nph</b>
+algorithm were run, comparing it to <b> ssw</b>, <b> psw</b>, and <b>
+pwi</b>.  Tables <a href="node34.html#tabe9">4.10</a> through <a href="node34.html#tabe10">4.11</a> and figures
+ <a href="node34.html#figsswnph">4.15</a> through <a href="node34.html#figpwinph">4.16</a> summarize the results of
+these sets of experiments.  There were no surprises or asymmetries
+among these sets of experiments; <b> nph</b> performed better in all
+cases.
+<p>
+<p><a name="8114">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img417.gif">
+<br><strong>Table 4.9:</strong> Usefulness, reduced words &amp; cosine vs. noise
+extended phrases &amp; indirect similarity <a name="tabe8">&#160;</a><br>
+<p>
+<p><a name="8170">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img418.gif">
+<br><strong>Figure 4.14:</strong> Retrieval Performance, reduced words &amp; cosine
+vs. noise extended phrases &amp; indirect similarity
+<a name="figpswnph">&#160;</a><br>
+<p>
+<p>
+
+<p>
+<p><a name="8171">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img419.gif">
+<br><strong>Table 4.10:</strong> Usefulness, S-stemmed words &amp; cosine vs. noise
+extended phrases &amp; indirect similarity <a name="tabe9">&#160;</a><br>
+<p>
+<p><a name="8227">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img420.gif">
+<br><strong>Figure 4.15:</strong> Retrieval Performance, S-stemmed words &amp; cosine
+vs. noise extended phrases &amp; indirect similarity 
+          <a name="figsswnph">&#160;</a><br>
+<p>
+<p>
+
+<p>
+<p><a name="8228">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img421.gif">
+<br><strong>Table 4.11:</strong> Usefulness, words &amp; indirect similarity vs. noise
+extended phrases &amp; indirect similarity <a name="tabe10">&#160;</a><br>
+<p>
+<p><a name="8292">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img422.gif">
+<br><strong>Figure 4.16:</strong> Retrieval Performance, words &amp; indirect similarity
+vs. noise extended phrases &amp; indirect similarity
+	  <a name="figpwinph">&#160;</a><br>
+<p>
+<p>
+At this point, it became clear that cross-evaluating all combinations
+of all algorithms in the system would be infeasible because the number
+of different combinations increases as the square of the number of
+different algorithms used.  Having verified again that no surprising
+results among these experiments appeared (cycles), we proceeded in a
+step-wise fashion in the next few evaluations, assuming <em>
+monotonicity</em> of retrieval performance as quantified by the usefulness
+measure.  At each step in the experimentation henceforth, the <em>
+highest</em> retrieval performance algorithm was <em> refined</em> to increase
+the overall system performance.
+<p>
+In the next set of experiments, the use of feature frequency
+normalization was measured against the baseline feature weighting
+function.  <b> nph</b> was run in the Pasadena system together with <b>
+npn</b> and produced the results in table <a href="node34.html#tabe12">4.12</a> and
+ <a href="node34.html#fignphnpn">4.17</a>.  As one would expect from recent tests on static
+collections [<a href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node40.html#Fre91b">Fre91b</a>], this normalization does provide a slight
+improvement.  However, it required 1140 feedback forms, only 495 of
+which contained valid preferences to achieve this result.  The adjusted
+usefulness is also very low.
+
+<p><a name="8293">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img423.gif">
+<br><strong>Table 4.12:</strong> Usefulness, standard message feature weighting
+vs. normalized message feature weighting <a name="tabe12">&#160;</a><br>
+<p>
+<p><a name="8358">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img424.gif">
+<br><strong>Figure 4.17:</strong> Retrieval Performance, standard feature weighting vs.
+normalized feature weighting <a name="fignphnpn">&#160;</a><br>
+<p>
+<p>
+Encouraged by the performance improvement due to message feature
+frequency normalization, we proceeded to test new feature weighting
+techniques, including those that take message <em> structure</em> into
+account (see section <a href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node16.html#secstruc">2.3</a>).  The <b> sps</b> algorithm is an
+adaptation of the recently proposed excerpt indexing scheme from Salton
+and Buckley; we applied this method in the Pasadena system using
+only paragraphs as excerpts.  The method was first contrasted to the
+standard, baseline <em> psw</em> method in the Pasadena system with
+somewhat encouraging results.
+<p>
+<p><a name="8359">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img425.gif">
+<br><strong>Table 4.13:</strong> Usefulness, fully stemmed words &amp; cosine vs. excerpt retrieval 
+<a name="tabe13">&#160;</a><br>
+<p>
+<p>
+Table <a href="node34.html#tabe13">4.13</a> and figure <a href="node34.html#figpswsps">4.18</a> contain the results
+of these experiments.  The improvement is rather slight and in spite of
+the fact that 119 feedback forms were returned containing 113 valid
+experiments (<b>k = 113</b>), the error probability is almost one percent.
+The adjusted usefulness is also very small (<img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img426.gif">).
+In other words, although we may conclude with confidence that 
+the <b> sps</b> method performed better than <b> psw</b>, the performance
+improvement was marginal.
+<p>
+<p><a name="8425">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img427.gif">
+<br><strong>Figure 4.18:</strong> Retrieval Performance, fully reduced words vs.
+normalized feature weighting <a name="figpswsps">&#160;</a><br>
+<p>
+<p>
+It was therefore not surprising that the inverse feature density term
+weighting function, when applied to the noise-extended phrases using an
+indirect similarity method performed much better than method <b>
+sps</b>.  In fact, the performance improvement in this set of experiments
+was the largest seen in the system.
+<p>
+Table <a href="node34.html#tabe14">4.14</a> and figure <a href="node34.html#figspsnpi">4.19</a> contain the results
+of experiments comparing <b> sps</b> to <b> npi</b>.
+<p>
+<p><a name="8426">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img428.gif">
+<br><strong>Table 4.14:</strong> Usefulness, excerpt retrieval vs. noise extended phrases,
+indirect similarity, inverse feature density
+<a name="tabe14">&#160;</a><br>
+<p>
+<p>
+Table <a href="node34.html#tabe14">4.14</a> and figure <a href="node34.html#figspsnpi">4.19</a> contain the results
+of these experiments.   It is very clear that the <b> npi</b> method
+outperforms <b> sps</b> in the vast majority of experiments.  The
+adjusted usefulness is also relatively high, indicating that within the
+experiments that many more user preferences were satisfied by the <b>
+npi</b> method.
+<p>
+<p><a name="8489">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img429.gif">
+<br><strong>Figure 4.19:</strong> Retrieval Performance, excerpt method vs. 
+noise extended phrases, indirect similarity, inverse feature density 
+<a name="figspsnpi">&#160;</a><br>
+<p>
+<p>
+The final set of experiments was run to determine if the <b> npi</b>
+method with inverse feature density term weighting would perform better
+than <b> npn</b> which uses normalized message feature frequency for term
+weighting.
+<p>
+<p><a name="8490">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img430.gif">
+<br><strong>Table 4.15:</strong> Usefulness, normalized vs. inverse feature
+density term weighting
+<a name="tabe15">&#160;</a><br>
+<p>
+<p>
+Table <a href="node34.html#tabe15">4.15</a> and figure <a href="node34.html#fignpnnpi">4.20</a> contain the results
+of these experiments.  The <b> npi</b> method outperforms <b> npn</b> and
+confirms an affirmative answer to hypothesis <a href="node34.html#hipd">8</a>, namely that
+the inverse feature density weighting function is better than any other
+reported method for application in conjunction with the high-performance
+noise extended phrase features and indirect similarity RSV function.
+The method combining all of these functions performs better than any
+other method tested in the system.
+<p>
+<p><a name="8537">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210849im_/http://www.vhdl.org/~wyle/diss/img431.gif">
+<br><strong>Figure 4.20:</strong> Retrieval Performance, excerpt method vs.
+noise extended phrases, indirect similarity, inverse feature density
+<a name="fignpnnpi">&#160;</a><br>
+<p>
+<p>
+In this section, we summarized many of the thousands of retrieval
+performance experiments run in the Pasadena system for the empirical
+evaluation and iterative development of the high-performance retrieval
+methods to be used in the ranking stage of a system for filtering WAN
+information.  But what do these results really mean and what are the
+implications of the outcome of these experiments?  In the next chapter
+we present interpretations of these results and conclude this thesis
+with a discussion of possible avenues of future work.
+<p>
+<a name="8517">&#160;</a>
+<a name="8518">&#160;</a>
+<a name="8519">&#160;</a>
+<p>
+<br> <hr><a name="tex2html1498" href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node35.html"><img align="BOTTOM" alt="next" src="https://web.archive.org/web/19971014210849im_/http://vhdl.org/~wyle/diss/images/next_motif.gif"></a>   <a name="tex2html1496" href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node23.html"><img align="BOTTOM" alt="up" src="https://web.archive.org/web/19971014210849im_/http://vhdl.org/~wyle/diss/images/up_motif.gif"></a>   <a name="tex2html1492" href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node33.html"><img align="BOTTOM" alt="previous" src="https://web.archive.org/web/19971014210849im_/http://vhdl.org/~wyle/diss/images/previous_motif.gif"></a>   <a name="tex2html1500" href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node2.html"><img align="BOTTOM" alt="contents" src="https://web.archive.org/web/19971014210849im_/http://vhdl.org/~wyle/diss/images/contents_motif.gif"></a>   <a name="tex2html1501" href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node57.html"><img align="BOTTOM" alt="index" src="https://web.archive.org/web/19971014210849im_/http://vhdl.org/~wyle/diss/images/index_motif.gif"></a>   <br>
+<b> Next:</b> <a name="tex2html1499" href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node35.html"> Conclusionand Outlook</a>
+<b>Up:</b> <a name="tex2html1497" href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node23.html"> Pasadena: a WAN </a>
+<b> Previous:</b> <a name="tex2html1493" href="https://web.archive.org/web/19971014210849/http://www.vhdl.org/~wyle/diss/node33.html"> Retrieval Methods Tested</a>
+<br> <hr> <p>
+<br> <hr>
+<p><address>
+<i>Mitchell F. Wyle <br>
+Wed Jan  3 13:22:21 EST 1996</i>
+</address>
+</body>
+<!--
+     FILE ARCHIVED ON 21:08:49 Oct 14, 1997 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 17:12:08 Aug 04, 2022.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 394.387
+  exclusion.robots: 0.117
+  exclusion.robots.policy: 0.107
+  RedisCDXSource: 320.873
+  esindex: 0.015
+  LoadShardBlock: 52.642 (3)
+  PetaboxLoader3.datanode: 60.012 (4)
+  CDXLines.iter: 17.234 (3)
+  load_resource: 58.144
+  PetaboxLoader3.resolve: 43.159
+-->
