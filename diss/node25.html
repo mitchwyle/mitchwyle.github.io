@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3O//DTD W3 HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 95 (Thu Jan 19 1995) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<head><script src="https://archive.org/includes/analytics.js?v=cf34f82" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app220.us.archive.org';v.server_ms=669;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="https://web.archive.org/_static/js/bundle-playback.js?v=KTqwAcYd" charset="utf-8"></script>
+<script type="text/javascript" src="https://web.archive.org/_static/js/wombat.js?v=UHAOicsW" charset="utf-8"></script>
+<script type="text/javascript">
+  __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.vhdl.org:80/~wyle/diss/node25.html","19971014210314","https://web.archive.org/","web","/_static/",
+	      "876862994");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web.archive.org/_static/css/banner-styles.css?v=fantwOh2" />
+<link rel="stylesheet" type="text/css" href="https://web.archive.org/_static/css/iconochive.css?v=qtvMKcIJ" />
+<!-- End Wayback Rewrite JS Include -->
+
+<title> Selective Information Extraction</title>
+</head>
+<body>
+<meta name="description" value=" Selective Information Extraction">
+<meta name="keywords" value="diss">
+<meta name="resource-type" value="document">
+<meta name="distribution" value="global">
+<p>
+ <br> <hr><a name="tex2html1388" href="https://web.archive.org/web/19971014210314/http://www.vhdl.org/~wyle/diss/node26.html"><img align="BOTTOM" alt="next" src="https://web.archive.org/web/19971014210314im_/http://vhdl.org/~wyle/diss/images/next_motif.gif"></a>   <a name="tex2html1386" href="https://web.archive.org/web/19971014210314/http://www.vhdl.org/~wyle/diss/node23.html"><img align="BOTTOM" alt="up" src="https://web.archive.org/web/19971014210314im_/http://vhdl.org/~wyle/diss/images/up_motif.gif"></a>   <a name="tex2html1380" href="https://web.archive.org/web/19971014210314/http://www.vhdl.org/~wyle/diss/node24.html"><img align="BOTTOM" alt="previous" src="https://web.archive.org/web/19971014210314im_/http://vhdl.org/~wyle/diss/images/previous_motif.gif"></a>   <a name="tex2html1390" href="https://web.archive.org/web/19971014210314/http://www.vhdl.org/~wyle/diss/node2.html"><img align="BOTTOM" alt="contents" src="https://web.archive.org/web/19971014210314im_/http://vhdl.org/~wyle/diss/images/contents_motif.gif"></a>   <a name="tex2html1391" href="https://web.archive.org/web/19971014210314/http://www.vhdl.org/~wyle/diss/node57.html"><img align="BOTTOM" alt="index" src="https://web.archive.org/web/19971014210314im_/http://vhdl.org/~wyle/diss/images/index_motif.gif"></a>   <br>
+<b> Next:</b> <a name="tex2html1389" href="https://web.archive.org/web/19971014210314/http://www.vhdl.org/~wyle/diss/node26.html"> User Profiles in </a>
+<b>Up:</b> <a name="tex2html1387" href="https://web.archive.org/web/19971014210314/http://www.vhdl.org/~wyle/diss/node23.html"> Pasadena: a WAN </a>
+<b> Previous:</b> <a name="tex2html1381" href="https://web.archive.org/web/19971014210314/http://www.vhdl.org/~wyle/diss/node24.html"> Selective Dissemination</a>
+<br> <hr> <p>
+<h1><a name="SECTION00920000000000000000"> Selective Information Extraction</a></h1>
+<a name="extraction">&#160;</a>
+<a name="6711">&#160;</a>
+<a name="6712">&#160;</a>
+<a name="6713">&#160;</a>
+<p>
+The Pasadena system includes a program for querying remote passive
+databases.  This selective extraction of information (<tt><b> sei</tt></b>)
+program runs periodically and scans its database of remote servers.
+Because the remote database systems have widely varying command
+languages and query-message requirements, each server has its own query
+message.  The state information stored for each passive source
+includes:  
+<ul><li> the last query time 
+<li> a (possibly dynamic) message to query the remote database 
+<li> the query interval 
+<li> a log (history) of previous query times 
+<li> a log of response times (and failures) 
+<li> a log of the number of new items returned for specific 
+      responses at specific times
+</ul>
+<p>
+The algorithm to query the remote servers is described in [<a href="https://web.archive.org/web/19971014210314/http://www.vhdl.org/~wyle/diss/node40.html#Wyle89">Wyle89</a>]
+and its implementation is described below (section
+ <a href="https://web.archive.org/web/19971014210314/http://www.vhdl.org/~wyle/diss/node27.html#implementation">4.4</a>).  When messages arrive back from the remote
+databases, the history information for the appropriate remote source
+database is updated, and new information items are stored in the local
+Pasadena message cache database.  In some cases the query message
+itself is changed to specify that only new messages be retrieved from
+the remote database.  At certain time intervals, the parameters
+affecting the query rate for the remote databases (<img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210314im_/http://www.vhdl.org/~wyle/diss/img357.gif">, <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210314im_/http://www.vhdl.org/~wyle/diss/img358.gif">,
+<img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210314im_/http://www.vhdl.org/~wyle/diss/img359.gif">) are re-calculated for each remote system, and
+the query intervals are changed accordingly.
+<p>
+In addition to <em> passive</em> sources that require Pasadena to query
+them, the Pasadena system subscribes to several different remote
+systems that automatically send it messages via email.  Pasadena does
+not have to query these system to receive messages.
+<p>
+Pasadena also gathers information from news feeds periodically by a a
+general-purpose communications system.  This program is
+an example of a parameter-driven, non-interactive terminal emulator
+that sends commands to remote interactive systems, and captures the
+replies from such systems.  The ``send and expect script'' is stored as
+external text, so that changes to the command language or menu
+structure of the system being queried do not force changes and costly
+re-compilation of the program.  Instead, the expected prompts and
+commands to be sent can be changed simply by changing the text file.
+This type of program in conjunction with automatic scheduling systems
+available from the native operating system is becoming very popular, as
+such systems form the basis for agents [<a href="https://web.archive.org/web/19971014210314/http://www.vhdl.org/~wyle/diss/node40.html#Kay91">Kay91</a>].
+The program captures new messages which have appeared in the passive remote
+news system since the last time the program was run.  These items
+appear as one large text, in the form of a ``log'' of the dialog
+between the querying program and the replies of the system.  The
+captured text is then post-processed by a separate program to convert
+the message data into a format to be used by the Pasadena system.
+<p>
+This conversion program filters the output of the dialog from newsfeed
+queries, converting each identified item into a separate message for
+the Pasadena message database; it then inserts the message into the
+database in its proper category.  The services queried often offer
+several different newswires; these feeds are further categorized by
+topic.  Each topic of each newswire has a separate Pasadena database
+category.  The Pasadena database system includes methods for the
+automatic creation, retrieval, and expiration (deletion) of individual
+messages.  The implementation and strategy is similar to the commercial
+system Clarinet [<a href="https://web.archive.org/web/19971014210314/http://www.vhdl.org/~wyle/diss/node40.html#Temp92">Temp92</a>] which uses a similar database and
+distribution medium for commercial newswire services.
+<p>
+Having touched upon the methods by which Pasadena extracts and receives
+messages from the Matrix, we now present some of the issues in the
+actual realization of the subscriber profile model from the last
+chapter.
+<p>
+<a name="6723">&#160;</a>
+<a name="6724">&#160;</a>
+<a name="6725">&#160;</a>
+<p>
+<br> <hr><a name="tex2html1388" href="https://web.archive.org/web/19971014210314/http://www.vhdl.org/~wyle/diss/node26.html"><img align="BOTTOM" alt="next" src="https://web.archive.org/web/19971014210314im_/http://vhdl.org/~wyle/diss/images/next_motif.gif"></a>   <a name="tex2html1386" href="https://web.archive.org/web/19971014210314/http://www.vhdl.org/~wyle/diss/node23.html"><img align="BOTTOM" alt="up" src="https://web.archive.org/web/19971014210314im_/http://vhdl.org/~wyle/diss/images/up_motif.gif"></a>   <a name="tex2html1380" href="https://web.archive.org/web/19971014210314/http://www.vhdl.org/~wyle/diss/node24.html"><img align="BOTTOM" alt="previous" src="https://web.archive.org/web/19971014210314im_/http://vhdl.org/~wyle/diss/images/previous_motif.gif"></a>   <a name="tex2html1390" href="https://web.archive.org/web/19971014210314/http://www.vhdl.org/~wyle/diss/node2.html"><img align="BOTTOM" alt="contents" src="https://web.archive.org/web/19971014210314im_/http://vhdl.org/~wyle/diss/images/contents_motif.gif"></a>   <a name="tex2html1391" href="https://web.archive.org/web/19971014210314/http://www.vhdl.org/~wyle/diss/node57.html"><img align="BOTTOM" alt="index" src="https://web.archive.org/web/19971014210314im_/http://vhdl.org/~wyle/diss/images/index_motif.gif"></a>   <br>
+<b> Next:</b> <a name="tex2html1389" href="https://web.archive.org/web/19971014210314/http://www.vhdl.org/~wyle/diss/node26.html"> User Profiles in </a>
+<b>Up:</b> <a name="tex2html1387" href="https://web.archive.org/web/19971014210314/http://www.vhdl.org/~wyle/diss/node23.html"> Pasadena: a WAN </a>
+<b> Previous:</b> <a name="tex2html1381" href="https://web.archive.org/web/19971014210314/http://www.vhdl.org/~wyle/diss/node24.html"> Selective Dissemination</a>
+<br> <hr> <p>
+<br> <hr>
+<p><address>
+<i>Mitchell F. Wyle <br>
+Wed Jan  3 13:22:21 EST 1996</i>
+</address>
+</body>
+<!--
+     FILE ARCHIVED ON 21:03:14 Oct 14, 1997 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 17:11:32 Aug 04, 2022.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 68.499
+  exclusion.robots: 0.089
+  exclusion.robots.policy: 0.081
+  RedisCDXSource: 2.047
+  esindex: 0.008
+  LoadShardBlock: 51.018 (3)
+  PetaboxLoader3.datanode: 52.975 (4)
+  CDXLines.iter: 13.103 (3)
+  load_resource: 596.426
+  PetaboxLoader3.resolve: 580.26
+-->

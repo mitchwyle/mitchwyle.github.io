@@ -1,0 +1,214 @@
+<!DOCTYPE HTML PUBLIC "-//W3O//DTD W3 HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 95 (Thu Jan 19 1995) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<head><script src="https://archive.org/includes/analytics.js?v=cf34f82" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app228.us.archive.org';v.server_ms=231;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="https://web.archive.org/_static/js/bundle-playback.js?v=KTqwAcYd" charset="utf-8"></script>
+<script type="text/javascript" src="https://web.archive.org/_static/js/wombat.js?v=UHAOicsW" charset="utf-8"></script>
+<script type="text/javascript">
+  __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.vhdl.org:80/~wyle/diss/node14.html","19971014205632","https://web.archive.org/","web","/_static/",
+	      "876862592");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web.archive.org/_static/css/banner-styles.css?v=fantwOh2" />
+<link rel="stylesheet" type="text/css" href="https://web.archive.org/_static/css/iconochive.css?v=qtvMKcIJ" />
+<!-- End Wayback Rewrite JS Include -->
+
+<title> Aperiodic Database Query</title>
+</head>
+<body>
+<meta name="description" value=" Aperiodic Database Query">
+<meta name="keywords" value="diss">
+<meta name="resource-type" value="document">
+<meta name="distribution" value="global">
+<p>
+ <br> <hr><a name="tex2html1245" href="https://web.archive.org/web/19971014205632/http://www.vhdl.org/~wyle/diss/node15.html"><img align="BOTTOM" alt="next" src="https://web.archive.org/web/19971014205632im_/http://vhdl.org/~wyle/diss/images/next_motif.gif"></a>   <a name="tex2html1243" href="https://web.archive.org/web/19971014205632/http://www.vhdl.org/~wyle/diss/node13.html"><img align="BOTTOM" alt="up" src="https://web.archive.org/web/19971014205632im_/http://vhdl.org/~wyle/diss/images/up_motif.gif"></a>   <a name="tex2html1237" href="https://web.archive.org/web/19971014205632/http://www.vhdl.org/~wyle/diss/node13.html"><img align="BOTTOM" alt="previous" src="https://web.archive.org/web/19971014205632im_/http://vhdl.org/~wyle/diss/images/previous_motif.gif"></a>   <a name="tex2html1247" href="https://web.archive.org/web/19971014205632/http://www.vhdl.org/~wyle/diss/node2.html"><img align="BOTTOM" alt="contents" src="https://web.archive.org/web/19971014205632im_/http://vhdl.org/~wyle/diss/images/contents_motif.gif"></a>   <a name="tex2html1248" href="https://web.archive.org/web/19971014205632/http://www.vhdl.org/~wyle/diss/node57.html"><img align="BOTTOM" alt="index" src="https://web.archive.org/web/19971014205632im_/http://vhdl.org/~wyle/diss/images/index_motif.gif"></a>   <br>
+<b> Next:</b> <a name="tex2html1246" href="https://web.archive.org/web/19971014205632/http://www.vhdl.org/~wyle/diss/node15.html"> Retrieval Methods</a>
+<b>Up:</b> <a name="tex2html1244" href="https://web.archive.org/web/19971014205632/http://www.vhdl.org/~wyle/diss/node13.html"> Dissemination and Retrieval</a>
+<b> Previous:</b> <a name="tex2html1238" href="https://web.archive.org/web/19971014205632/http://www.vhdl.org/~wyle/diss/node13.html"> Dissemination and Retrieval</a>
+<br> <hr> <p>
+<h1><a name="SECTION00710000000000000000"> Aperiodic Database Query</a></h1>
+<a name="aperiodic">&#160;</a>
+<a name="586">&#160;</a>
+<a name="587">&#160;</a>
+
+<p>
+In order for an information server effectively to query the large
+number of heterogeneous passive information sources in the Matrix, it
+requires a model which accounts for the following factors:
+<a name="588">&#160;</a>
+<a name="589">&#160;</a>
+<a name="590">&#160;</a>
+<a name="591">&#160;</a>
+<ul>
+<p>
+  <li> the rate that new information becomes available for query at a
+<a name="593">&#160;</a>
+<a name="594">&#160;</a>
+<a name="595">&#160;</a>
+<a name="596">&#160;</a>
+  remote database 
+  <li> the delay between issuing a query and obtaining a result 
+  <li> the probability that a query message or its result
+  message will be lost<a name="597">&#160;</a><a name="598">&#160;</a>
+  <a name="599">&#160;</a>
+</ul> 
+
+<p>
+In the following query scheduling<a name="601">&#160;</a> 
+model<a name="602">&#160;</a>, we assume that information
+somehow flows<a name="603">&#160;</a> into passive<a name="604">&#160;</a> WAN database systems, and is then made
+available for query.  An optimal query schedule will allow the
+extractor<a name="605">&#160;</a> 
+program, that is the information service which is querying
+the remote WAN database, to obtain information at the same rate as it
+arrives at the server.  Obviously some delay<a name="606">&#160;</a> 
+is inevitable since the
+source information is not instantly available. We assume that the rate
+of information <em> flow</em> however, is approximately the same over some
+time interval.  Querying too often would result in many empty or
+redundant<a name="608">&#160;</a> answers.  
+Querying too infrequently would result in large,
+infrequent ``bursts<a name="609">&#160;</a>'' of information<a name="610">&#160;</a> 
+at the extractor, and large
+intervals of time where the extractor's 
+information<a name="611">&#160;</a> is out of date.
+More importantly, part of the information in such bursts is already
+old when they arrive at the extracting system.  Since WAN
+communications bandwidth<a name="612">&#160;</a>
+can be expensive, and since the clients of
+every SDI service prefer current information, neither of these
+situations is desirable.
+<p>
+Measuring the arrival rate, i.e. the rate at which information arrives
+at the passive server is the usual approach.  However, from the
+extractor's point of view, a more important parameter is the rate that
+the information becomes available for querying.  These two rates are
+not identical because the passive database source server must 
+update<a name="613">&#160;</a>
+the information to make it available for query.  We shall call this
+<em> update rate</em> <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205632im_/http://www.vhdl.org/~wyle/diss/img12.gif"><a name="615">&#160;</a>
+and define it to be the number of<a name="616">&#160;</a>
+information items which the server makes available for querying per
+unit time.  This rate may indeed be different from the arrival rate,
+but since the extractor has no control over the indexing process at the
+passive database source, this latter parameter must take precedence.
+Thus, using the extractor's perspective we shall take a
+phenomenological ``black box'' approach.<a name="617">&#160;</a>
+<p>
+Without loss of generality, we consider each passive WAN server (figure
+2.1) separately, and optimize a scheduling rate for an individual one.
+Let <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205632im_/http://www.vhdl.org/~wyle/diss/img14.gif"> <a name="618">&#160;</a> 
+(with units of queries per unit time) be the rate at which
+the extractor sends queries to the server.  The <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205632im_/http://www.vhdl.org/~wyle/diss/img16.gif"> parameter is
+designed to allow an extractor to mirror a remote 
+information<a name="619">&#160;</a><a name="620">&#160;</a>
+source.  Hence, it is desirable
+that an extractor<a name="621">&#160;</a> <a name="622">&#160;</a>
+querying at a rate <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205632im_/http://www.vhdl.org/~wyle/diss/img17.gif"> retrieve information as
+soon as it becomes available.  Therefore, if <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205632im_/http://www.vhdl.org/~wyle/diss/img18.gif"> is optimal it
+will allow an extractor to retrieve, on average, precisely one message
+per query.  Retrieving more than one message decreases the 
+timeliness<a name="623">&#160;</a>
+and therefore the isomorphism of the model<a name="624">&#160;</a>.  
+If messages queue<a name="625">&#160;</a>
+at a server and become available for query in groups, it is impossible
+for a single query to return exactly one information item; it is,
+however, possible for the average query rate<a name="626">&#160;</a> 
+over time to produce one
+item per query.  Bursts of available items at a server will lead to
+cases where this definition of an optimal <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205632im_/http://www.vhdl.org/~wyle/diss/img19.gif"> would cause a
+system <a name="627">&#160;</a><a name="628">&#160;</a>
+to send several queries which retrieve zero items.  A burst size <b>b</b>
+leads to the following ``optimal'' scenario, where the average number
+of <a name="629">&#160;</a>
+items retrieved over time is one but many more queries are 
+sent:  <p><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205632im_/http://www.vhdl.org/~wyle/diss/img22.gif"><p>
+Defining an optimal <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205632im_/http://www.vhdl.org/~wyle/diss/img23.gif"> to be a rate which allows an extractor to
+retrieve items just after each update<a name="632">&#160;</a> 
+at a remote server would
+therefore be more efficient.  However, experience indicates that burst
+sizes are usually very small, and that sporadic updates rates, large
+burst sizes, or server unavailability are not common; therefore
+optimizing for one item retrieved per query provides a more useful
+method than one query per server update.
+<p>
+If, on average, an <a name="633">&#160;</a><a name="634">&#160;</a>
+extractor querying at a rate <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205632im_/http://www.vhdl.org/~wyle/diss/img24.gif"> retrieves more
+than one information item, the rate is too slow.  If no new information
+items are retrieved, the rate is too fast.  Since we assume that the
+extractor has no control or knowledge <a name="635">&#160;</a>
+about the update rate at the
+remote server site, the extractor system adjusts <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205632im_/http://www.vhdl.org/~wyle/diss/img25.gif"> using an
+algorithm <a name="636">&#160;</a>
+which predicts the value of <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205632im_/http://www.vhdl.org/~wyle/diss/img27.gif"> at each moment in
+time.  Our approach to making this prediction uses the previous
+<img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205632im_/http://www.vhdl.org/~wyle/diss/img28.gif"> values measured by the extractor each time it queries the
+remote server.  We initially define <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205632im_/http://www.vhdl.org/~wyle/diss/img29.gif"> to be:
+<p>
+<p><a name="eqquery1">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205632im_/http://www.vhdl.org/~wyle/diss/img30.gif"><p>
+<a name="642">&#160;</a>
+<p>
+where <b>I</b> <a name="643">&#160;</a> 
+is the number of messages returned per query times the time 
+interval between queries; <b>I</b> has units of messages per query times 
+unit time.
+<p>
+Using this history<a name="644">&#160;</a> 
+information a future value of <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205632im_/http://www.vhdl.org/~wyle/diss/img32.gif"> can be predicted
+and a new <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205632im_/http://www.vhdl.org/~wyle/diss/img33.gif"> can be calculated.
+<p>
+Thus far, our analysis assumes that no errors or network failures 
+<a name="645">&#160;</a><a name="646">&#160;</a><a name="647">&#160;</a> can
+occur, an assumption that is, of course, completely unrealistic.
+Network failures cannot be ignored; we are therefore
+obliged to add recovery factors and robustness to the model for the
+unfortunate case of network breakdowns.  Consider the space -
+time diagram in figure <a href="node14.html#figts">2.1</a>.   The information sources are
+grouped into one abstract entity on the right.  Time flows from the
+bottom to the top, and events are shown as circles inscribed on the
+entity lines at which they occur.  Source events<a name="649">&#160;</a> 
+S1 and S2 travel to the database Server where the information items are 
+immediately updated as indicated by update events U1 and U2.
+<a name="654">&#160;</a>
+<a name="655">&#160;</a>
+<p>
+<p><a name="1077">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205632im_/http://www.vhdl.org/~wyle/diss/img36.gif">
+<br><strong>Figure 2.1:</strong> Time - Space Diagram<a name="figts">&#160;</a><br>
+<p>
+<a name="716">&#160;</a>
+<p>
+No WAN architecture offers the luxury of uniform response times or
+transmission rates.  In figure <a href="node14.html#figts">2.1</a> the 
+result
+<a name="index">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205632im_/http://www.vhdl.org/~wyle/diss/img37.gif">R_n<img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014205632im_/http://www.vhdl.org/~wyle/diss/img38.gif"><br> <hr><a name="tex2html1245" href="https://web.archive.org/web/19971014205632/http://www.vhdl.org/~wyle/diss/node15.html"><img align="BOTTOM" alt="next" src="https://web.archive.org/web/19971014205632im_/http://vhdl.org/~wyle/diss/images/next_motif.gif"></a>   <a name="tex2html1243" href="https://web.archive.org/web/19971014205632/http://www.vhdl.org/~wyle/diss/node13.html"><img align="BOTTOM" alt="up" src="https://web.archive.org/web/19971014205632im_/http://vhdl.org/~wyle/diss/images/up_motif.gif"></a>   <a name="tex2html1237" href="https://web.archive.org/web/19971014205632/http://www.vhdl.org/~wyle/diss/node13.html"><img align="BOTTOM" alt="previous" src="https://web.archive.org/web/19971014205632im_/http://vhdl.org/~wyle/diss/images/previous_motif.gif"></a>   <a name="tex2html1247" href="https://web.archive.org/web/19971014205632/http://www.vhdl.org/~wyle/diss/node2.html"><img align="BOTTOM" alt="contents" src="https://web.archive.org/web/19971014205632im_/http://vhdl.org/~wyle/diss/images/contents_motif.gif"></a>   <a name="tex2html1248" href="https://web.archive.org/web/19971014205632/http://www.vhdl.org/~wyle/diss/node57.html"><img align="BOTTOM" alt="index" src="https://web.archive.org/web/19971014205632im_/http://vhdl.org/~wyle/diss/images/index_motif.gif"></a>   <br>
+<b> Next:</b> <a name="tex2html1246" href="https://web.archive.org/web/19971014205632/http://www.vhdl.org/~wyle/diss/node15.html"> Retrieval Methods</a>
+<b>Up:</b> <a name="tex2html1244" href="https://web.archive.org/web/19971014205632/http://www.vhdl.org/~wyle/diss/node13.html"> Dissemination and Retrieval</a>
+<b> Previous:</b> <a name="tex2html1238" href="https://web.archive.org/web/19971014205632/http://www.vhdl.org/~wyle/diss/node13.html"> Dissemination and Retrieval</a>
+<br> <hr> <p>
+<br> <hr>
+<p><address>
+<i>Mitchell F. Wyle <br>
+Wed Jan  3 13:22:21 EST 1996</i>
+</address>
+</body>
+<!--
+     FILE ARCHIVED ON 20:56:32 Oct 14, 1997 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 17:10:48 Aug 04, 2022.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 99.452
+  exclusion.robots: 0.091
+  exclusion.robots.policy: 0.081
+  RedisCDXSource: 5.403
+  esindex: 0.01
+  LoadShardBlock: 75.089 (3)
+  PetaboxLoader3.datanode: 97.329 (4)
+  CDXLines.iter: 16.028 (3)
+  load_resource: 125.784
+  PetaboxLoader3.resolve: 97.868
+-->

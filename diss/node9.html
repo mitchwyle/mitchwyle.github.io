@@ -1,0 +1,284 @@
+<!DOCTYPE HTML PUBLIC "-//W3O//DTD W3 HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 95 (Thu Jan 19 1995) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<head><script src="https://archive.org/includes/analytics.js?v=cf34f82" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app201.us.archive.org';v.server_ms=146;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="https://web.archive.org/_static/js/bundle-playback.js?v=KTqwAcYd" charset="utf-8"></script>
+<script type="text/javascript" src="https://web.archive.org/_static/js/wombat.js?v=UHAOicsW" charset="utf-8"></script>
+<script type="text/javascript">
+  __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.vhdl.org:80/~wyle/diss/node9.html","19971014205329","https://web.archive.org/","web","/_static/",
+	      "876862409");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web.archive.org/_static/css/banner-styles.css?v=fantwOh2" />
+<link rel="stylesheet" type="text/css" href="https://web.archive.org/_static/css/iconochive.css?v=qtvMKcIJ" />
+<!-- End Wayback Rewrite JS Include -->
+
+<title> Agents in the Matrix</title>
+</head>
+<body>
+<meta name="description" value=" Agents in the Matrix">
+<meta name="keywords" value="diss">
+<meta name="resource-type" value="document">
+<meta name="distribution" value="global">
+<p>
+ <br> <hr><a name="tex2html1183" href="https://web.archive.org/web/19971014205329/http://www.vhdl.org/~wyle/diss/node10.html"><img align="BOTTOM" alt="next" src="https://web.archive.org/web/19971014205329im_/http://vhdl.org/~wyle/diss/images/next_motif.gif"></a>   <a name="tex2html1181" href="https://web.archive.org/web/19971014205329/http://www.vhdl.org/~wyle/diss/node6.html"><img align="BOTTOM" alt="up" src="https://web.archive.org/web/19971014205329im_/http://vhdl.org/~wyle/diss/images/up_motif.gif"></a>   <a name="tex2html1175" href="https://web.archive.org/web/19971014205329/http://www.vhdl.org/~wyle/diss/node8.html"><img align="BOTTOM" alt="previous" src="https://web.archive.org/web/19971014205329im_/http://vhdl.org/~wyle/diss/images/previous_motif.gif"></a>   <a name="tex2html1185" href="https://web.archive.org/web/19971014205329/http://www.vhdl.org/~wyle/diss/node2.html"><img align="BOTTOM" alt="contents" src="https://web.archive.org/web/19971014205329im_/http://vhdl.org/~wyle/diss/images/contents_motif.gif"></a>   <a name="tex2html1186" href="https://web.archive.org/web/19971014205329/http://www.vhdl.org/~wyle/diss/node57.html"><img align="BOTTOM" alt="index" src="https://web.archive.org/web/19971014205329im_/http://vhdl.org/~wyle/diss/images/index_motif.gif"></a>   <br>
+<b> Next:</b> <a name="tex2html1184" href="https://web.archive.org/web/19971014205329/http://www.vhdl.org/~wyle/diss/node10.html"> Information RetrievalHomeosemy, </a>
+<b>Up:</b> <a name="tex2html1182" href="https://web.archive.org/web/19971014205329/http://www.vhdl.org/~wyle/diss/node6.html"> Introduction</a>
+<b> Previous:</b> <a name="tex2html1176" href="https://web.archive.org/web/19971014205329/http://www.vhdl.org/~wyle/diss/node8.html"> Thesis Outline</a>
+<br> <hr> <p>
+<h1><a name="SECTION00630000000000000000"> Agents in the Matrix</a></h1>
+<a name="secaim">&#160;</a>
+<a name="148">&#160;</a>
+<blockquote> <em>Knowledge is of two kinds; we know a subject ourselves, or we know where
+we can find information upon it.  -- <b> S. Johnson</b>, <em> Letter to Lord
+Chesterfield</em>, February, 1755.
+
+<p>
+</blockquote>
+<p>
+Advances in computer hardware and telecommunications technology have
+spawned an exponential growth of the <em> Matrix</em> [<a href="https://web.archive.org/web/19971014205329/http://www.vhdl.org/~wyle/diss/node40.html#Quar90">Quar90</a>], a
+worldwide meta-network<a name="156">&#160;</a> of 
+connected computer networks<a name="157">&#160;</a> and 
+conferencing<a name="158">&#160;</a><a name="159">&#160;</a>
+systems; the Matrix provides unique services that are similar to but more
+powerful than those of the telephone<a name="160">&#160;</a>, 
+post office, library or telefax<a name="161">&#160;</a>.
+The Matrix consists of WANs; each WAN<a name="162">&#160;</a> 
+links thousands (or hundreds of
+thousands) of computers together and provides a distributed
+computer-mediated communications<a name="163">&#160;</a> 
+system to millions of users.
+Information is delivered quickly over large geographical distances;
+information sources for IR are no longer limited to a single machine, a
+local area network (LAN<a name="164">&#160;</a>), a metropolitan area network 
+(MAN<a name="165">&#160;</a>), or even a single wide-area network (WAN).
+<p>
+Communities<a name="166">&#160;</a> of 
+individuals congeal around particular WANs and topics of
+discussion supported by the Matrix.  Preexisting communities use this medium
+to further their goals.  New applications<a name="167">&#160;</a> 
+of the Matrix
+include tasks that could ordinarily not be completed in time to be useful
+without computer networks.  These tasks<a name="168">&#160;</a> include:
+<p>
+<ul><li> The coordination<a name="170">&#160;</a> 
+  of large software projects with many programmers or
+  individuals separated by large geographical distances
+  <li> Data transfer<a name="171">&#160;</a><a name="172">&#160;</a> 
+  for coordination of astronomical<a name="173">&#160;</a> 
+  observations
+  <li> Medical data<a name="174">&#160;</a> transfer<a name="175">&#160;</a>
+  <li> News<a name="176">&#160;</a> of political<a name="177">&#160;</a> situations
+  <li> The production<a name="178">&#160;</a><a name="179">&#160;</a>
+  of scholarly reports<a name="180">&#160;</a> and 
+  books<a name="181">&#160;</a>
+  <li> Scientific collaboration<a name="182">&#160;</a> 
+  in Biology<a name="183">&#160;</a>, Chemistry<a name="184">&#160;</a>, 
+  Physics<a name="185">&#160;</a>
+</ul>
+<p>
+As the Matrix expands, each of these application areas requires better
+methods to access<a name="187">&#160;</a> and filter the
+information<a name="188">&#160;</a> flood.  The ultimate application
+of this thesis is to provide a foundation<a name="189">&#160;</a> 
+for developing and using such methods.
+<p>
+Alan Kay<a name="190">&#160;</a> has informally <a name="191">&#160;</a>
+proposed ``semi-intelligent software programs
+that you can delegate your goals to <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205329im_/http://www.vhdl.org/~wyle/diss/img9.gif"> that will act like your
+personal news reporters, whose jobs will be to scour the networks that
+you are connected to and find things that are relevant to the goals you
+are pursuing right now. <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205329im_/http://www.vhdl.org/~wyle/diss/img10.gif"> their job is not just to find
+anecdotes but also tools and other kinds of things that are related to
+what you are doing'' [<a href="https://web.archive.org/web/19971014205329/http://www.vhdl.org/~wyle/diss/node40.html#Kay91">Kay91</a>].  Related ideas are now appearing in
+diverse areas of computer science literature (for a survey, see
+[<a href="https://web.archive.org/web/19971014205329/http://www.vhdl.org/~wyle/diss/node40.html#Seel91">Seel91</a>]).  SDI software systems could be considered a kind of
+agent, but most existing SDI systems have a human 
+intermediary<a name="194">&#160;</a> or
+organization involved in their use.  Furthermore, these systems do not
+help their subscribers with the discovery<a name="195">&#160;</a> 
+of other information<a name="196">&#160;</a>
+resources.  Commercial<a name="197">&#160;</a> SDI services obviously 
+do not want to encourage
+their subscribers to use competing services, and public systems (for
+example in libraries) are not designed to assist resource discovery
+[<a href="https://web.archive.org/web/19971014205329/http://www.vhdl.org/~wyle/diss/node40.html#Maur74">Maur74</a>].  Another class of software systems which may loosely be
+considered ``agents'' are systems which store and execute a list of
+commands on behalf of the user at specified times.  Such systems exist
+in most computing environments, and are typically used in conjunction
+with non-interactive software<a name="199">&#160;</a>.  
+Employing such systems in conjunction
+with a sophisticated ``user-emulation<a name="200">&#160;</a>'' or 
+scripting<a name="201">&#160;</a> system<a name="202">&#160;</a> would
+approximate Kay's concept more closely.  One can conclude that agents,
+in general, are still in a developmental stage; it is probable that
+they will become more prominent in the future<a name="203">&#160;</a>.
+<p>
+We shall now review the major software designs for retrieving
+information from the Matrix.  The most notable WAN-based
+information<a name="204">&#160;</a> server models include the
+WAIS<a name="205">&#160;</a> project, [<a href="https://web.archive.org/web/19971014205329/http://www.vhdl.org/~wyle/diss/node40.html#Kahl91">Kahl91</a>], the internet
+gopher<a name="207">&#160;</a><a name="208">&#160;</a>[<a href="https://web.archive.org/web/19971014205329/http://www.vhdl.org/~wyle/diss/node40.html#Albe91">Albe91</a>], the
+information lens<a name="210">&#160;</a><a name="211">&#160;</a>
+[<a href="https://web.archive.org/web/19971014205329/http://www.vhdl.org/~wyle/diss/node40.html#Malo87">Malo87</a>], the distributed<a name="213">&#160;</a> indexing model
+[<a href="https://web.archive.org/web/19971014205329/http://www.vhdl.org/~wyle/diss/node40.html#Danz91">Danz91</a>], Xanadu<a name="215">&#160;</a> [<a href="https://web.archive.org/web/19971014205329/http://www.vhdl.org/~wyle/diss/node40.html#Nels88">Nels88</a>], 
+and the polychannel<a name="217">&#160;</a> system<a name="218">&#160;</a>
+[<a href="https://web.archive.org/web/19971014205329/http://www.vhdl.org/~wyle/diss/node40.html#Giff90">Giff90</a>].
+<p>
+WAIS is an IR system developed by Thinking<a name="220">&#160;</a>
+Machines Inc. for searching inverted<a name="221">&#160;</a> file text
+databases available over a WAN.  It is based on a two-tiered
+search<a name="222">&#160;</a> strategy whereby a user first queries a
+directory<a name="223">&#160;</a> of database servers for choosing
+appropriate source<a name="224">&#160;</a> databases, and then queries
+the databases<a name="225">&#160;</a> themselves for messages.  The directory
+of servers can be a WAN-distributed database [<a href="https://web.archive.org/web/19971014205329/http://www.vhdl.org/~wyle/diss/node40.html#Ever90">Ever90</a>].  In the
+baseline WAIS implementation, the directory of servers is centrally
+located at one node on in the Matrix.  However, the domain-name server
+(DNS) [<a href="https://web.archive.org/web/19971014205329/http://www.vhdl.org/~wyle/diss/node40.html#Ever90">Ever90</a>] distributed database system has been grafted into
+WAIS to solve the <a name="228">&#160;</a>
+single-point-of-failure and access<a name="229">&#160;</a> problems of a
+central<a name="230">&#160;</a> directory.  The network
+protocol<a name="231">&#160;</a>, user-interface, and retrieval
+algorithm in WAIS can use
+relevance<a name="232">&#160;</a><a name="233">&#160;</a> feedback
+data to incorporate terms from relevant documents into the query.  In
+the WAIS model, the directory of servers does not contain much
+information about the source databases themselves and is not updated
+when source collections change.  This drawback may be a fatal flaw in
+the WAIS architecture [<a href="https://web.archive.org/web/19971014205329/http://www.vhdl.org/~wyle/diss/node40.html#Giff90">Giff90</a>].  The original design concept of
+the system [<a href="https://web.archive.org/web/19971014205329/http://www.vhdl.org/~wyle/diss/node40.html#Kahl89">Kahl89</a>] calls for an SDI component, called ``dynamic
+folders<a name="236">&#160;</a><a name="237">&#160;</a>,'' 
+in which queries would automatically, periodically be
+executed.  In this ``dynamic folders'' proposal, a special file
+directory has an agent associated with it.  The state information of
+the agent is called a ``charter<a name="238">&#160;</a>'' 
+and consists of a Boolean database
+query, a list of asynchronous event types and a time interval for
+re-running the query as well as some user-interface semantics.  No
+viable realization of this concept has emerged from the WAIS project,
+however.
+<p>
+The internet gopher<a name="239">&#160;</a><a name="240">&#160;</a> is similar to
+WAIS, but is based on a much simpler client-server protocol; it
+provides a distributed <em> hierarchy<a name="241">&#160;</a></em> of full-text
+messages from several host machines in the Matrix.  The client part can
+either browse<a name="242">&#160;</a> the directory hierarchy and documents of
+several servers, or issue a Boolean query to a single server.  Such
+queries range over all documents contained in that server.  The goal of
+the gopher project is to present users of a
+<a name="243">&#160;</a>campus-wide
+information<a name="244">&#160;</a> system with a single,
+network-transparent, unified view<a name="245">&#160;</a> of the
+information resources on the campus; the metaphor<a name="246">&#160;</a> is a
+local computer file-system and file searching software.  There is no
+SDI component in the internet gopher.
+<p>
+Malone's information<a name="247">&#160;</a><a name="248">&#160;</a>
+lens is an email user agent<a name="249">&#160;</a> (UA<a name="250">&#160;</a>) with
+filtering and mailing list<a name="251">&#160;</a> capabilities.  Such
+features are quite common in email user agents [<a href="https://web.archive.org/web/19971014205329/http://www.vhdl.org/~wyle/diss/node40.html#Wyl89a">Wyl89a</a>].  A unique
+feature of the information lens is the email alias
+``anyone<a name="253">&#160;</a>'' to which users can send a message which will
+then be readable by all users in an organization.  Users specify
+filtering rules by filling in forms<a name="254">&#160;</a> or
+templates<a name="255">&#160;</a>, which can retrieve messages sent to
+``anyone.'' The email filtering functions include the usual sorting,
+pre-filing, and deletion.  The information lens user-interface
+incorporates a concept similar to our <em> palette of examples</em> (see
+section <a href="https://web.archive.org/web/19971014205329/http://www.vhdl.org/~wyle/diss/node19.html#passive">3.1</a>) user-interface dialog whereby the system
+presents menus<a name="258">&#160;</a> for the construction of
+filtering<a name="259">&#160;</a> rules<a name="260">&#160;</a> which
+help guide users through the creation<a name="261">&#160;</a> of new
+rules.  We take this concept a step further by furnishing complete
+examples instead of a myriad of menu choices.
+<p>
+The distributed<a name="262">&#160;</a><a name="263">&#160;</a>
+indexing model is a vague proposal for a distributed database and
+retrieval system to be used by information providers on the Matrix.  It
+prescribes a complex, hierarchical<a name="264">&#160;</a>,
+cooperating network<a name="265">&#160;</a> protocol instead of the
+now standard client-server paradigm.  The advantage of this model is
+its scalability<a name="266">&#160;</a>; the authors claim it can easily
+handle <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205329im_/http://www.vhdl.org/~wyle/diss/img11.gif"> network nodes.  One major disadvantage of the proposal is
+the assumption that all Matrix resource providers can and will
+cooperate with ``index brokers<a name="267">&#160;</a>'' (the postulated
+intermediate<a name="268">&#160;</a> systems); another drawback is
+the large amount of data redundancy<a name="269">&#160;</a><a name="270">&#160;</a> and replicated storage<a name="271">&#160;</a>
+overhead<a name="272">&#160;</a> it requires to cache<a name="273">&#160;</a> the
+requests and data.  This system also appears to be in an early
+conceptual phase of development, as no implementations have been
+reported.
+<p>
+The Xanadu<a name="274">&#160;</a> project is hypertext inventor 
+Ted<a name="275">&#160;</a> Nelson's ambitious attempt
+to create a system providing the simultaneous connection and access of
+all published text in the world via hypertext<a name="276">&#160;</a> 
+links<a name="277">&#160;</a> which span the
+Matrix.  A new file 
+system<a name="278">&#160;</a> is proposed with 
+network<a name="279">&#160;</a> transparent
+hypertext<a name="280">&#160;</a> 
+links<a name="281">&#160;</a> 
+embedded in its design.  Although a few Xanadu
+booths<a name="282">&#160;</a> have 
+been installed in one U.S. city, the concept has had
+neither commercial success nor widespread academic acceptance.  Other
+network transparent hypermedia systems have been proposed (a broad
+survey can be found in [<a href="https://web.archive.org/web/19971014205329/http://www.vhdl.org/~wyle/diss/node40.html#Micha91">Micha91</a>]; retrieval models for large
+hypermedia webs are described in [<a href="https://web.archive.org/web/19971014205329/http://www.vhdl.org/~wyle/diss/node40.html#Fre91c">Fre91c</a>])<a name="285">&#160;</a>. 
+IR based on hypermedia<a name="286">&#160;</a>
+webs have taken directions outside of Nelson's original doctrine.
+Xanadu includes no SDI provisions and retrieval itself is based solely
+on interactive browsing<a name="287">&#160;</a>.
+<p>
+Gifford's<a name="288">&#160;</a> Polychannel<a name="289">&#160;</a>
+model<a name="290">&#160;</a> is based on both
+broadcast<a name="291">&#160;</a> (simplex<a name="292">&#160;</a>)
+media<a name="293">&#160;</a><a name="294">&#160;</a> such as
+radio<a name="295">&#160;</a> or cable<a name="296">&#160;</a> TV in a metropolitan area
+network<a name="297">&#160;</a> (MAN<a name="298">&#160;</a>) and
+traditional (duplex<a name="299">&#160;</a>) digital communications media in the
+Matrix.  Subscribers receive a constant stream<a name="300">&#160;</a> of
+information<a name="301">&#160;</a> from the simplex medium and
+actively store only information matching a local
+filtering<a name="302">&#160;</a> specification.  Subscribers can
+formulate queries via the duplex communications medium in order to
+retrieve messages which do not match their local
+filters<a name="303">&#160;</a>.  The system is based on simple text matching
+and includes no IR ranking<a name="304">&#160;</a> or similarity measures.
+<p>
+<a name="305">&#160;</a>
+</em><br> <hr><a name="tex2html1183" href="https://web.archive.org/web/19971014205329/http://www.vhdl.org/~wyle/diss/node10.html"><img align="BOTTOM" alt="next" src="https://web.archive.org/web/19971014205329im_/http://vhdl.org/~wyle/diss/images/next_motif.gif"></a>   <a name="tex2html1181" href="https://web.archive.org/web/19971014205329/http://www.vhdl.org/~wyle/diss/node6.html"><img align="BOTTOM" alt="up" src="https://web.archive.org/web/19971014205329im_/http://vhdl.org/~wyle/diss/images/up_motif.gif"></a>   <a name="tex2html1175" href="https://web.archive.org/web/19971014205329/http://www.vhdl.org/~wyle/diss/node8.html"><img align="BOTTOM" alt="previous" src="https://web.archive.org/web/19971014205329im_/http://vhdl.org/~wyle/diss/images/previous_motif.gif"></a>   <a name="tex2html1185" href="https://web.archive.org/web/19971014205329/http://www.vhdl.org/~wyle/diss/node2.html"><img align="BOTTOM" alt="contents" src="https://web.archive.org/web/19971014205329im_/http://vhdl.org/~wyle/diss/images/contents_motif.gif"></a>   <a name="tex2html1186" href="https://web.archive.org/web/19971014205329/http://www.vhdl.org/~wyle/diss/node57.html"><img align="BOTTOM" alt="index" src="https://web.archive.org/web/19971014205329im_/http://vhdl.org/~wyle/diss/images/index_motif.gif"></a>   <br>
+<b> Next:</b> <a name="tex2html1184" href="https://web.archive.org/web/19971014205329/http://www.vhdl.org/~wyle/diss/node10.html"> Information RetrievalHomeosemy, </a>
+<b>Up:</b> <a name="tex2html1182" href="https://web.archive.org/web/19971014205329/http://www.vhdl.org/~wyle/diss/node6.html"> Introduction</a>
+<b> Previous:</b> <a name="tex2html1176" href="https://web.archive.org/web/19971014205329/http://www.vhdl.org/~wyle/diss/node8.html"> Thesis Outline</a>
+<br> <hr> <p>
+<br> <hr>
+<p><address>
+<i>Mitchell F. Wyle <br>
+Wed Jan  3 13:22:21 EST 1996</i>
+</address>
+</body>
+<!--
+     FILE ARCHIVED ON 20:53:29 Oct 14, 1997 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 17:10:31 Aug 04, 2022.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 72.118
+  exclusion.robots: 0.117
+  exclusion.robots.policy: 0.108
+  cdx.remote: 0.08
+  esindex: 0.011
+  LoadShardBlock: 46.863 (3)
+  PetaboxLoader3.datanode: 65.065 (4)
+  CDXLines.iter: 15.213 (3)
+  load_resource: 66.756
+  PetaboxLoader3.resolve: 45.501
+-->

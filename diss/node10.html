@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3O//DTD W3 HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 95 (Thu Jan 19 1995) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<head><script src="https://archive.org/includes/analytics.js?v=cf34f82" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app204.us.archive.org';v.server_ms=194;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="https://web.archive.org/_static/js/bundle-playback.js?v=KTqwAcYd" charset="utf-8"></script>
+<script type="text/javascript" src="https://web.archive.org/_static/js/wombat.js?v=UHAOicsW" charset="utf-8"></script>
+<script type="text/javascript">
+  __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.vhdl.org:80/~wyle/diss/node10.html","19971014205406","https://web.archive.org/","web","/_static/",
+	      "876862446");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web.archive.org/_static/css/banner-styles.css?v=fantwOh2" />
+<link rel="stylesheet" type="text/css" href="https://web.archive.org/_static/css/iconochive.css?v=qtvMKcIJ" />
+<!-- End Wayback Rewrite JS Include -->
+
+<title> Information Retrieval, Homeosemy, Natural Language</title>
+</head>
+<body>
+<meta name="description" value=" Information Retrieval, Homeosemy, Natural Language">
+<meta name="keywords" value="diss">
+<meta name="resource-type" value="document">
+<meta name="distribution" value="global">
+<p>
+ <br> <hr><a name="tex2html1195" href="https://web.archive.org/web/19971014205406/http://www.vhdl.org/~wyle/diss/node11.html"><img align="BOTTOM" alt="next" src="https://web.archive.org/web/19971014205406im_/http://vhdl.org/~wyle/diss/images/next_motif.gif"></a>   <a name="tex2html1193" href="https://web.archive.org/web/19971014205406/http://www.vhdl.org/~wyle/diss/node6.html"><img align="BOTTOM" alt="up" src="https://web.archive.org/web/19971014205406im_/http://vhdl.org/~wyle/diss/images/up_motif.gif"></a>   <a name="tex2html1187" href="https://web.archive.org/web/19971014205406/http://www.vhdl.org/~wyle/diss/node9.html"><img align="BOTTOM" alt="previous" src="https://web.archive.org/web/19971014205406im_/http://vhdl.org/~wyle/diss/images/previous_motif.gif"></a>   <a name="tex2html1197" href="https://web.archive.org/web/19971014205406/http://www.vhdl.org/~wyle/diss/node2.html"><img align="BOTTOM" alt="contents" src="https://web.archive.org/web/19971014205406im_/http://vhdl.org/~wyle/diss/images/contents_motif.gif"></a>   <a name="tex2html1198" href="https://web.archive.org/web/19971014205406/http://www.vhdl.org/~wyle/diss/node57.html"><img align="BOTTOM" alt="index" src="https://web.archive.org/web/19971014205406im_/http://vhdl.org/~wyle/diss/images/index_motif.gif"></a>   <br>
+<b> Next:</b> <a name="tex2html1196" href="https://web.archive.org/web/19971014205406/http://www.vhdl.org/~wyle/diss/node11.html"> PreferenceRelevance, and </a>
+<b>Up:</b> <a name="tex2html1194" href="https://web.archive.org/web/19971014205406/http://www.vhdl.org/~wyle/diss/node6.html"> Introduction</a>
+<b> Previous:</b> <a name="tex2html1188" href="https://web.archive.org/web/19971014205406/http://www.vhdl.org/~wyle/diss/node9.html"> Agents in the </a>
+<br> <hr> <p>
+<h1><a name="SECTION00640000000000000000"> Information Retrieval, Homeosemy, Natural Language</a></h1>
+<a name="ir">&#160;</a>
+<a name="308">&#160;</a>
+<a name="309">&#160;</a>
+<a name="310">&#160;</a>
+<a name="311">&#160;</a>
+<a name="312">&#160;</a>
+<a name="313">&#160;</a>
+<blockquote> <em> By eliminating time and space as barriers, the very
+achievements that put us within reach of a truly global economy are
+burying us in irrelevant and useless data, in mountains of low-quality
+ore that must be laboriously refined for relevant information, the
+signal hidden in the noise.  The critical resource for turning this raw
+data into useful information is computer software, as strategic a
+resource in the information age as petroleum is today. -- B. Cox, <em>
+There Is a Silver Bullet</em>, <b> Byte</b>, October 1990, p. 209.
+</blockquote>
+<p>
+We cannot give a comprehensive overview of IR<a name="318">&#160;</a> in this thesis;
+the reader is instead referred to some standard texts [<a href="https://web.archive.org/web/19971014205406/http://www.vhdl.org/~wyle/diss/node40.html#Salt83">Salt83</a>]
+<a name="320">&#160;</a> and [<a href="https://web.archive.org/web/19971014205406/http://www.vhdl.org/~wyle/diss/node40.html#Rijs79">Rijs79</a>] <a name="322">&#160;</a> as well
+as a newer and more formal dense tutorial of IR concepts
+[<a href="https://web.archive.org/web/19971014205406/http://www.vhdl.org/~wyle/diss/node40.html#Scha92">Scha92</a>]<a name="324">&#160;</a>.
+<p>
+Information retrieval<a name="325">&#160;</a><a name="326">&#160;</a> systems<a name="327">&#160;</a> exist to
+satisfy the information<a name="328">&#160;</a> needs of their users.
+Although some newer browsing<a name="329">&#160;</a> methods [<a href="https://web.archive.org/web/19971014205406/http://www.vhdl.org/~wyle/diss/node40.html#Lesk91">Lesk91</a>]
+allow for searching without a query, traditional IR always assumes that
+the information need of the user is modeled as a query<a name="331">&#160;</a>
+text.  The well-known distinction between
+user-relevance<a name="332">&#160;</a> and
+<a name="333">&#160;</a>query-relevance, i.e.  the difference between
+how well a document satisfies the information need of the user versus
+how well it matches a query, is one of the fundamental concerns both in
+formulating definitions of relevance<a name="334">&#160;</a> and
+also in new proposals for measuring retrieval
+performance<a name="335">&#160;</a> (see section 2.4).  The
+important distinction between queries in standard<a name="336">&#160;</a> 
+test<a name="337">&#160;</a> collections whose supposed
+absolute<a name="338">&#160;</a>, universal<a name="339">&#160;</a> <a name="340">&#160;</a><a name="341">&#160;</a>
+relevance is determined by a <em> committee</em>, and queries whose
+relevance is expressed by an <em> individual</em> is discussed only
+informally, even in some modern studies of relevance [<a href="https://web.archive.org/web/19971014205406/http://www.vhdl.org/~wyle/diss/node40.html#Lose91">Lose91</a>].
+Additionally, the obvious
+time-dependence<a name="345">&#160;</a><a name="346">&#160;</a>
+of an individual's information need, though mentioned occasionally
+[<a href="https://web.archive.org/web/19971014205406/http://www.vhdl.org/~wyle/diss/node40.html#Swan88">Swan88</a>], [<a href="https://web.archive.org/web/19971014205406/http://www.vhdl.org/~wyle/diss/node40.html#Clev91">Clev91</a>], has never been modeled or directly taken
+into account.  In an interactive system, it is plausible that two
+individual documents which are quite low on a user's ranked preference
+list, suddenly shoot up the list when retrieved and viewed together.
+Preferences among a retrieval set of documents can therefore change
+suddenly during a single interactive session; individual, absolute
+relevance assessments are therefore an inadequate model for
+user<a name="349">&#160;</a><a name="350">&#160;</a><a name="351">&#160;</a><a name="352">&#160;</a>
+relevance judgements.  User-preferences are probably better.  In a
+subscription service, changes in relevance over longer time intervals
+are the result of many factors, not just the effects of viewing
+documents from the service.
+<p>
+The field of IR has boiled down to the mechanics of finding messages
+that are most <em> similar<a name="353">&#160;</a></em> to a query text.  The
+similarity<a name="354">&#160;</a> in meaning<a name="355">&#160;</a> of two texts is
+sometimes called <em> homeosemy<a name="356">&#160;</a></em> [<a href="https://web.archive.org/web/19971014205406/http://www.vhdl.org/~wyle/diss/node40.html#Karl77">Karl77</a>].  This
+similarity is important not only for retrieving documents relevant to a
+query, but also for clustering<a name="358">&#160;</a> similar documents
+together for storage and also for building
+information<a name="359">&#160;</a> structures to
+categorize<a name="360">&#160;</a> the messages.  These structures can often
+assist in the browsing and retrieval processes of large 
+collections<a name="361">&#160;</a>
+[<a href="https://web.archive.org/web/19971014205406/http://www.vhdl.org/~wyle/diss/node40.html#Salt91">Salt91</a>].
+<p>
+In the next chapter we shall offer different and, we hope, slightly
+better alternatives to some common IR assumptions; but let us first
+consider the normal IR paradigms<a name="363">&#160;</a> and the body of
+knowledge gleaned through the last four decades of scientific
+investigations into text<a name="364">&#160;</a> analysis and
+retrieval<a name="365">&#160;</a>.  Perhaps the most important common
+result from the large number of text retrieval studies through the
+years is that a detailed and complex semantic<a name="366">&#160;</a>
+analysis of all messages in a collection is often not practical,
+necessary, or even effective in approximating homeosemy for the purpose
+of deriving good retrieval performance results.  Instead, the best
+results for very large collections are obtained by systems which rely
+upon the statistics<a name="367">&#160;</a> of term
+occurrences<a name="368">&#160;</a> <a name="369">&#160;</a> in texts to
+approximate similarities.  This statistical approximation of homeosemy
+is not only computationally very practical, but also yields
+surprisingly good retrieval performance when compared to many methods
+of manual indexing<a name="370">&#160;</a>.  We therefore build upon
+these practical and effective methods, instead of proposing yet another
+radical new model for IR.
+<p>
+In addition to <em> relevance<a name="371">&#160;</a> feedback</em> and
+other traditional methods<a name="372">&#160;</a> of
+improving<a name="373">&#160;</a> a query text, we shall also explore
+aspects of a user's information<a name="374">&#160;</a> need that are
+not encoded in a query text.  These aspects include time-dependence,
+new resource discovery<a name="375">&#160;</a><a name="376">&#160;</a>, 
+retrieval set size, and very specific sets of
+messages to be included or eliminated from a retrieval set, independent
+of the ranking of the messages.  This exploration takes us into a
+further discussion of new definitions of 
+relevance<a name="377">&#160;</a> and effectiveness,
+as well as an analysis and clarification of communication and
+``information need.''<a name="378">&#160;</a><a name="379">&#160;</a>
+<p>
+There is some indication that methods for <a name="380">&#160;</a>
+natural language processing<a name="381">&#160;</a>
+have finally matured to the point that they can be used effectively for
+retrieval and filtering [<a href="https://web.archive.org/web/19971014205406/http://www.vhdl.org/~wyle/diss/node40.html#Ande92">Ande92</a>], [<a href="https://web.archive.org/web/19971014205406/http://www.vhdl.org/~wyle/diss/node40.html#Hays91">Hays91</a>], [<a href="https://web.archive.org/web/19971014205406/http://www.vhdl.org/~wyle/diss/node40.html#Rau91">Rau91</a>],
+[<a href="https://web.archive.org/web/19971014205406/http://www.vhdl.org/~wyle/diss/node40.html#Jaco92">Jaco92</a>], [<a href="https://web.archive.org/web/19971014205406/http://www.vhdl.org/~wyle/diss/node40.html#Jac92a">Jac92a</a>].  However, other recent studies still
+point out the extreme rigidity and major shortcomings inherent in these
+models [<a href="https://web.archive.org/web/19971014205406/http://www.vhdl.org/~wyle/diss/node40.html#Maul91">Maul91</a>], [<a href="https://web.archive.org/web/19971014205406/http://www.vhdl.org/~wyle/diss/node40.html#Salt91">Salt91</a>].  Although our methods do
+incorporate some simple semantic<a name="389">&#160;</a>
+components such as stop-lists, word
+reduction, and phrases, we do not pursue advanced natural language
+parsing<a name="390">&#160;</a> (NLP) methods in this work.
+<p>
+<a name="391">&#160;</a>
+</em><br> <hr><a name="tex2html1195" href="https://web.archive.org/web/19971014205406/http://www.vhdl.org/~wyle/diss/node11.html"><img align="BOTTOM" alt="next" src="https://web.archive.org/web/19971014205406im_/http://vhdl.org/~wyle/diss/images/next_motif.gif"></a>   <a name="tex2html1193" href="https://web.archive.org/web/19971014205406/http://www.vhdl.org/~wyle/diss/node6.html"><img align="BOTTOM" alt="up" src="https://web.archive.org/web/19971014205406im_/http://vhdl.org/~wyle/diss/images/up_motif.gif"></a>   <a name="tex2html1187" href="https://web.archive.org/web/19971014205406/http://www.vhdl.org/~wyle/diss/node9.html"><img align="BOTTOM" alt="previous" src="https://web.archive.org/web/19971014205406im_/http://vhdl.org/~wyle/diss/images/previous_motif.gif"></a>   <a name="tex2html1197" href="https://web.archive.org/web/19971014205406/http://www.vhdl.org/~wyle/diss/node2.html"><img align="BOTTOM" alt="contents" src="https://web.archive.org/web/19971014205406im_/http://vhdl.org/~wyle/diss/images/contents_motif.gif"></a>   <a name="tex2html1198" href="https://web.archive.org/web/19971014205406/http://www.vhdl.org/~wyle/diss/node57.html"><img align="BOTTOM" alt="index" src="https://web.archive.org/web/19971014205406im_/http://vhdl.org/~wyle/diss/images/index_motif.gif"></a>   <br>
+<b> Next:</b> <a name="tex2html1196" href="https://web.archive.org/web/19971014205406/http://www.vhdl.org/~wyle/diss/node11.html"> PreferenceRelevance, and </a>
+<b>Up:</b> <a name="tex2html1194" href="https://web.archive.org/web/19971014205406/http://www.vhdl.org/~wyle/diss/node6.html"> Introduction</a>
+<b> Previous:</b> <a name="tex2html1188" href="https://web.archive.org/web/19971014205406/http://www.vhdl.org/~wyle/diss/node9.html"> Agents in the </a>
+<br> <hr> <p>
+<br> <hr>
+<p><address>
+<i>Mitchell F. Wyle <br>
+Wed Jan  3 13:22:21 EST 1996</i>
+</address>
+</body>
+<!--
+     FILE ARCHIVED ON 20:54:06 Oct 14, 1997 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 17:10:34 Aug 04, 2022.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 102.633
+  exclusion.robots: 0.093
+  exclusion.robots.policy: 0.086
+  cdx.remote: 0.066
+  esindex: 0.009
+  LoadShardBlock: 74.966 (3)
+  PetaboxLoader3.datanode: 81.908 (4)
+  CDXLines.iter: 14.827 (3)
+  load_resource: 86.078
+  PetaboxLoader3.resolve: 66.324
+-->

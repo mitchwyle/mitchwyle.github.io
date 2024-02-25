@@ -1,0 +1,220 @@
+<!DOCTYPE HTML PUBLIC "-//W3O//DTD W3 HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 95 (Thu Jan 19 1995) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<head><script src="https://archive.org/includes/analytics.js?v=cf34f82" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app225.us.archive.org';v.server_ms=153;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="https://web.archive.org/_static/js/bundle-playback.js?v=KTqwAcYd" charset="utf-8"></script>
+<script type="text/javascript" src="https://web.archive.org/_static/js/wombat.js?v=UHAOicsW" charset="utf-8"></script>
+<script type="text/javascript">
+  __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.vhdl.org:80/~wyle/diss/node26.html","19971014210351","https://web.archive.org/","web","/_static/",
+	      "876863031");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web.archive.org/_static/css/banner-styles.css?v=fantwOh2" />
+<link rel="stylesheet" type="text/css" href="https://web.archive.org/_static/css/iconochive.css?v=qtvMKcIJ" />
+<!-- End Wayback Rewrite JS Include -->
+
+<title> User Profiles in Pasadena</title>
+</head>
+<body>
+<meta name="description" value=" User Profiles in Pasadena">
+<meta name="keywords" value="diss">
+<meta name="resource-type" value="document">
+<meta name="distribution" value="global">
+<p>
+ <br> <hr><a name="tex2html1400" href="https://web.archive.org/web/19971014210351/http://www.vhdl.org/~wyle/diss/node27.html"><img align="BOTTOM" alt="next" src="https://web.archive.org/web/19971014210351im_/http://vhdl.org/~wyle/diss/images/next_motif.gif"></a>   <a name="tex2html1398" href="https://web.archive.org/web/19971014210351/http://www.vhdl.org/~wyle/diss/node23.html"><img align="BOTTOM" alt="up" src="https://web.archive.org/web/19971014210351im_/http://vhdl.org/~wyle/diss/images/up_motif.gif"></a>   <a name="tex2html1392" href="https://web.archive.org/web/19971014210351/http://www.vhdl.org/~wyle/diss/node25.html"><img align="BOTTOM" alt="previous" src="https://web.archive.org/web/19971014210351im_/http://vhdl.org/~wyle/diss/images/previous_motif.gif"></a>   <a name="tex2html1402" href="https://web.archive.org/web/19971014210351/http://www.vhdl.org/~wyle/diss/node2.html"><img align="BOTTOM" alt="contents" src="https://web.archive.org/web/19971014210351im_/http://vhdl.org/~wyle/diss/images/contents_motif.gif"></a>   <a name="tex2html1403" href="https://web.archive.org/web/19971014210351/http://www.vhdl.org/~wyle/diss/node57.html"><img align="BOTTOM" alt="index" src="https://web.archive.org/web/19971014210351im_/http://vhdl.org/~wyle/diss/images/index_motif.gif"></a>   <br>
+<b> Next:</b> <a name="tex2html1401" href="https://web.archive.org/web/19971014210351/http://www.vhdl.org/~wyle/diss/node27.html"> Implementation</a>
+<b>Up:</b> <a name="tex2html1399" href="https://web.archive.org/web/19971014210351/http://www.vhdl.org/~wyle/diss/node23.html"> Pasadena: a WAN </a>
+<b> Previous:</b> <a name="tex2html1393" href="https://web.archive.org/web/19971014210351/http://www.vhdl.org/~wyle/diss/node25.html"> Selective Information Extraction</a>
+<br> <hr> <p>
+<h1><a name="SECTION00930000000000000000"> User Profiles in Pasadena</a></h1>
+<p>
+<a name="6727">&#160;</a>
+<a name="6728">&#160;</a>
+<a name="6729">&#160;</a>
+<p>
+As indicated above, a user of the Matrix subscribes to the Pasadena
+system through a four-step process.  A subscriber profile is created in the
+database when a Matrix user issues a valid registration command.  The
+main subscriber profile entry is created void of queries, and with only
+those global default parameters are set which are required in the
+registration message.  At this point in the profile's life cycle, no
+actions are taken by the Pasadena system because no queries exist for
+the profile.  When a subscriber creates at least one query in his
+profile, the system begins searching for, processing, and sending
+messages (along with feedback forms).  The design of many features
+in the Pasadena system such as the ``prod'' interval (reminder
+variable) is to allow for frequent changes in each query, so that
+performance is enhanced and interest drift is tracked.  Sending
+commands via electronic mail is usually not as ``comfortable'' as using an
+interactive system.  For this reason an interactive profile editor was
+developed (see below).  The <em> active</em> stage of a subscriber's
+profile life cycle involves the creation, deletion and frequent update
+of queries and their associated parameters.  It is also the intention
+of the Pasadena system that as subscribers become more advanced, more,
+different, high-performance commands will be used.  If for any reason a
+subscriber wishes to discontinue using the service, the subscriber can
+issue a ``sign-off'' command.  All profile data as well as query
+indexes and other auxiliary data are then deleted from the Pasadena
+system.
+<p>
+Pasadena maintains an exhaustive list of email addresses of every 
+entity that has ever contacted the system.  Some of these addresses are
+moved to a list of addresses known to cause endless mailer loops, and
+others become active subscribers.  The system also has the capability of
+storing all in-coming and out-going email messages for auditing.  
+This feature
+can be used to verify results of experiments run by the system.
+<p>
+The Pasadena system maintains user profile data as a collection of
+small, relational databases.  Each registered subscriber has a global
+profile containing a sequence of name - value pair parameters.
+These global parameters are:
+<ul><li> the subscriber's email address,
+<li> the subscriber's name,
+<li> the subscriber's telephone number,
+<li> the subscriber's profession,
+<li> the default number of messages the subscriber wishes to receive 
+      after each query interval for each query, and
+<li> the default number of virtual<a name="tex2html916" href="https://web.archive.org/web/19971014210351/http://www.vhdl.org/~wyle/diss/footnode.html#6732"><img align="BOTTOM" alt="gif" src="https://web.archive.org/web/19971014210351im_/http://vhdl.org/~wyle/diss/images/foot_motif.gif"></a>
+	days the system should wait before 
+      sending this subscriber a new set of messages.
+</ul>
+<p>
+Each <em> query</em> in a subscriber's profile has a name and several
+optional parameters:
+<p>
+The specific <b> query interval</b> specifies how many virtual days the
+system should wait after sending a retrieved set of messages before
+re-running the query.  A global
+system parameter determines its range which in the current
+implementation is between one and ten.  This parameter has a subtle but
+important effect on the retrieval performance of a query.  The longer
+the interval, the larger the dynamic message collection used for
+retrieval.  If many new items arrive at the server every day, then making
+the interval too long would lower performance because certain preferable
+items would arrive too late to be ranked higher than other information.  If
+very few new, preferable items arrive at the server every day, an
+interval that is too short will retrieve many items that the subscriber
+would prefer not to see for each relevant message; retrieval
+performance would therefore suffer.  This interval defaults to the value
+in the global part of the subscriber's profile.
+<p>
+The <b> retrieval set size</b> determines the total number of items that
+should be sent to the subscriber from the vector space ranking
+algorithms.   It does not have any effect on the number of items that
+are sent as a result of a match by the include filter.  The range of
+this parameter is also determined in the global system parameter file;
+currently it ranges between two and thirty-two.  Obviously,
+precision-oriented subscribers will choose a small retrieval set size,
+and recall-oriented subscriber will choose a larger number.  This
+parameter affects other aspects of the system, however.  The larger the
+number, the more fields will appear on the feedback forms.  If
+the forms have the subscriber rank only the relative usefulness of the
+retrieved items among the retrieved set (as is the case in the current
+implementation), then when there is a large number of messages, the
+subscriber will be tasked with assigning many ranks.  Such a situation
+is not always desirable, even though ties (messages with the same rank)
+are allowed.  Again, the default for this parameter is the value
+specified in the global part of the subscriber's profile.
+<p>
+For each query, a table of <b> database categories</b> contains
+information indicating one of three states: subscription to a database
+(i.e. the database should be scanned for this query), non-subscription
+which means the database should not be scanned for this query, and a
+third state which indicates either that the group is no longer
+available, or that the subscriber has not yet decided if the query
+should subscribe or not.  If a subscriber does not specify any
+information, the query will be subscribed to all possible databases by
+default.  A master table of all known databases is maintained
+separately from those in the queries.  All query tables are updated
+when the master table changes.  Each subscriber's resource discovery
+filter is run when new databases and their descriptions enter the
+master table of all remote sources.
+<p>
+Each query also has a <b> query text</b> which is treated similarly to
+messages, except that these query texts contain no messages headers
+(formatted fields).  Query texts contain the full-text of a
+subscriber's query which should be expanded by the subscriber over time
+to include paragraphs from relevant messages.  There is no default
+value for the query text as it must accompany the query creation 
+command.  Query creation commands with a blank query text are ignored.
+<p>
+Queries may also contain <b> inclusion</b> and <b> exclusion</b> filters.
+These specifications contain the original (un-compiled) regular
+expressions specified by the subscriber.  Pasadena's extended regular
+expression pattern matching specification is described below in section
+ <a href="https://web.archive.org/web/19971014210351/http://www.vhdl.org/~wyle/diss/node30.html#regeximp">4.4.3</a>.  Subscribers can anchor these filter specifications to
+message header lines by including the header name in the expression.
+By default neither of these patterns is active.
+<p>
+A query also contains a parameter called <b> reminder</b>.  The Pasadena
+system contains the assumption that the interests of a user will drift
+over time; it therefore automatically prods its subscribers to change
+their queries after a default number of days or in the case that the
+retrieval performance of a query is consistently very low.  This
+positive integer parameter called ``reminder'' specifies the interval
+between these prompts.  The system also tracks the last time such a
+prod was sent to the subscriber reminding the subscriber to change the
+query.  The default value of this parameter is stored in the system's
+global parameter file and is currently thirty virtual days.
+<p>
+A list of message <b> header fields</b> is another optional
+parameter for each query.  This parameter, if set, specifies the
+exhaustive list of header fields from retrieved source messages that
+should be included when the message is delivered, and also the <em>
+order</em> in which they should appear.  If this parameter is not present,
+all header lines from each message are sent with the message, in the
+original order in which they appear in the message.  Setting this
+parameter to null indicates that no header fields are desired.
+<p>
+Queries also contain certain system information over which the
+subscriber has no control or knowledge.  For example, outstanding <b>
+feedback form numbers</b> are kept in the query parameter database.  These
+values are used by the Pasadena main daemon program (see below) to 
+track which
+experiment numbers belong to which queries.  When filled-out feedback
+forms arrive back in the system, it uses these fields to process the
+filled-out forms.
+<p>
+In this section, we presented some of the detailed requirements and
+general design considerations of creating, updating, and deleting
+subscriber profiles within the network-based subscription service
+Pasadena.  The subscriber profile database design was discussed in some
+detail.  We now present some aspects of the implementation of 
+the Pasadena system.
+<p>
+<a name="6746">&#160;</a>
+<a name="6747">&#160;</a>
+<a name="6748">&#160;</a>
+<p>
+<br> <hr><a name="tex2html1400" href="https://web.archive.org/web/19971014210351/http://www.vhdl.org/~wyle/diss/node27.html"><img align="BOTTOM" alt="next" src="https://web.archive.org/web/19971014210351im_/http://vhdl.org/~wyle/diss/images/next_motif.gif"></a>   <a name="tex2html1398" href="https://web.archive.org/web/19971014210351/http://www.vhdl.org/~wyle/diss/node23.html"><img align="BOTTOM" alt="up" src="https://web.archive.org/web/19971014210351im_/http://vhdl.org/~wyle/diss/images/up_motif.gif"></a>   <a name="tex2html1392" href="https://web.archive.org/web/19971014210351/http://www.vhdl.org/~wyle/diss/node25.html"><img align="BOTTOM" alt="previous" src="https://web.archive.org/web/19971014210351im_/http://vhdl.org/~wyle/diss/images/previous_motif.gif"></a>   <a name="tex2html1402" href="https://web.archive.org/web/19971014210351/http://www.vhdl.org/~wyle/diss/node2.html"><img align="BOTTOM" alt="contents" src="https://web.archive.org/web/19971014210351im_/http://vhdl.org/~wyle/diss/images/contents_motif.gif"></a>   <a name="tex2html1403" href="https://web.archive.org/web/19971014210351/http://www.vhdl.org/~wyle/diss/node57.html"><img align="BOTTOM" alt="index" src="https://web.archive.org/web/19971014210351im_/http://vhdl.org/~wyle/diss/images/index_motif.gif"></a>   <br>
+<b> Next:</b> <a name="tex2html1401" href="https://web.archive.org/web/19971014210351/http://www.vhdl.org/~wyle/diss/node27.html"> Implementation</a>
+<b>Up:</b> <a name="tex2html1399" href="https://web.archive.org/web/19971014210351/http://www.vhdl.org/~wyle/diss/node23.html"> Pasadena: a WAN </a>
+<b> Previous:</b> <a name="tex2html1393" href="https://web.archive.org/web/19971014210351/http://www.vhdl.org/~wyle/diss/node25.html"> Selective Information Extraction</a>
+<br> <hr> <p>
+<br> <hr>
+<p><address>
+<i>Mitchell F. Wyle <br>
+Wed Jan  3 13:22:21 EST 1996</i>
+</address>
+</body>
+<!--
+     FILE ARCHIVED ON 21:03:51 Oct 14, 1997 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 17:11:35 Aug 04, 2022.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 107.757
+  exclusion.robots: 0.163
+  exclusion.robots.policy: 0.151
+  RedisCDXSource: 1.176
+  esindex: 0.01
+  LoadShardBlock: 90.424 (3)
+  PetaboxLoader3.datanode: 126.034 (4)
+  CDXLines.iter: 13.262 (3)
+  load_resource: 38.373
+-->

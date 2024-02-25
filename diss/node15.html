@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3O//DTD W3 HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 95 (Thu Jan 19 1995) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<head><script src="https://archive.org/includes/analytics.js?v=cf34f82" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app223.us.archive.org';v.server_ms=169;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="https://web.archive.org/_static/js/bundle-playback.js?v=KTqwAcYd" charset="utf-8"></script>
+<script type="text/javascript" src="https://web.archive.org/_static/js/wombat.js?v=UHAOicsW" charset="utf-8"></script>
+<script type="text/javascript">
+  __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.vhdl.org:80/~wyle/diss/node15.html","19971014205708","https://web.archive.org/","web","/_static/",
+	      "876862628");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web.archive.org/_static/css/banner-styles.css?v=fantwOh2" />
+<link rel="stylesheet" type="text/css" href="https://web.archive.org/_static/css/iconochive.css?v=qtvMKcIJ" />
+<!-- End Wayback Rewrite JS Include -->
+
+<title> Retrieval Methods</title>
+</head>
+<body>
+<meta name="description" value=" Retrieval Methods">
+<meta name="keywords" value="diss">
+<meta name="resource-type" value="document">
+<meta name="distribution" value="global">
+<p>
+ <br> <hr><a name="tex2html1257" href="https://web.archive.org/web/19971014205708/http://www.vhdl.org/~wyle/diss/node16.html"><img align="BOTTOM" alt="next" src="https://web.archive.org/web/19971014205708im_/http://vhdl.org/~wyle/diss/images/next_motif.gif"></a>   <a name="tex2html1255" href="https://web.archive.org/web/19971014205708/http://www.vhdl.org/~wyle/diss/node13.html"><img align="BOTTOM" alt="up" src="https://web.archive.org/web/19971014205708im_/http://vhdl.org/~wyle/diss/images/up_motif.gif"></a>   <a name="tex2html1249" href="https://web.archive.org/web/19971014205708/http://www.vhdl.org/~wyle/diss/node14.html"><img align="BOTTOM" alt="previous" src="https://web.archive.org/web/19971014205708im_/http://vhdl.org/~wyle/diss/images/previous_motif.gif"></a>   <a name="tex2html1259" href="https://web.archive.org/web/19971014205708/http://www.vhdl.org/~wyle/diss/node2.html"><img align="BOTTOM" alt="contents" src="https://web.archive.org/web/19971014205708im_/http://vhdl.org/~wyle/diss/images/contents_motif.gif"></a>   <a name="tex2html1260" href="https://web.archive.org/web/19971014205708/http://www.vhdl.org/~wyle/diss/node57.html"><img align="BOTTOM" alt="index" src="https://web.archive.org/web/19971014205708im_/http://vhdl.org/~wyle/diss/images/index_motif.gif"></a>   <br>
+<b> Next:</b> <a name="tex2html1258" href="https://web.archive.org/web/19971014205708/http://www.vhdl.org/~wyle/diss/node16.html"> Text Structure</a>
+<b>Up:</b> <a name="tex2html1256" href="https://web.archive.org/web/19971014205708/http://www.vhdl.org/~wyle/diss/node13.html"> Dissemination and Retrieval</a>
+<b> Previous:</b> <a name="tex2html1250" href="https://web.archive.org/web/19971014205708/http://www.vhdl.org/~wyle/diss/node14.html"> Aperiodic Database Query</a>
+<br> <hr> <p>
+<h1><a name="SECTION00720000000000000000"> Retrieval Methods</a></h1>
+<a name="methods">&#160;</a>
+<p>
+<a name="916">&#160;</a>
+<a name="917">&#160;</a>
+<p>
+One filtering stage in our WAN information server model 
+(section <a href="https://web.archive.org/web/19971014205708/http://www.vhdl.org/~wyle/diss/node20.html#stages">3.2</a>) is based on 
+<a name="919">&#160;</a><a name="920">&#160;</a>
+<a name="921">&#160;</a>
+the vector space retrieval model
+[<a href="https://web.archive.org/web/19971014205708/http://www.vhdl.org/~wyle/diss/node40.html#Salt83">Salt83</a>] where queries and messages are represented as vectors in
+<a name="923">&#160;</a>
+<a name="924">&#160;</a><a name="925">&#160;</a><a name="926">&#160;</a>a 
+linear vector space.  Given <b>k</b> query texts represented as vectors 
+<img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014205708im_/http://www.vhdl.org/~wyle/diss/img39.gif"> through <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014205708im_/http://www.vhdl.org/~wyle/diss/img40.gif">
+in a collection <b>Q</b>, <b>n</b> messages, also represented as vectors 
+<img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014205708im_/http://www.vhdl.org/~wyle/diss/img41.gif"> through <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014205708im_/http://www.vhdl.org/~wyle/diss/img42.gif"> in
+a<a name="1093">&#160;</a>
+<a name="1094">&#160;</a>
+<a name="932">&#160;</a>
+<a name="933">&#160;</a>
+<a name="934">&#160;</a>
+<a name="935">&#160;</a>
+<a name="936">&#160;</a>
+<a name="937">&#160;</a>
+<a name="938">&#160;</a> momentary
+collection <b>D</b>, for each retrieval algorithm <b>r</b>, we define a
+retrieval status value (RSV) function <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014205708im_/http://www.vhdl.org/~wyle/diss/img45.gif"> which operates on each
+<a name="939">&#160;</a>
+<a name="940">&#160;</a>
+<img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014205708im_/http://www.vhdl.org/~wyle/diss/img46.gif"> in <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014205708im_/http://www.vhdl.org/~wyle/diss/img47.gif"> giving a value in <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205708im_/http://www.vhdl.org/~wyle/diss/img48.gif">.  Each indexing feature
+<img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014205708im_/http://www.vhdl.org/~wyle/diss/img49.gif"> extracted from the query or message text is considered a
+<a name="941">&#160;</a>
+dimension in the vector space, where the <em> weight</em> of the feature
+(see below) is its distance along the feature dimension from the
+<a name="943">&#160;</a>
+<a name="944">&#160;</a>
+origin.  Statistics are gathered for feature occurrence frequencies in
+<a name="945">&#160;</a>
+individual paragraphs, queries, messages, and the entire collection.
+Features can be extended N-grams [<a href="https://web.archive.org/web/19971014205708/http://www.vhdl.org/~wyle/diss/node40.html#Teuf89">Teuf89</a>], words with various
+<a name="947">&#160;</a>
+degrees of suffix reduction applied [<a href="https://web.archive.org/web/19971014205708/http://www.vhdl.org/~wyle/diss/node40.html#Wyle91">Wyle91</a>], or phrases
+constructed from reduced words (see section <a href="https://web.archive.org/web/19971014205708/http://www.vhdl.org/~wyle/diss/node22.html#phrases">3.4</a>).  The
+<a name="950">&#160;</a>
+exhaustive vocabulary of features for a collection using a given
+algorithm is called <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205708im_/http://www.vhdl.org/~wyle/diss/img50.gif">.
+<a name="951">&#160;</a>
+<a name="952">&#160;</a>
+<a name="953">&#160;</a>
+<p>
+The statistics gathered include:
+<ul><li> feature frequencies in a message or query <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014205708im_/http://www.vhdl.org/~wyle/diss/img52.gif">,
+     <a name="955">&#160;</a><a name="956">&#160;</a>
+  <li> feature frequencies in an individual paragraph within a message,
+    <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014205708im_/http://www.vhdl.org/~wyle/diss/img54.gif">,
+     <a name="957">&#160;</a>
+     <a name="958">&#160;</a>
+  <li> feature frequencies in the entire collection <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014205708im_/http://www.vhdl.org/~wyle/diss/img56.gif">.
+     <a name="959">&#160;</a>
+  <li> message frequencies <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014205708im_/http://www.vhdl.org/~wyle/diss/img58.gif">, i.e. the number of messages
+    containing feature <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014205708im_/http://www.vhdl.org/~wyle/diss/img59.gif">.
+    <a name="960">&#160;</a>
+    <a name="961">&#160;</a>
+  <li> inverse message frequencies <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014205708im_/http://www.vhdl.org/~wyle/diss/img61.gif"> [<a href="https://web.archive.org/web/19971014205708/http://www.vhdl.org/~wyle/diss/node40.html#Salt83">Salt83</a>],
+     <p><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205708im_/http://www.vhdl.org/~wyle/diss/img62.gif"><p> 
+     <a name="963">&#160;</a>
+     <a name="964">&#160;</a>
+     <a name="965">&#160;</a>
+  <li> <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014205708im_/http://www.vhdl.org/~wyle/diss/img64.gif">, the number of messages that contain,
+     in addition to feature <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014205708im_/http://www.vhdl.org/~wyle/diss/img65.gif">, at least one other feature from <b>d</b>,
+     <a name="1095">&#160;</a>
+  <li> <b>|d|</b>, the number of features in <b>d</b>.
+    <a name="968">&#160;</a><a name="969">&#160;</a>
+</ul>
+<p>
+Feature weighting functions <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014205708im_/http://www.vhdl.org/~wyle/diss/img67.gif"> based on these statistics
+<a name="971">&#160;</a>
+yield values in <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205708im_/http://www.vhdl.org/~wyle/diss/img68.gif">.  These functions include the standard (base)
+<a name="972">&#160;</a>
+<a name="973">&#160;</a>
+<a name="974">&#160;</a>
+function [<a href="https://web.archive.org/web/19971014205708/http://www.vhdl.org/~wyle/diss/node40.html#Salt83">Salt83</a>]
+<p><a name="eqwtbase">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205708im_/http://www.vhdl.org/~wyle/diss/img69.gif"><p>
+<a name="1096">&#160;</a>
+<p>
+and a new variation [<a href="https://web.archive.org/web/19971014205708/http://www.vhdl.org/~wyle/diss/node40.html#Fre91b">Fre91b</a>] using <b>tf</b> normalization (norm)
+<a name="982">&#160;</a>
+<a name="983">&#160;</a>
+<p>
+<p><a name="eqwtnorm">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205708im_/http://www.vhdl.org/~wyle/diss/img71.gif"><p>
+<a name="1097">&#160;</a>
+<p>
+The <b>RSV</b> functions in our baseline algorithms include the minimal 
+<a name="991">&#160;</a>
+<a name="992">&#160;</a>
+overlap [<a href="https://web.archive.org/web/19971014205708/http://www.vhdl.org/~wyle/diss/node40.html#Rijs79">Rijs79</a>] (mo):
+<a name="994">&#160;</a>
+<a name="995">&#160;</a>
+<p><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205708im_/http://www.vhdl.org/~wyle/diss/img73.gif"><p>
+<p>
+cosine [<a href="https://web.archive.org/web/19971014205708/http://www.vhdl.org/~wyle/diss/node40.html#Salt83">Salt83</a>] (cos):
+<a name="1004">&#160;</a>
+<a name="1005">&#160;</a>
+<a name="1099">&#160;</a>
+<p><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205708im_/http://www.vhdl.org/~wyle/diss/img75.gif"><p>
+<p>
+vector product [<a href="https://web.archive.org/web/19971014205708/http://www.vhdl.org/~wyle/diss/node40.html#Salt83">Salt83</a>] (vp):
+<a name="1012">&#160;</a>
+<a name="1013">&#160;</a>
+<p><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205708im_/http://www.vhdl.org/~wyle/diss/img76.gif"><p>
+<a name="1102">&#160;</a>
+<p>
+and an indirect similarity [<a href="https://web.archive.org/web/19971014205708/http://www.vhdl.org/~wyle/diss/node40.html#Teuf89">Teuf89</a>] (is) measure:
+<a name="1018">&#160;</a>
+<a name="1019">&#160;</a>
+<p><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205708im_/http://www.vhdl.org/~wyle/diss/img78.gif"><p>
+<a name="1105">&#160;</a>
+<p>
+<img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014205708im_/http://www.vhdl.org/~wyle/diss/img80.gif"> and <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014205708im_/http://www.vhdl.org/~wyle/diss/img81.gif"> are not used singly; instead they are combined
+as the algebraic sum of two fuzzy sets to provide <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014205708im_/http://www.vhdl.org/~wyle/diss/img82.gif">
+<a name="1030">&#160;</a>
+<a name="1031">&#160;</a>
+[<a href="https://web.archive.org/web/19971014205708/http://www.vhdl.org/~wyle/diss/node40.html#Teuf89">Teuf89</a>]:
+<p>
+<p><a name="eqrsvblen">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205708im_/http://www.vhdl.org/~wyle/diss/img83.gif"><p>
+<a name="1106">&#160;</a>
+<p>
+<p><a name="1217">&#160;</a><a name="figsdiir1">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014205708im_/http://www.vhdl.org/~wyle/diss/img85.gif">
+<br><strong>Figure 2.2:</strong> SDI versus IR<br>
+<p>
+<a name="1220">&#160;</a><a name="1221">&#160;</a>
+<a name="1222">&#160;</a>
+<a name="1223">&#160;</a>
+<a name="1224">&#160;</a>
+<a name="1225">&#160;</a>
+<a name="1226">&#160;</a>
+<p>
+These equations assume a <em> collection</em> of messages, which is large
+enough for the statistically derived parameters to be indicative and
+useful for feature weighting.  However, in contrast to the usual IR
+searching model, where a small number of query texts is compared to a
+large, static message collection, the SDI model [<a href="https://web.archive.org/web/19971014205708/http://www.vhdl.org/~wyle/diss/node40.html#Zais76">Zais76</a>] is
+normally formulated as that of a sequence of single messages compared
+individually to a number of queries (figure <a href="node15.html#figsdiir1">2.2</a>).  The
+retrieval techniques typically used are therefore based either on
+Boolean matching, or, in advanced systems using the vector
+<a name="1230">&#160;</a> <a name="1231">&#160;</a> space model
+[<a href="https://web.archive.org/web/19971014205708/http://www.vhdl.org/~wyle/diss/node40.html#Salt91">Salt91</a>], feature weights are derived from static collections of
+previously examined messages.  In figure <a href="node15.html#figsdiir1">2.2</a>, the size of
+the messages, which are represented as circles, corresponds to the
+meaning of a message as modeled by its features.  In the SDI model,
+messages entering the system are filtered through several queries which
+are represented by different sized holes in the filter.  The ``holes''
+into which messages can fall are analogous to the features in a query,
+which represent its meaning.  The IR system has a ``net'' inserted in a
+large message collection to retrieve messages of interest.  The mesh of
+the net represents the query meaning (as described by its features).
+An IR system uses relationships among the message features in a large
+collection to facilitate fishing the relevant messages out with a query
+(net).  In section <a href="https://web.archive.org/web/19971014205708/http://www.vhdl.org/~wyle/diss/node20.html#stages">3.2</a>, we shall propose a more flexible
+model of <em> dynamic</em> message collections which amalgamates both the
+SDI and IR paradigms into a hybrid arrangement.
+<p>
+Having presented the framework and baseline methods for IR homeosemy
+calculations, we now develop term weighting functions based on the
+structure of messages in the Matrix.
+<p>
+<a name="1236">&#160;</a>
+<a name="1237">&#160;</a>
+<p>
+<br> <hr><a name="tex2html1257" href="https://web.archive.org/web/19971014205708/http://www.vhdl.org/~wyle/diss/node16.html"><img align="BOTTOM" alt="next" src="https://web.archive.org/web/19971014205708im_/http://vhdl.org/~wyle/diss/images/next_motif.gif"></a>   <a name="tex2html1255" href="https://web.archive.org/web/19971014205708/http://www.vhdl.org/~wyle/diss/node13.html"><img align="BOTTOM" alt="up" src="https://web.archive.org/web/19971014205708im_/http://vhdl.org/~wyle/diss/images/up_motif.gif"></a>   <a name="tex2html1249" href="https://web.archive.org/web/19971014205708/http://www.vhdl.org/~wyle/diss/node14.html"><img align="BOTTOM" alt="previous" src="https://web.archive.org/web/19971014205708im_/http://vhdl.org/~wyle/diss/images/previous_motif.gif"></a>   <a name="tex2html1259" href="https://web.archive.org/web/19971014205708/http://www.vhdl.org/~wyle/diss/node2.html"><img align="BOTTOM" alt="contents" src="https://web.archive.org/web/19971014205708im_/http://vhdl.org/~wyle/diss/images/contents_motif.gif"></a>   <a name="tex2html1260" href="https://web.archive.org/web/19971014205708/http://www.vhdl.org/~wyle/diss/node57.html"><img align="BOTTOM" alt="index" src="https://web.archive.org/web/19971014205708im_/http://vhdl.org/~wyle/diss/images/index_motif.gif"></a>   <br>
+<b> Next:</b> <a name="tex2html1258" href="https://web.archive.org/web/19971014205708/http://www.vhdl.org/~wyle/diss/node16.html"> Text Structure</a>
+<b>Up:</b> <a name="tex2html1256" href="https://web.archive.org/web/19971014205708/http://www.vhdl.org/~wyle/diss/node13.html"> Dissemination and Retrieval</a>
+<b> Previous:</b> <a name="tex2html1250" href="https://web.archive.org/web/19971014205708/http://www.vhdl.org/~wyle/diss/node14.html"> Aperiodic Database Query</a>
+<br> <hr> <p>
+<br> <hr>
+<p><address>
+<i>Mitchell F. Wyle <br>
+Wed Jan  3 13:22:21 EST 1996</i>
+</address>
+</body>
+<!--
+     FILE ARCHIVED ON 20:57:08 Oct 14, 1997 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 17:10:54 Aug 04, 2022.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 99.175
+  exclusion.robots: 0.096
+  exclusion.robots.policy: 0.088
+  RedisCDXSource: 4.21
+  esindex: 0.009
+  LoadShardBlock: 78.625 (3)
+  PetaboxLoader3.datanode: 102.37 (4)
+  CDXLines.iter: 13.641 (3)
+  load_resource: 64.063
+  PetaboxLoader3.resolve: 32.547
+-->

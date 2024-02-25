@@ -1,0 +1,246 @@
+<!DOCTYPE HTML PUBLIC "-//W3O//DTD W3 HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 95 (Thu Jan 19 1995) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<head><script src="https://archive.org/includes/analytics.js?v=cf34f82" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app214.us.archive.org';v.server_ms=272;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="https://web.archive.org/_static/js/bundle-playback.js?v=KTqwAcYd" charset="utf-8"></script>
+<script type="text/javascript" src="https://web.archive.org/_static/js/wombat.js?v=UHAOicsW" charset="utf-8"></script>
+<script type="text/javascript">
+  __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.vhdl.org:80/~wyle/diss/node24.html","19971014210238","https://web.archive.org/","web","/_static/",
+	      "876862958");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web.archive.org/_static/css/banner-styles.css?v=fantwOh2" />
+<link rel="stylesheet" type="text/css" href="https://web.archive.org/_static/css/iconochive.css?v=qtvMKcIJ" />
+<!-- End Wayback Rewrite JS Include -->
+
+<title> Selective Dissemination</title>
+</head>
+<body>
+<meta name="description" value=" Selective Dissemination">
+<meta name="keywords" value="diss">
+<meta name="resource-type" value="document">
+<meta name="distribution" value="global">
+<p>
+ <br> <hr><a name="tex2html1376" href="https://web.archive.org/web/19971014210238/http://www.vhdl.org/~wyle/diss/node25.html"><img align="BOTTOM" alt="next" src="https://web.archive.org/web/19971014210238im_/http://vhdl.org/~wyle/diss/images/next_motif.gif"></a>   <a name="tex2html1374" href="https://web.archive.org/web/19971014210238/http://www.vhdl.org/~wyle/diss/node23.html"><img align="BOTTOM" alt="up" src="https://web.archive.org/web/19971014210238im_/http://vhdl.org/~wyle/diss/images/up_motif.gif"></a>   <a name="tex2html1368" href="https://web.archive.org/web/19971014210238/http://www.vhdl.org/~wyle/diss/node23.html"><img align="BOTTOM" alt="previous" src="https://web.archive.org/web/19971014210238im_/http://vhdl.org/~wyle/diss/images/previous_motif.gif"></a>   <a name="tex2html1378" href="https://web.archive.org/web/19971014210238/http://www.vhdl.org/~wyle/diss/node2.html"><img align="BOTTOM" alt="contents" src="https://web.archive.org/web/19971014210238im_/http://vhdl.org/~wyle/diss/images/contents_motif.gif"></a>   <a name="tex2html1379" href="https://web.archive.org/web/19971014210238/http://www.vhdl.org/~wyle/diss/node57.html"><img align="BOTTOM" alt="index" src="https://web.archive.org/web/19971014210238im_/http://vhdl.org/~wyle/diss/images/index_motif.gif"></a>   <br>
+<b> Next:</b> <a name="tex2html1377" href="https://web.archive.org/web/19971014210238/http://www.vhdl.org/~wyle/diss/node25.html"> Selective Information Extraction</a>
+<b>Up:</b> <a name="tex2html1375" href="https://web.archive.org/web/19971014210238/http://www.vhdl.org/~wyle/diss/node23.html"> Pasadena: a WAN </a>
+<b> Previous:</b> <a name="tex2html1369" href="https://web.archive.org/web/19971014210238/http://www.vhdl.org/~wyle/diss/node23.html"> Pasadena: a WAN </a>
+<br> <hr> <p>
+<h1><a name="SECTION00910000000000000000"> Selective Dissemination</a></h1>
+<p>
+<blockquote> <em>When you have pervasive networking, the user interface that works so
+well on the Macintosh simply won't work anymore.  -- Alan Kay,
+[<a href="https://web.archive.org/web/19971014210238/http://www.vhdl.org/~wyle/diss/node40.html#Kay91">Kay91</a>]
+</blockquote>
+<p>
+<a name="6622">&#160;</a>
+<a name="6623">&#160;</a>
+<p>
+The <a name="6624">&#160;</a>
+Matrix is a natural dissemination medium for Luhn's SDI model.
+Simplex (broadcast) communications media such as radio, television, or
+newspapers are economically viable only if a large group of people
+subscribe to the service.  At the other extreme, telephones, facsimile
+transfer (FAX), letters, and other duplex (point-to-point)
+communications media become economically untenable after only a small
+number of people are linked together.  The synergy resulting from the
+marriage of general-purpose computers to electronic networks makes
+possible a new and in some respects better solution to the problem of
+effectively disseminating information: <em> electronic filtering
+services</em>.  In this chapter we present an implementation of
+the <b>IS</b> model described in the last chapter.  The <b>IS</b> described here
+is an email subscription service that retrieves messages from diverse
+sources and sends them to subscribers via email; the system also
+includes client - server network transparent software for interactively
+browsing dynamic message collections and updating a subscriber's
+profile.
+<p>
+We developed the Pasadena (<b> P</b>eriodic, <b> a</b>synchronous <b>
+s</b>elective extr<b> a</b>ction and <b> d</b>iss<b> e</b>mination of
+information through <b> n</b>etwork <b> a</b>ccess) system as a test-bed
+for evaluating the models presented in the previous chapters
+[<a href="https://web.archive.org/web/19971014210238/http://www.vhdl.org/~wyle/diss/node40.html#Wyle89">Wyle89</a>], [<a href="https://web.archive.org/web/19971014210238/http://www.vhdl.org/~wyle/diss/node40.html#Wyle91">Wyle91</a>].  The system also happens to provide a
+useful service to its subscribers in spite of the fact that they are
+used as test subjects for numerous IR performance experiments.
+This overview of the Pasadena subscription service is organized as
+follows.  First we concisely summarize how the system works; we
+describe the query of remote sources, the maintenance of local
+databases, interacting with users, and the evaluation of IR
+algorithms.   Then we describe some interesting aspects of the system
+implementation, and finally we summarize the many experiments used to
+evaluate IR algorithms run in Pasadena and give a summary of
+those results.
+<p>
+Figure <a href="node24.html#overview">4.1</a> is a general block diagram of the Pasadena
+system.  Pasadena actively queries diverse information sources using
+equations <a href="node24.html#eqwindowavg">2.4</a> and <a href="node24.html#eqavgarrive">2.7</a> to optimize the
+query rates; the system maintains a local database of current
+information items, deleting older information and adding new items
+continually.  The system manages user-dialog, starts and runs the
+indexing and retrieval algorithms, and administers the similarity
+measures for comparing query texts with information items.  It also
+provides facilities for profile management and process scheduling.
+<p>
+<p><a name="6812">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210238im_/http://www.vhdl.org/~wyle/diss/img356.gif">
+<br><strong>Figure 4.1:</strong> Pasadena Overview<a name="overview">&#160;</a><br>
+<p>
+<p>
+Any person or entity which can use networked electronic mail and is
+reachable on the Matrix can become a subscriber of the Pasadena
+system.  Using the email interface implementation of the passive
+user-model discussed in section <a href="https://web.archive.org/web/19971014210238/http://www.vhdl.org/~wyle/diss/node19.html#passive">3.1</a>, individuals subscribe
+to the Pasadena system through a four-step process.  First, they send a
+message containing the word ``help'' to the system.  A message is sent
+back explaining what the service is and how to register.  This first
+help message, like all other messages sent out by the system, is itself
+a registration ``form'' with several leading ``comments'' which a
+would-be subscriber can modify with his own 
+information.  After registration, a users manual is mailed out
+electronically.  This manual contains instructions for formulating and
+refining queries.  The third step is the formulation of queries, each
+of which contains the formal parameters described in the last chapter.
+After submitting at least one query and receiving some messages,
+subscribers are encouraged to refine the query in order to enhance
+retrieval performance.  Additionally, a ``prod'' interval 
+determines when the system automatically prompts the subscriber
+to make changes.  All parameters in each query of the profile can be
+changed.  Some changes to enhance a typical low-performance query
+include: increasing the query interval in order to increase the size of
+the dynamic message collection formed between executions; changing the
+query text; adding exclusion patterns to filter out non-relevant
+messages containing a specific text pattern; and specifying a larger
+number of messages to be retrieved to increase recall performance.
+<p>
+Pasadena's information sources are extremely heterogeneous as far as
+subject matter is concerned.  The bulk of the information items come
+from commercial news agencies that distribute their messages via Usenet
+[<a href="https://web.archive.org/web/19971014210238/http://www.vhdl.org/~wyle/diss/node40.html#Ande87">Ande87</a>] newsgroups; however, the system also receives messages
+from mailing lists and actively queries passive WAN-accessible
+databases for new information.  All of these sources contain pure-text
+items which are meant for electronic distribution in the Matrix.  In
+addition to the usual mailing list and distributed electronic bulletin
+board system (bbs) messages [<a href="https://web.archive.org/web/19971014210238/http://www.vhdl.org/~wyle/diss/node40.html#Wyle89">Wyle89</a>], Pasadena also taps
+information from news wire services.  These news items are usually only
+a paragraph or two in length, and adhere to the Associated Press (AP)
+style guide for journalistic prose.  Such messages are ultimately
+targeted at paper publication and dissemination.  All of these
+heterogeneous information categories have an important characteristic in
+common, namely that the news they contain is timely.  The value of the
+information they comprise is therefore dependent upon quick
+distribution.  Receiving such information a week too late is like
+reading a week-old newspaper.  Subscribers typically set their query
+intervals to span at most a few days because they have come to expect
+prompt service from services in the Matrix.
+<p>
+Each subscriber has a single profile which contains one or more
+queries.  Each query is composed of a comparison text and several
+parameters described in <a href="https://web.archive.org/web/19971014210238/http://www.vhdl.org/~wyle/diss/node20.html#stages">3.2</a>.  The Pasadena system manages
+user-dialog, coordinates the execution of the indexing and retrieval
+algorithms, and administers the similarity measures for comparing query
+texts with information item texts.  The system provides facilities for
+profile management and interactive browsing of the entire database of
+cached WAN messages.  It also keeps track of the experiments currently
+running in the system, and stores state information about which
+algorithm generated which ranked list of messages for which
+subscriber.
+<p>
+The experiments concentrate on measuring the performance of the vector
+space algorithms described in the previous chapter.  These algorithms
+are used in Pasadena's third filtering stage to rank the ``promising''
+messages passing through the first two stages of the filter.  Using
+carefully controlled, experiments in which only one
+component of a ranking algorithm is varied, we try to discover which
+components of the vector space algorithms perform better in the
+Pasadena SDI service and why.
+<p>
+Within a single query of each subscriber's profile, the retrieval set
+size parameter determines how many messages the subscriber wishes to
+receive for that query.  A separate, query-specific parameter
+determines how often Pasadena should deliver information related to the
+query.  At these intervals, the Pasadena delivers those items with the 
+highest retrieval status values along with feedback forms.
+<p>
+The Pasadena system is a straightforward implementation (see section
+ <a href="https://web.archive.org/web/19971014210238/http://www.vhdl.org/~wyle/diss/node27.html#implementation">4.4</a> below) of the model described in section
+ <a href="https://web.archive.org/web/19971014210238/http://www.vhdl.org/~wyle/diss/node20.html#filter">3.2</a>.  Dynamic message collections are formed for each
+query by the database category and exclusion filtering stages.
+These dynamic collections are further limited to contain only messages which
+have arrived in the system since the last time the query was
+evaluated.  The messages in such a dynamic collection are ranked by
+both vector space algorithms currently being evaluated.  Both
+algorithms compute a RSV for each message for the query.  Ranking is
+then simply the descending order of RSVs.  Ranks in a set of identical
+RSVs are arbitrary.  The set of messages that is eventually sent to the
+subscriber for the given query is built up step-wise from the highest
+ranked messages of each retrieval algorithm.  Messages chosen to be
+sent to a subscriber because they matched the inclusion pattern are
+also ranked by both vector space algorithms.  If neither vector space
+algorithm gives these messages a high rank (retrieves them) then these
+messages do not contribute to the usefulness performance measure.
+<p>
+At the time of this writing, Pasadena extracts data from its sources at
+approximately ten Mbyte per day; simultaneously, ten Mbytes of older
+data are deleted each day.  Newswire services and certain Usenet
+newsgroups [<a href="https://web.archive.org/web/19971014210238/http://www.vhdl.org/~wyle/diss/node40.html#Ande87">Ande87</a>] are polled daily; other databases are polled
+aperiodically, based on a moving average of their update rates
+(equation <a href="node24.html#eqavgarrive">2.7</a>).  Although the rate of growth of WAN
+queryable source data is still exponential, such a phenomenon cannot
+continue for more than a few more years.  Currently, users are limited
+to queries spanning ten days; the maximum data volume excluding
+indexing overhead at any given time is therefore 100 Mbyte.  As new,
+better newswire services and other sources of information become
+available on WANs, this volume could grow.
+<p>
+Pasadena's basic system architecture is in fact easily course grain
+parallelisable.  The rate determining steps of Pasadena's processing
+cycle are the information retrieval RSV functions (called <em> ranking
+algorithms</em> in the system).  It is practically quite simple to run
+several comparisons in parallel on separate processors, or several
+queries in parallel on different incarnations of Pasadena.  The system
+also scales well with the size and speed of its native hardware /
+software environment.  Computer hardware advances therefore would allow
+Pasadena gracefully to keep pace with growing data volume.
+<p>
+In this section, the SDI framework for the Pasadena subscription
+service was outlined, and the overall system architecture was
+discussed.  The remote data sources and heterogeneous data were
+considered, and some general issues about implementing the <b>IS</b> model
+from the last two chapters were also presented.  We come now to some of the
+specific design considerations for implementing the remote query
+and user profile models mentioned in the last chapter.
+<p>
+<a name="6707">&#160;</a>
+<a name="6708">&#160;</a>
+<p>
+</em><br> <hr><a name="tex2html1376" href="https://web.archive.org/web/19971014210238/http://www.vhdl.org/~wyle/diss/node25.html"><img align="BOTTOM" alt="next" src="https://web.archive.org/web/19971014210238im_/http://vhdl.org/~wyle/diss/images/next_motif.gif"></a>   <a name="tex2html1374" href="https://web.archive.org/web/19971014210238/http://www.vhdl.org/~wyle/diss/node23.html"><img align="BOTTOM" alt="up" src="https://web.archive.org/web/19971014210238im_/http://vhdl.org/~wyle/diss/images/up_motif.gif"></a>   <a name="tex2html1368" href="https://web.archive.org/web/19971014210238/http://www.vhdl.org/~wyle/diss/node23.html"><img align="BOTTOM" alt="previous" src="https://web.archive.org/web/19971014210238im_/http://vhdl.org/~wyle/diss/images/previous_motif.gif"></a>   <a name="tex2html1378" href="https://web.archive.org/web/19971014210238/http://www.vhdl.org/~wyle/diss/node2.html"><img align="BOTTOM" alt="contents" src="https://web.archive.org/web/19971014210238im_/http://vhdl.org/~wyle/diss/images/contents_motif.gif"></a>   <a name="tex2html1379" href="https://web.archive.org/web/19971014210238/http://www.vhdl.org/~wyle/diss/node57.html"><img align="BOTTOM" alt="index" src="https://web.archive.org/web/19971014210238im_/http://vhdl.org/~wyle/diss/images/index_motif.gif"></a>   <br>
+<b> Next:</b> <a name="tex2html1377" href="https://web.archive.org/web/19971014210238/http://www.vhdl.org/~wyle/diss/node25.html"> Selective Information Extraction</a>
+<b>Up:</b> <a name="tex2html1375" href="https://web.archive.org/web/19971014210238/http://www.vhdl.org/~wyle/diss/node23.html"> Pasadena: a WAN </a>
+<b> Previous:</b> <a name="tex2html1369" href="https://web.archive.org/web/19971014210238/http://www.vhdl.org/~wyle/diss/node23.html"> Pasadena: a WAN </a>
+<br> <hr> <p>
+<br> <hr>
+<p><address>
+<i>Mitchell F. Wyle <br>
+Wed Jan  3 13:22:21 EST 1996</i>
+</address>
+</body>
+<!--
+     FILE ARCHIVED ON 21:02:38 Oct 14, 1997 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 17:11:28 Aug 04, 2022.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 209.216
+  exclusion.robots: 0.101
+  exclusion.robots.policy: 0.093
+  cdx.remote: 0.064
+  esindex: 0.01
+  LoadShardBlock: 101.122 (3)
+  PetaboxLoader3.datanode: 105.683 (4)
+  CDXLines.iter: 13.458 (3)
+  load_resource: 57.972
+  PetaboxLoader3.resolve: 45.546
+-->

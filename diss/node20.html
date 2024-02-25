@@ -1,0 +1,663 @@
+<!DOCTYPE HTML PUBLIC "-//W3O//DTD W3 HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 95 (Thu Jan 19 1995) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<head><script src="https://archive.org/includes/analytics.js?v=cf34f82" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app201.us.archive.org';v.server_ms=679;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="https://web.archive.org/_static/js/bundle-playback.js?v=KTqwAcYd" charset="utf-8"></script>
+<script type="text/javascript" src="https://web.archive.org/_static/js/wombat.js?v=UHAOicsW" charset="utf-8"></script>
+<script type="text/javascript">
+  __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.vhdl.org:80/~wyle/diss/node20.html","19971014210012","https://web.archive.org/","web","/_static/",
+	      "876862812");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web.archive.org/_static/css/banner-styles.css?v=fantwOh2" />
+<link rel="stylesheet" type="text/css" href="https://web.archive.org/_static/css/iconochive.css?v=qtvMKcIJ" />
+<!-- End Wayback Rewrite JS Include -->
+
+<title> Sifting in Stages</title>
+</head>
+<body>
+<meta name="description" value=" Sifting in Stages">
+<meta name="keywords" value="diss">
+<meta name="resource-type" value="document">
+<meta name="distribution" value="global">
+<p>
+ <br> <hr><a name="tex2html1319" href="https://web.archive.org/web/19971014210012/http://www.vhdl.org/~wyle/diss/node21.html"><img align="BOTTOM" alt="next" src="https://web.archive.org/web/19971014210012im_/http://vhdl.org/~wyle/diss/images/next_motif.gif"></a>   <a name="tex2html1317" href="https://web.archive.org/web/19971014210012/http://www.vhdl.org/~wyle/diss/node18.html"><img align="BOTTOM" alt="up" src="https://web.archive.org/web/19971014210012im_/http://vhdl.org/~wyle/diss/images/up_motif.gif"></a>   <a name="tex2html1311" href="https://web.archive.org/web/19971014210012/http://www.vhdl.org/~wyle/diss/node19.html"><img align="BOTTOM" alt="previous" src="https://web.archive.org/web/19971014210012im_/http://vhdl.org/~wyle/diss/images/previous_motif.gif"></a>   <a name="tex2html1321" href="https://web.archive.org/web/19971014210012/http://www.vhdl.org/~wyle/diss/node2.html"><img align="BOTTOM" alt="contents" src="https://web.archive.org/web/19971014210012im_/http://vhdl.org/~wyle/diss/images/contents_motif.gif"></a>   <a name="tex2html1322" href="https://web.archive.org/web/19971014210012/http://www.vhdl.org/~wyle/diss/node57.html"><img align="BOTTOM" alt="index" src="https://web.archive.org/web/19971014210012im_/http://vhdl.org/~wyle/diss/images/index_motif.gif"></a>   <br>
+<b> Next:</b> <a name="tex2html1320" href="https://web.archive.org/web/19971014210012/http://www.vhdl.org/~wyle/diss/node21.html"> Regular Expressions</a>
+<b>Up:</b> <a name="tex2html1318" href="https://web.archive.org/web/19971014210012/http://www.vhdl.org/~wyle/diss/node18.html"> Filtering</a>
+<b> Previous:</b> <a name="tex2html1312" href="https://web.archive.org/web/19971014210012/http://www.vhdl.org/~wyle/diss/node19.html"> Passive Subscriber Model</a>
+<br> <hr> <p>
+<h1><a name="SECTION00820000000000000000"> Sifting in Stages</a></h1>
+<a name="stages">&#160;</a>
+<a name="3742">&#160;</a>
+<a name="3743">&#160;</a>
+<a name="3744">&#160;</a>
+<p>
+We now introduce the notion of using separate retrieval functions
+instead of a single information filtering process.  We call these
+functions <em> filtering stages</em> and define some parameters for their
+application and combination.  Factoring out levels of information
+filtering from the overall IR process into independent layers is
+advantageous not only because it enhances the
+flexibility<a name="3746">&#160;</a> and retrieval capabilities for
+subscribers, but also for managing network<a name="3747">&#160;</a>
+bandwidth<a name="3748">&#160;</a> and computational resources.
+Decomposing<a name="3749">&#160;</a> the filtering<a name="3750">&#160;</a>
+process<a name="3751">&#160;</a> into stages<a name="3752">&#160;</a> gives a
+subscriber much more flexibility in
+formulating<a name="3753">&#160;</a><a name="3754">&#160;</a> a
+profile.  Specific aspects of the information need are handled
+separately, which provides a <em> structure</em> in the profile.  Evidence
+from the literature [<a href="https://web.archive.org/web/19971014210012/http://www.vhdl.org/~wyle/diss/node40.html#Crof91">Crof91</a>] indicates that such a structure is
+advantageous to the retrieval process.  Stages also give a system
+architect more degrees of freedom in constructing a filtering service.
+Separate stages could, for example, be run on separate processors or
+machines.  Network bandwidth can be optimized by positioning filtering
+stages providing a large data<a name="3757">&#160;</a> reduction
+<a name="3758">&#160;</a><a name="3759">&#160;</a> topologically (in a
+networking sense) close to the information source.  Storage and other
+computational resources are used more efficiently because only those
+information sources with possibly relevant information need be tracked
+by a server.
+<p>
+<p><a name="4005">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img170.gif">
+<br><strong>Figure 3.1:</strong> <b> passive</b> (b) versus <b> active</b> (a) models 
+of user interaction <a name="figpassive">&#160;</a><br>
+<p>
+<a name="3822">&#160;</a>
+<a name="3823">&#160;</a>
+<p>
+Well-defined search<a name="3824">&#160;</a> 
+criteria<a name="3825">&#160;</a>, 
+operating on formal<a name="3826">&#160;</a>, 
+specific<a name="3827">&#160;</a> fields<a name="3828">&#160;</a> of
+WAN messages, are used to extract a promising<a name="3829">&#160;</a> 
+set<a name="3830">&#160;</a> of messages<a name="3831">&#160;</a> for the
+IR ranking<a name="3832">&#160;</a> 
+process<a name="3833">&#160;</a>.  Specific patterns are used to retrieve or
+eliminate messages independently of their ranking.  Paragraph 
+types<a name="3834">&#160;</a>
+(see section 2.3) are then designated in order to deliver only
+relevant full-text sections or the appropriate message surrogates to
+subscribers.
+<p>
+We turn now to the development of a model for an 
+information<a name="3835">&#160;</a> server<a name="3836">&#160;</a>.
+We model an information server (IS)<a name="3837">&#160;</a> 
+as a dynamic<a name="3838">&#160;</a> 
+intermediate<a name="3839">&#160;</a> 
+repository<a name="3840">&#160;</a> 
+of <a name="3841">&#160;</a>
+WAN messages whose purpose is to deliver all and only those messages in the
+Matrix which a subscriber <em> prefers</em> to all other available messages.
+The <a name="3843">&#160;</a><a name="3844">&#160;</a>
+system's <a name="3845">&#160;</a><a name="3846">&#160;</a>
+subscribers are the information <em> sinks</em> and the
+heterogeneous WAN information providers are the information <em> sources</em>.
+In our model, an IS includes methods for optimally and efficiently gathering
+information from WAN sources and delivering the 
+most ``relevant,'' that is the messages <em> preferred</em>
+to all other messages, to its subscribers.
+<p>
+An <b>IS</b> is composed of a set of system<a name="3850">&#160;</a> 
+parameters<a name="3851">&#160;</a>, state<a name="3852">&#160;</a> 
+information<a name="3853">&#160;</a> for
+tracking remote<a name="3854">&#160;</a> <a name="3855">&#160;</a>
+sources <a name="3856">&#160;</a><a name="3857">&#160;</a>
+in the Matrix<a name="3858">&#160;</a>, 
+a set of subscriber profiles<a name="3859">&#160;</a>, a
+momentary<a name="3860">&#160;</a> <a name="3861">&#160;</a>
+database of locally cached<a name="3862">&#160;</a><a name="3863">&#160;</a>
+WAN messages, and some auxiliary
+information<a name="3864">&#160;</a> 
+such as article indexes and feature<a name="3865">&#160;</a> 
+statistics<a name="3866">&#160;</a>.  Each user
+profile contains some general<a name="3867">&#160;</a> 
+parameters about the subscriber such as
+how to reach him or her, and specific elements for modelling an
+information<a name="3868">&#160;</a> need<a name="3869">&#160;</a>:
+<p>
+<ul><li> First and foremost, a profile contains a set of zero or more topics
+  about which the subscriber wishes to be informed.  We call these topics
+  <em> queries</em>; <a name="3872">&#160;</a>
+  it is important to distinguish these queries from the usual
+  <em> query texts</em> associated with other types of information systems.
+  Queries in this model contain several parameters in addition to a text.
+  These query parameters are described in detail below.
+  <li> The second element in a profile is a sequence of 
+  extended <em> regular
+  expressions</em> [<a href="https://web.archive.org/web/19971014210012/http://www.vhdl.org/~wyle/diss/node40.html#Enge88">Enge88</a>] (see section <a href="https://web.archive.org/web/19971014210012/http://www.vhdl.org/~wyle/diss/node21.html#regex">3.3</a>) in disjunctive
+  normal form used to model a subscriber's future<a name="3877">&#160;</a>
+  interest<a name="3878">&#160;</a> in possible<a name="3879">&#160;</a> 
+  sources of information.  These regular
+  expressions are used to match the titles or descriptions of new
+  sources of information as they become available.  They are not meant
+  to match the actual information within the new sources; rather 
+  the name or description of new WAN <em>
+  databases</em> which are continually becoming available in the Matrix.
+  <li> In order to make the formulation, storage, and processing
+  of queries easier, a profile also contains global defaults for all
+  non-text parameters in each query.
+</ul>
+<p>
+A query is composed of some user and system 
+identification
+<a name="3882">&#160;</a>
+<a name="3883">&#160;</a>
+<a name="3884">&#160;</a>
+<a name="3885">&#160;</a>
+information, a query<a name="3886">&#160;</a> text<a name="3887">&#160;</a> 
+of unlimited length which the subscriber may
+change frequently, and the following parameters:
+<p>
+<ul><li> The number of messages in a retrieval set to be delivered;
+  <a name="3889">&#160;</a>
+  <a name="3890">&#160;</a>
+  <a name="3891">&#160;</a>
+  <li> The time interval between deliveries;
+  <a name="3892">&#160;</a>
+  <a name="3893">&#160;</a>
+  <li> A set of one or more remote WAN database categories:
+  <a name="3894">&#160;</a>
+  <a name="3895">&#160;</a>
+  <a name="3896">&#160;</a>
+  These categories map directly to existing, distinct 
+  WAN<a name="3897">&#160;</a> databases to be used as a 
+  retrieval<a name="3898">&#160;</a> source;
+  <li> Zero or more 
+  inclusion<a name="3899">&#160;</a> 
+  patterns<a name="3900">&#160;</a>;
+  these <a name="3901">&#160;</a>
+  <a name="3902">&#160;</a>
+  <a name="3903">&#160;</a>
+  <a name="3904">&#160;</a>
+  <a name="3905">&#160;</a>
+  <a name="3906">&#160;</a>
+  patterns are also extended
+  regular expressions in disjunctive normal form.  These inclusion patterns are
+  designed to be a highly specific template which will match a very small
+  set of messages that the subscriber prefers above all other possible
+  messages, regardless of their similarity to the text portion of the
+  query.  These patterns are typically the name of a specific individual or
+  a very exact (and therefore long) phrase;
+  <li> Zero or more exclusion patterns; these patterns are once again
+  <a name="3907">&#160;</a>
+  <a name="3908">&#160;</a>
+  <a name="3909">&#160;</a>
+  <a name="3910">&#160;</a>
+  <a name="3911">&#160;</a>
+  <a name="3912">&#160;</a>
+  extended regular expressions OR'd together in disjunctive normal form.  
+  Exclusion
+  patterns are designed to filter out specific messages which have a high
+  syntactic similarity to a query text but little semantic correspondence.
+  For example, if a subscriber is interested in pixel orientation in object
+  recognition systems, she would not want to see messages about object
+  oriented programming languages or the recognition received by
+  object oriented database companies;
+  <li> A set of one or more <em> paragraph types</em> [<a href="https://web.archive.org/web/19971014210012/http://www.vhdl.org/~wyle/diss/node40.html#Hort87">Hort87</a>] to 
+  be <a name="3915">&#160;</a>
+  be <a name="3916">&#160;</a>
+  displayed in the messages sent from the <b>IS</b>.
+</ul>
+<p>
+An <b>IS</b> uses the union of all 
+database<a name="3918">&#160;</a> categories of all queries of all
+subscribers as the sources in the Matrix<a name="3919">&#160;</a> 
+for messages to cache in its<a name="3920">&#160;</a>
+local database <b>DB</b>.  As the database categories change in the queries
+of the user profiles in an <b>IS</b>, the sources queried by the <b>IS</b> change
+accordingly.  <b>DB</b> also changes as older messages are deleted from the
+<b>IS</b> cache and as new messages arrive.
+<p>
+Using these parameters<a name="3921">&#160;</a> 
+we <a name="3922">&#160;</a><a name="3923">&#160;</a>
+define retrieval and <em> filtering stages</em>
+for messages in the Matrix.
+<p>
+A filtering stage is simply a function which selects a subset from a
+set of messages.  If <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img171.gif"> and <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img172.gif">,
+then it follows trivially, that <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img173.gif">, the power set of
+<b>A</b>.  <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img174.gif">.
+<p>
+Filtering stages are monotonic<a name="3930">&#160;</a>,
+<p><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img175.gif"><p>
+idempotent<a name="3931">&#160;</a>
+<p><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img176.gif"><p>
+and obey ``contraction<a name="3932">&#160;</a>''<a name="3933">&#160;</a>
+<p><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img177.gif"><p>
+<p>
+Because of the above properties, the sequential application of filtering
+stages is commutative<a name="3934">&#160;</a>:
+<p><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img178.gif"><p>
+Applying two stages in parallel<a name="3941">&#160;</a> 
+to <a name="3942">&#160;</a>
+the same message set will, of
+course, result in the union of their resulting sets.  We therefore
+denote the <em> parallel application</em> of filtering stages as: 
+<img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img179.gif"> 
+which means that <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img180.gif"> results from the parallel application of 
+filtering stages <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img181.gif"> and <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img182.gif"> to the set of messages <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img183.gif">.
+<p>
+We shall now consider some properties of the sets resulting from the
+application of filtering stages and the relationships among these
+sets.  These properties can be used to check the viability and
+operating bounds of filtering functions <em> after</em> their application.
+As we shall see in the following discussion, the result of these tests
+can then be used to signal warnings and suggest changes to filtering
+functions based on undesired results.
+<p>
+We examine three classes<a name="3952">&#160;</a> 
+of overlap<a name="3953">&#160;</a> among the sets of messages
+resulting from separate filtering stages.  A pair of message sets can be:
+<a name="3954">&#160;</a>
+<ul><li> <b> disjoint</b>:  Two sets of messages are disjoint when they 
+  contain no <a name="3957">&#160;</a>
+  elements in common <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img184.gif">.
+  <li> <b> semi-orthogonal</b>:  <a name="3961">&#160;</a>
+  Two <a name="3962">&#160;</a>
+  sets are semi-orthogonal when they 
+  are either disjoint, or contain some elements in common, but are 
+  not identical, <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img185.gif">.
+  <li> <b> unrestricted</b>:  There <a name="3966">&#160;</a>
+  is no restriction on the sets; they
+  may be identical, overlapping, or disjoint.
+</ul>
+Obviously, these classes are hierarchical.  All pairs of disjoint sets
+are semi-orthogonal and all pairs of semi-orthogonal sets are
+unrestricted.
+<p>
+The filtering stages constructed by the inclusion pattern and the
+complement of the exclusion pattern (described above) are designed to
+produce either identical or semi-orthogonal answer sets.  If the answer
+sets are disjoint, their sequential application would result in a
+completely empty answer set.  Although this situation may indeed be
+desired by the subscriber, it can often be an indication that the
+patterns composing one or both of the filtering stages is too broad or
+too specific.  In such a situation, a warning can be issued by the
+system to indicate that one or both of the filtering stages may need
+changes.  Similarly, the filtering stage resulting from the query text
+and an IR algorithm is designed to be semi-orthogonal to the set
+resulting from the application of the exclusion<a name="3968">&#160;</a>
+stage.  If the resulting sets of the application of these stages are
+disjoint, it is likely that the exclusion stage is too broad.
+<p>
+<p><a name="4175">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img186.gif">
+<br><strong>Figure 3.2:</strong> Filtering sequentially in stages <a name="filter">&#160;</a><br>
+<p>
+Figure <a href="node20.html#filter">3.2</a> broadly outlines a typical example of sequentially
+filtering in stages; only those stages producing a reduction in data
+volume are depicted and the data volumes are approximate.  
+<a name="4100">&#160;</a>
+<p>
+We now address the filtering process<a name="4101">&#160;</a> somewhat
+<a name="4102">&#160;</a> more precisely.  We shall define four
+distinct filtering stages, their application, and a recommended order
+for their combination.  The motivations for, and therefore the
+definitions of these stages are based on an analysis of subscriber <em>
+preferences</em>, both explicit and surmised (conjectured), of sets of
+messages in the Matrix.  In the following, we examine the sets of
+messages in the Matrix which are or would be preferred by subscribers
+to all others, the subset of Matrix messages cached in an <b>IS</b>, and the
+subset of <b>IS</b> messages actually delivered to subscribers, as well as
+changes to these sets with time.
+<p>
+Although, in general, filtering stages operate on the set of messages
+in the entire Matrix<a name="4104">&#160;</a> 
+(<img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img187.gif">), it <a name="4105">&#160;</a> is convenient to restrict some of
+them to range only over the set of messages cached in an information
+server (<b>DB</b>).<a name="4106">&#160;</a>  
+Obviously, <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img189.gif">.  Defining a filter
+operating on <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img190.gif"> to produce <b>DB</b> is the first step in defining an
+<b>IS</b> and one of the most important considerations.
+<p>
+Consider the momentary set of all WAN information items <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img191.gif"> in the
+entire Matrix at different times.  We noted in 
+section <a href="https://web.archive.org/web/19971014210012/http://www.vhdl.org/~wyle/diss/node12.html#overload">1.6</a> that <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img192.gif"> is growing exponentially.  In fact,
+formal studies of the growth of the Matrix [<a href="https://web.archive.org/web/19971014210012/http://www.vhdl.org/~wyle/diss/node40.html#Lott92">Lott92</a>] indicate that
+it will reach <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img193.gif"> notes before this work is published.  
+Figure <a href="node20.html#omega">3.3</a> shows the number of nodes which are mutually, directly 
+accessible in the Matrix as of January 1992.  
+<p><a name="5343">&#160;</a><a name="omega">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img194.gif">
+<br><strong>Figure 3.3:</strong> The Expanding Matrix<br>
+<p>
+<a name="5346">&#160;</a>
+<a name="5347">&#160;</a>
+<p>
+For each subscriber <b>s</b> <a name="5348">&#160;</a>
+of an <b>IS</b> at time<a name="5349">&#160;</a> <b>t</b>, we postulate the
+existence of an <a name="5350">&#160;</a>
+optimal<a name="5351">&#160;</a> set<a name="tex2html859" href="https://web.archive.org/web/19971014210012/http://www.vhdl.org/~wyle/diss/footnode.html#6031"><img align="BOTTOM" alt="gif" src="https://web.archive.org/web/19971014210012im_/http://vhdl.org/~wyle/diss/images/foot_motif.gif"></a> of messages which
+completely satisfies <b>s</b>'s information<a name="5353">&#160;</a> need.
+<p>
+This set, <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img196.gif"> is defined by selecting the highest ranked messages
+from the ranking produced by the complete set of conjectured
+preferences from all messages in the Matrix for a given set size
+<img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img197.gif">.  The size of this set is also specified by <b>s</b>; it the first
+query parameter (see above).
+<p>
+
+<p>
+The union of the <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img198.gif"> sets for all subscribers of an <b>IS</b> at time
+<b>t</b> is denoted <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img199.gif">.  <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img200.gif"> contains exactly those messages which at
+least one subscriber of the <b>IS</b> would want to receive.  We restrict
+our discussion to those instants in time at which <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img201.gif"> is not
+empty.
+<p><a name="6073">&#160;</a><a name="sets1">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img208.gif">
+<br><strong>Figure 3.4:</strong> Information Need <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img205.gif">, the Matrix <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img206.gif">,
+and Coverage <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img207.gif"><br>
+<p>
+Obviously, <b>O</b> changes over time; changes are tracked by the creation
+of new queries, the deletion of old queries, and changes in existing
+parameters of the set of user profiles in <b>IS</b>.  An information
+server explicitly and actively accounts for changes in <b>O</b> by its
+momentary set of query prompt intervals.
+<img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img209.gif"> intersects <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img210.gif"> to form <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img211.gif">, the optimal set of
+messages for <b>IS</b> to cache which are contained in the Matrix at 
+time <b>t</b> (figure <a href="node20.html#sets1">3.4</a>).  As the Matrix expands, it envelopes 
+different parts of <b>O</b>.  The growth and change in <b>O</b> is not well understood
+[<a href="https://web.archive.org/web/19971014210012/http://www.vhdl.org/~wyle/diss/node40.html#Quar90">Quar90</a>], and it is also unclear whether or not the coverage of the
+Matrix, <b>SO</b>, is growing over time.
+<p><a name="6140">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img218.gif">
+<br><strong>Figure 3.5:</strong> Relevant messages in the Matrix <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img215.gif">; Relevant messages in 
+an information server <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img216.gif">; all messages in an information server <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img217.gif"><br>
+<p>
+<a name="6089">&#160;</a>
+<a name="6090">&#160;</a>
+<a name="6091">&#160;</a>
+<p>
+As mentioned above, <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img222.gif">, the subset of messages in <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img223.gif">
+actually contained in <b>IS</b> at time <b>t</b> is determined directly by the
+database category selection filtering stages in the set of subscribers'
+profiles and the current state of the <b>IS</b> with respect to its
+retrieval of the remote sources in the Matrix.
+<p>
+<img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img224.gif">, <a name="6094">&#160;</a>
+the intersection of <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img226.gif"> with <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img227.gif">, is the set of messages
+subscribers prefer to all others in the Matrix which are also in an
+<b>IS</b> at time <b>t</b>.  That is, <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img228.gif"> contains the subset of messages
+within an <b>IS</b> which at least one subscriber would want to receive at
+time <b>t</b>.
+<p>
+Using these sets of conjectural preferences it is possible to
+define theoretical <em> coverage recall</em> and coverage precision
+indicators.<a name="6096">&#160;</a><a name="6097">&#160;</a><a name="6098">&#160;</a>
+The <em> coverage precision</em>   <b>CU</b>  
+and <em> coverage recall</em>   <b>CR</b>   indicators of an <b>IS</b> with respect
+to the Matrix at time <b>t</b> are simply 
+<p><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img229.gif"><p>
+This analysis ignores conjecturally preferred messages that are not
+contained in the Matrix.  It is important to distinguish these coverage
+indicators from the traditional usefulness, precision, and recall.  The
+latter three measures are determined by using relevance judgements from
+users or standard collections; they are measured only with respect to
+messages contained in an <b>IS</b>.  The former ratios indicate how well an
+<b>IS</b> retrieves messages from those available.  Although it is practically 
+impossible to <em> measure</em> such parameters, crude estimations are 
+possible [<a href="https://web.archive.org/web/19971014210012/http://www.vhdl.org/~wyle/diss/node40.html#Giff90">Giff90</a>].
+<p>
+Without loss of generality, we consider for the moment the information
+need of a single subscriber <b>s</b> at time <b>t</b>.  The postulated optimal
+set of messages <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img230.gif"> contains the <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img231.gif">
+messages which <b>s</b> prefers to all others available
+at time <b>t</b>.  We again restrict ourselves to <b>t</b> such that <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img232.gif">.  To model <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img233.gif"> a user-profile contains
+one or more queries.  Each query contains a list of databases
+categories which maps directly to databases to be searched; each query
+also contains a pattern (actually an extended  <em> regular expression</em>; 
+see <a href="https://web.archive.org/web/19971014210012/http://www.vhdl.org/~wyle/diss/node21.html#regex">3.3</a>), to match new databases when they become available.
+These parameters comprise the first filtering stage <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img234.gif">.  This stage
+addresses<a name="6115">&#160;</a>
+the conjectural preferences which form the overall current and future
+coverage recall performance of <b>DB</b> in <b>IS</b> with respect to to the
+Matrix and <b>s</b>.
+<a name="6149">&#160;</a>
+<p><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img237.gif"><p>
+<img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img238.gif"> is theoretically very large because <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img239.gif"> is designed to
+maximize preferences for coverage<a name="6122">&#160;</a> recall.  
+<img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img240.gif"> will, of course, be combined with
+other stages, and therefore <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img241.gif"> does not necessarily ever have
+to exist outside of a filter<a name="6124">&#160;</a> 
+pipeline<a name="6125">&#160;</a> (a group of sequentially applied
+filtering stages).
+<p>
+Each query also has a parameter specifying the number of messages to
+be retrieved.  The subscriber <b>s</b> therefore specifies <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img242.gif">
+directly by assigning individual values to the retrieval set sizes of
+queries in his profile.
+The set <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img243.gif"> includes <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img244.gif">, the ``optimal'' subset of
+<img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img245.gif"> containing all messages in the Matrix that <b>s</b> would prefer
+to all other messages in the Matrix.  We define
+<img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img246.gif"> to be the set formed
+by the intersection of <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img247.gif"> with <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img248.gif">.  It is the exhaustive
+subset of <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img249.gif"> containing those messages <b>s</b> would prefer to all others
+cached in the <b>IS</b> at time <b>t</b>.
+(see figure <a href="node20.html#fom2">3.6</a>).
+<p><a name="6203">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img250.gif">
+<br><strong>Figure 3.6:</strong> improving effectiveness using filtering stages <a name="fom2">&#160;</a><br>
+<p>
+<p>
+
+<p>
+For each of <b>s</b>'s queries, at the time interval specified by <b>s</b> in
+each query, the <b>IS</b> evaluates and sends a subset of <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img251.gif"> to <b>s</b>
+based on the filtering parameters of the query (including the query
+text).  Let this retrieved<a name="6204">&#160;</a>
+message set be <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img253.gif">.  
+It <a name="6205">&#160;</a>
+includes <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img255.gif">, the
+messages within <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img256.gif"> preferred by subscribers 
+and some non-relevant (fallout) messages
+<img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img257.gif">.  The ratio of <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img258.gif"> to <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img259.gif"> is
+the traditional IR recall measure (see figure <a href="node20.html#sets3">3.7</a>) which, of
+course, can never actually be measured in a real <b>IS</b>.  Those messages
+contained in <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img260.gif"> which are not part of <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img261.gif"> are targeted
+by <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img262.gif">, <a name="6175">&#160;</a>
+the second filtering stage.  This stage is defined by the set
+of inclusion<a name="6176">&#160;</a> <a name="6177">&#160;</a>
+patterns of the query; it is designed to increase the
+number of unfulfilled<a name="6178">&#160;</a> 
+preferences<a name="6179">&#160;</a> 
+that are expressed by the traditional
+recall<a name="6180">&#160;</a> measure by retrieving a set of messages matching a very specific
+pattern.  Such messages may not ordinarily be part of the algorithm
+preferences and might include messages by a specific author or
+contain a different highly specific phrase.
+<p><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img264.gif"><p>
+<img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img265.gif"> and <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img266.gif"> are unrestricted (as defined
+above).   <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img267.gif"> and <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img268.gif"> can therefore be applied to <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img269.gif">
+sequentially in an arbitrary order and still produce the same result.
+<p>
+<p><a name="6265">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img270.gif">
+<br><strong>Figure 3.7:</strong> Retrieved and Relevant Sets in an Information Server<a name="sets3">&#160;</a><br>
+<p>
+<p>
+The <a name="6223">&#160;</a>
+third filtering stage, <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img272.gif"> is defined by the exclusion pattern.
+It is aimed at reducing unsatisfied preferences due to the inclusion of 
+``fallout'' messages<a name="6224">&#160;</a> 
+(messages <a name="6225">&#160;</a>
+for which the subscriber would prefer other
+messages in <b>DB</b> that are not included in the retrieval set).  The exclusion
+pattern is designed to remove messages matching a specific,
+known pattern common to a class of messages which violate preferences.
+These messages are from <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img273.gif">.  
+Looking at the problem from the classical retrieval performance point of
+view, this stage is intended to increase the
+classical precision performance of <b>IS</b>.  We would like to restrict 
+the result of <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img274.gif"> to be disjoint to the set resulting from <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img275.gif"> 
+and therefore place it in parallel to <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img276.gif"> in the filtering
+pipeline of the <b>IS</b>.
+<p><a name="eqf0f1f2">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img277.gif"><p>
+<p>
+The <a name="6243">&#160;</a>
+fourth and final filtering function, <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img279.gif"> is the 
+vector<a name="6244">&#160;</a> space
+ranking stage, the most important element of any <b>IS</b>.  It is
+designated by a query text, the number of messages to be delivered per
+interval, a query-specific message collection (see below), and a
+retrieval algorithm as defined in section <a href="https://web.archive.org/web/19971014210012/http://www.vhdl.org/~wyle/diss/node15.html#methods">2.2</a>.  The
+query-specific message collection is a <em> dynamic</em> set of messages
+defined as the result of applying the previous three filtering stages
+to those messages entering the Matrix and retrieved by an <b>IS</b> during a
+specific time interval <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img280.gif">.  This interval is determined by the
+query parameter which specifies the time<a name="6247">&#160;</a> 
+period<a name="6248">&#160;</a> between query
+evaluation<a name="6249">&#160;</a> 
+events<a name="6250">&#160;</a>.  <a name="6251">&#160;</a>
+If the time between query evaluations is <b>qI</b>,
+then <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img282.gif"> is simply <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img283.gif">, where <b>t</b> is the current time.
+The dynamic collection used by <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img284.gif"> is then defined as
+<p>
+<p><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img285.gif"><p>
+<p>
+<p><a name="6601">&#160;</a><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img286.gif">
+<br><strong>Figure 3.8:</strong> Hybrid IR &amp; SDI Model<a name="figsdiir2">&#160;</a><br>
+<p>
+<a name="6347">&#160;</a>
+<a name="6348">&#160;</a>
+<a name="6349">&#160;</a>
+<p>
+Figures <a href="https://web.archive.org/web/19971014210012/http://www.vhdl.org/~wyle/diss/node15.html#figsdiir1">2.2</a> and <a href="node20.html#figsdiir2">3.8</a> illustrate the
+differences among the traditional SDI model, vector space IR, and our
+new concept of applying IR to a dynamic, filtered collection of
+messages.  In our hybrid model (figure <a href="node20.html#figsdiir2">3.8</a>), dynamic
+message collections <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img287.gif"> are formed during the query
+interval <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img288.gif"> (one for each query); then vector space ranking methods
+are applied to these dynamic collections.  Whereas paragraph-specific
+matching patterns can be specified in <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img289.gif"> and <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img290.gif">, the
+vector space ranking stage <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img291.gif"> <em> ranks</em> all similarities of the
+query text to all messages in <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img292.gif"> and therefore requires
+an algorithmic method for weighting features (indexing tokens) of each
+message <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img293.gif">.  One way to take the different
+paragraph types into consideration in the ranking process is by the
+inverse feature density measure defined
+in equations <a href="https://web.archive.org/web/19971014210012/http://www.vhdl.org/~wyle/diss/node16.html#eqwtipd">2.15</a> and <a href="https://web.archive.org/web/19971014210012/http://www.vhdl.org/~wyle/diss/node16.html#eqwtipdn">2.16</a> (from 
+section <a href="https://web.archive.org/web/19971014210012/http://www.vhdl.org/~wyle/diss/node16.html#secstruc">2.3</a>) as part of the term weighting scheme.  Another
+approach is to specify the paragraph types directly in <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img294.gif">,
+and <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img295.gif">.  We believe that <em> combining</em> these schemes provides
+the most flexible and therefore most effective method for selecting
+messages for delivery to <b>s</b>.
+<p>
+The relationships among the set of messages resulting from <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img296.gif"> and
+the sets resulting from the other stages are as follows.  <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img297.gif">
+and <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img298.gif"> are unrestricted.  <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img299.gif"> and <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img300.gif"> are
+unrestricted.  <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img301.gif"> and <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img302.gif"> are semi-orthogonal.
+<p>
+The final filtering pipeline for generating a set of messages at time
+<b>t</b> for subscriber <b>s</b> in <b>IS</b> is:
+<p><img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img303.gif"><p>
+<a name="6381">&#160;</a>
+<p>
+A final post-processing filtering action<a name="6382">&#160;</a> 
+is defined by a query-specific
+parameter that specifies a list of paragraph<a name="6383">&#160;</a> 
+types to be included in
+each message delivered to <b>s</b>.  It also indicates the 
+order<a name="6384">&#160;</a><a name="6385">&#160;</a> in which
+these paragraphs should appear when the message is delivered.  The
+subscriber can thereby filter out unwanted 
+header<a name="6386">&#160;</a> paragraphs<a name="6387">&#160;</a> and
+directly control the size and order of the summarizing paragraphs of
+each message delivered.
+<p>
+It is preferable to rank and retrieve only information items that have
+potential<a name="6388">&#160;</a> 
+relevance<a name="6389">&#160;</a> 
+to a query because of the large and exponentially
+growing number of messages available.  The reason for this preference is
+simply an efficiency issue.   Narrowing down the set of messages to
+be ranked using the stages <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img304.gif"> through <img align="MIDDLE" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img305.gif"> is therefore
+conceptually superior to a simple single-stage ranking method.  The
+explicit elimination of messages containing a specific pattern directly
+reduces the fallout and therefore enhances precision performance.
+<p>
+There is some evidence to support the hypothesis that filtering in
+stages is more effective than one-stage paradigms [<a href="https://web.archive.org/web/19971014210012/http://www.vhdl.org/~wyle/diss/node40.html#Salt90">Salt90</a>],
+[<a href="https://web.archive.org/web/19971014210012/http://www.vhdl.org/~wyle/diss/node40.html#Mans92">Mans92</a>].  Salton and Buckley, though not concerned with
+filtering <em> per se</em> propose a two-stage similarity measure in which
+the similarity between a query text and message is calculated by
+applying two separate functions in sequence.  In discussing the
+benefits of this method, they speculate that ``this precision
+performance may be improvable by using additional matching criteria
+for low level constructs.''  In other words, by adding another stage
+to their overall similarity measure.  In the same work, they also
+conjecture that ``restricting the collection search to items located
+within the same text cluster <img align="BOTTOM" alt="" src="https://web.archive.org/web/19971014210012im_/http://www.vhdl.org/~wyle/diss/img306.gif"> might also produce somewhat
+enhanced performance measurements.''  It seems that they find
+filtering in stages an idea worthy of further pursuit.  Mansfield et.
+al. use hardware methods for sequential filtering stages.  They claim
+that ``Efficient processing of complex associative search queries
+enables services that are impractical using conventional database
+system approaches.''  Their use of filtering stages is implemented in
+hardware and is applied to optimize distributed database applications
+in telephone and cable television networks.
+Filtering in this manner is in any case more flexible for network and
+computing resource allocation [<a href="https://web.archive.org/web/19971014210012/http://www.vhdl.org/~wyle/diss/node40.html#Lee88">Lee88</a>].
+<p>
+
+<p>
+With the growth and increased use of the Matrix, there has been a
+resurgence in studies of methods for so-called <em> 
+resource<a name="6396">&#160;</a>
+discovery<a name="6397">&#160;</a></em>, 
+a concept which has migrated from the field of 
+library<a name="6398">&#160;</a>
+science to the WAN literature in computer science [<a href="https://web.archive.org/web/19971014210012/http://www.vhdl.org/~wyle/diss/node40.html#Danz91">Danz91</a>].  Use
+of the query-specific profile parameter which matches new database
+categories as new WAN databases become available addresses precisely
+this issue:  when an <b>IS</b> gains access to new source databases in the
+Matrix, subscribers whose queries contain a pattern which matches the
+text of the name or description of these new databases are
+automatically informed of the existence of the new source.  Thus an
+<b>IS</b> can facilitate resource discovery among its subscribers in a
+similar fashion to the way messages themselves are disseminated.  The
+pattern for matching the descriptions of new databases as they become
+available is another parameter designed to satisfy conjectural
+preferences normally associated with the classical recall measure.  An
+<b>IS</b> does not necessarily add new databases to queries automatically.
+Instead, the subscribers themselves choose which databases to add to
+their queries.  However, subscribers will be informed about all new
+databases matching their filter specification.  The system has therefore
+automated much of the resource discovery process.
+<p>
+In this section, we presented the notion of distinct filtering stages
+within an <b>IS</b>, motivating their definition by retrieval effectiveness
+considerations.  Some of these stages were defined via extended regular
+expressions.  The formal definition of these regular expressions
+appears in the next section.
+<p>
+<a name="6400">&#160;</a>
+<a name="6401">&#160;</a>
+<a name="6402">&#160;</a>
+<p>
+<br> <hr><a name="tex2html1319" href="https://web.archive.org/web/19971014210012/http://www.vhdl.org/~wyle/diss/node21.html"><img align="BOTTOM" alt="next" src="https://web.archive.org/web/19971014210012im_/http://vhdl.org/~wyle/diss/images/next_motif.gif"></a>   <a name="tex2html1317" href="https://web.archive.org/web/19971014210012/http://www.vhdl.org/~wyle/diss/node18.html"><img align="BOTTOM" alt="up" src="https://web.archive.org/web/19971014210012im_/http://vhdl.org/~wyle/diss/images/up_motif.gif"></a>   <a name="tex2html1311" href="https://web.archive.org/web/19971014210012/http://www.vhdl.org/~wyle/diss/node19.html"><img align="BOTTOM" alt="previous" src="https://web.archive.org/web/19971014210012im_/http://vhdl.org/~wyle/diss/images/previous_motif.gif"></a>   <a name="tex2html1321" href="https://web.archive.org/web/19971014210012/http://www.vhdl.org/~wyle/diss/node2.html"><img align="BOTTOM" alt="contents" src="https://web.archive.org/web/19971014210012im_/http://vhdl.org/~wyle/diss/images/contents_motif.gif"></a>   <a name="tex2html1322" href="https://web.archive.org/web/19971014210012/http://www.vhdl.org/~wyle/diss/node57.html"><img align="BOTTOM" alt="index" src="https://web.archive.org/web/19971014210012im_/http://vhdl.org/~wyle/diss/images/index_motif.gif"></a>   <br>
+<b> Next:</b> <a name="tex2html1320" href="https://web.archive.org/web/19971014210012/http://www.vhdl.org/~wyle/diss/node21.html"> Regular Expressions</a>
+<b>Up:</b> <a name="tex2html1318" href="https://web.archive.org/web/19971014210012/http://www.vhdl.org/~wyle/diss/node18.html"> Filtering</a>
+<b> Previous:</b> <a name="tex2html1312" href="https://web.archive.org/web/19971014210012/http://www.vhdl.org/~wyle/diss/node19.html"> Passive Subscriber Model</a>
+<br> <hr> <p>
+<br> <hr>
+<p><address>
+<i>Mitchell F. Wyle <br>
+Wed Jan  3 13:22:21 EST 1996</i>
+</address>
+</body>
+<!--
+     FILE ARCHIVED ON 21:00:12 Oct 14, 1997 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 17:11:09 Aug 04, 2022.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 558.055
+  exclusion.robots: 0.118
+  exclusion.robots.policy: 0.111
+  cdx.remote: 0.055
+  esindex: 0.007
+  LoadShardBlock: 167.505 (3)
+  PetaboxLoader3.datanode: 143.432 (4)
+  CDXLines.iter: 12.06 (3)
+  load_resource: 111.311
+  PetaboxLoader3.resolve: 68.996
+-->
